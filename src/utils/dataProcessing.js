@@ -186,62 +186,30 @@ export const processIndustryData = (data) => {
 export const processSexData = (data) => {
   if (!data || data.length === 0) return [];
 
-  // 首先按日期分组
+  // 按日期分组
   const groupedByDate = {};
-  
+
   data.forEach(item => {
-    // 只处理Alberta地区的数据
-    if (item.GeoName !== 'Alberta') return;
-    
-    // 只处理15岁及以上年龄组的数据
-    if (item.Age !== '15 years and over') return;
-    
-    // 从数据中提取日期
-    const date = new Date(item.Date);
-    const formattedDate = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}`;
-    const key = formattedDate;
-    
-    // 初始化日期的数据结构
-    if (!groupedByDate[key]) {
-      groupedByDate[key] = {
-        date,
-        formattedDate,
-        Male: undefined,
-        Female: undefined,
-        'Both sexes': undefined
+    const date = item.Date;
+    const series = item.Series; // 使用Series字段代替原来的Sex字段
+    const value = item.Value;
+
+    if (!groupedByDate[date]) {
+      groupedByDate[date] = {
+        date: new Date(date),
+        formattedDate: date.substring(0, 7), // 使用YYYY-MM格式
+        Male: null,
+        Female: null
       };
     }
-    
-    // 根据性别添加数据 - 将失业人数转换为失业率 (这里需要接入真实的劳动力数据做分母)
-    // 但在缺乏完整数据的情况下，我们可以用固定的缩放因子来模拟失业率
-    if (item.Sex === 'Male' || item.Sex === 'Female' || item.Sex === 'Both sexes') {
-      // 创建一个模拟的失业率 (失业人数 / 10,000) 作为百分比
-      // 在实际应用中，这应该替换为真实的失业率计算
-      const unemploymentValue = item.Value;
-      
-      // 根据不同性别数据范围调整，确保显示的比例更合理
-      let scaleFactor;
-      if (item.Sex === 'Male') {
-        scaleFactor = 30000;
-      } else if (item.Sex === 'Female') {
-        scaleFactor = 35000;
-      } else { // Both sexes
-        scaleFactor = 65000;
-      }
-      
-      // 计算模拟的失业率百分比
-      const unemploymentRate = (unemploymentValue / scaleFactor) * 100;
-      groupedByDate[key][item.Sex] = parseFloat(unemploymentRate.toFixed(1));
+
+    // 填充相应性别的数据
+    if (series === 'Male' || series === 'Female') {
+      groupedByDate[date][series] = value;
     }
   });
-  
-  console.log(`Processed sex data items: ${Object.keys(groupedByDate).length}`);
-  if (Object.keys(groupedByDate).length > 0) {
-    const sample = groupedByDate[Object.keys(groupedByDate)[0]];
-    console.log("Sample processed sex data:", sample);
-  }
-  
-  // 将对象转换为数组，并按日期排序
+
+  // 将对象转换为数组并按日期排序
   return Object.values(groupedByDate).sort((a, b) => a.date - b.date);
 };
 
