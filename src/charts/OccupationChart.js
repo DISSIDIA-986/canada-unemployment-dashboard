@@ -42,7 +42,7 @@ const OccupationChart = ({ data, timeframe }) => {
 
   // 生成职业筛选器
   const occupationFilters = (
-    <>
+    <div className="flex flex-wrap gap-2 mt-2">
       {getAvailableOccupations(data).map(occupation => (
         <div
           key={occupation}
@@ -56,12 +56,12 @@ const OccupationChart = ({ data, timeframe }) => {
           {occupation.length > 25 ? occupation.substring(0, 25) + '...' : occupation}
         </div>
       ))}
-    </>
+    </div>
   );
 
   return (
     <ChartContainer 
-      title="职业失业率对比" 
+      title="Unemployment Rate by Occupation"
       filters={occupationFilters}
     >
       <ResponsiveContainer width="100%" height="100%">
@@ -80,7 +80,7 @@ const OccupationChart = ({ data, timeframe }) => {
             tickFormatter={(value) => `${value}%`}
           />
           <Tooltip 
-            formatter={(value) => [`${value.toFixed(1)}%`, '失业率']} 
+            formatter={(value) => [`${value.toFixed(1)}%`, 'Unemployment']} 
             labelFormatter={(label) => label}
           />
           <Legend />

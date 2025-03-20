@@ -45,25 +45,25 @@ const AlbertaOverviewChart = ({ data, timeframe }) => {
     <>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
         <div className="bg-white p-4 rounded-lg shadow">
-          <div className="text-sm font-medium text-gray-500 mb-1">当前失业率</div>
+          <div className="text-sm font-medium text-gray-500 mb-1">Current Rate</div>
           <div className="text-2xl font-bold">{currentValue.toFixed(1)}%</div>
           {yoyChange !== null && (
             <div className={`text-sm ${yoyChange < 0 ? 'text-green-500' : 'text-red-500'}`}>
-              比去年{yoyChange < 0 ? '下降' : '上升'} {Math.abs(yoyChange).toFixed(1)}%
+              {yoyChange < 0 ? 'Down' : 'Up'} {Math.abs(yoyChange).toFixed(1)}% year-over-year
             </div>
           )}
         </div>
         <div className="bg-white p-4 rounded-lg shadow">
-          <div className="text-sm font-medium text-gray-500 mb-1">期间最低值</div>
+          <div className="text-sm font-medium text-gray-500 mb-1">Period Low</div>
           <div className="text-2xl font-bold">{minValue.toFixed(1)}%</div>
         </div>
         <div className="bg-white p-4 rounded-lg shadow">
-          <div className="text-sm font-medium text-gray-500 mb-1">期间最高值</div>
+          <div className="text-sm font-medium text-gray-500 mb-1">Period High</div>
           <div className="text-2xl font-bold">{maxValue.toFixed(1)}%</div>
         </div>
       </div>
       
-      <ChartContainer title="Alberta失业率趋势">
+      <ChartContainer title="Alberta Unemployment Trend">
         <ResponsiveContainer width="100%" height="100%">
           <LineChart
             data={chartData}
@@ -79,7 +79,7 @@ const AlbertaOverviewChart = ({ data, timeframe }) => {
               domain={[0, 'auto']}
               tickFormatter={(value) => `${value}%`}
             />
-            <Tooltip formatter={(value) => [`${value.toFixed(1)}%`, '失业率']} />
+            <Tooltip formatter={(value) => [`${value.toFixed(1)}%`, 'Unemployment']} />
             <Line
               type="monotone"
               dataKey="value"

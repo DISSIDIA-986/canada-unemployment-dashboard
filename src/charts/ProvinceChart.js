@@ -1,77 +1,35 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import ChartContainer from '../components/ChartContainer';
-import { filterByTimeframe, getAvailableProvinces } from '../utils/dataProcessing';
-import { provinceColorScale } from '../utils/colorScales';
+import { getAvailableProvinces } from '../utils/dataProcessing';
+import * as d3 from 'd3';
 
 /**
  * 省份失业率对比图表
  * 
  * @param {Object} props
  * @param {Array} props.data - 省份失业率数据
- * @param {string} props.timeframe - 选中的时间范围
+ * @param {Array} props.selectedProvinces - 选中的省份
+ * @param {Function} props.onProvinceSelection - 省份选择回调函数
  * @returns {React.ReactElement} 省份失业率对比组件
  */
-const ProvinceChart = ({ data, timeframe }) => {
-  const [selectedProvinces, setSelectedProvinces] = useState(['Alberta', 'Canada', 'British Columbia', 'Ontario']);
-  
-  const filteredData = filterByTimeframe(data, timeframe);
-  
-  if (!filteredData || filteredData.length === 0) {
+const ProvinceChart = ({ data, selectedProvinces, onProvinceSelection }) => {
+  if (!data || data.length === 0) {
     return null;
   }
-  
-  // 当数据变化时，更新默认选中的省份
-  useEffect(() => {
-    if (data && data.length > 0) {
-      const availableProvinces = getAvailableProvinces(data);
-      
-      // 设置默认选中的省份
-      const defaultProvinces = [];
-      
-      // 尝试找到常见省份
-      const provinceOptions = [
-        "Alberta", 
-        "Canada",
-        "British Columbia",
-        "Ontario"
-      ];
-      
-      // 添加存在于数据中的省份
-      provinceOptions.forEach(option => {
-        if (availableProvinces.includes(option)) {
-          defaultProvinces.push(option);
-        }
-      });
-      
-      // 如果找不到首选省份，使用前几个可用的
-      if (defaultProvinces.length === 0 && availableProvinces.length > 0) {
-        defaultProvinces.push(availableProvinces[0]);
-        if (availableProvinces.length > 1) {
-          defaultProvinces.push(availableProvinces[1]);
-        }
-      }
-      
-      // 如果找到有效选择，更新状态
-      if (defaultProvinces.length > 0) {
-        setSelectedProvinces(defaultProvinces);
-      }
-    }
-  }, [data]);
 
-  // 处理省份选择变化
-  const handleProvinceSelection = (province) => {
-    if (selectedProvinces.includes(province)) {
-      setSelectedProvinces(selectedProvinces.filter(p => p !== province));
-    } else {
-      setSelectedProvinces([...selectedProvinces, province]);
-    }
-  };
+  // 获取可用省份
+  const availableProvinces = getAvailableProvinces(data);
+
+  // 省份颜色比例尺
+  const provinceColorScale = d3.scaleOrdinal()
+    .domain(['Alberta', 'Canada', 'British Columbia', 'Ontario', 'Quebec'])
+    .range(['#4285F4', '#DB4437', '#F4B400', '#0F9D58', '#AB47BC']);
 
   // 生成省份筛选器
   const provinceFilters = (
-    <>
-      {getAvailableProvinces(data).map(province => (
+    <div className="flex flex-wrap gap-2 mt-2">
+      {availableProvinces.map(province => (
         <div
           key={province}
           className={`px-3 py-1 rounded-full text-sm cursor-pointer ${
@@ -79,22 +37,22 @@ const ProvinceChart = ({ data, timeframe }) => {
               ? 'bg-blue-100 text-blue-800' 
               : 'bg-gray-100 text-gray-500'
           }`}
-          onClick={() => handleProvinceSelection(province)}
+          onClick={() => onProvinceSelection(province)}
         >
           {province}
         </div>
       ))}
-    </>
+    </div>
   );
 
   return (
     <ChartContainer 
-      title="省份失业率对比" 
+      title="Provincial Unemployment Rate Comparison"
       filters={provinceFilters}
     >
-      <ResponsiveContainer width="100%" height="100%">
+      <ResponsiveContainer width="100%" height={400}>
         <LineChart
-          data={filteredData}
+          data={data}
           margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
         >
           <CartesianGrid strokeDasharray="3 3" />
@@ -108,10 +66,11 @@ const ProvinceChart = ({ data, timeframe }) => {
             tickFormatter={(value) => `${value}%`}
           />
           <Tooltip 
-            formatter={(value) => [`${value.toFixed(1)}%`, '失业率']} 
+            formatter={(value) => [`${value.toFixed(1)}%`, 'Unemployment']}
             labelFormatter={(label) => label}
           />
           <Legend />
+          
           {selectedProvinces.map(province => (
             <Line
               key={province}

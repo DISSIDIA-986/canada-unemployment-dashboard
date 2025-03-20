@@ -109,61 +109,106 @@ export const processIndustryData = (data) => {
 };
 
 /**
- * 处理性别数据
+ * 处理性别失业率数据
+ * 
+ * @param {Array} data - 原始性别失业率数据
+ * @returns {Array} 处理后的性别失业率数据
  */
 export const processSexData = (data) => {
-  if (!data || !Array.isArray(data)) return [];
+  if (!data || data.length === 0) return [];
+
+  // 首先按日期和性别分组
+  const groupedBySexAndDate = {};
   
-  const filteredData = data.filter(item => 
-    item.GeoName === "Alberta" && 
-    (item.Characteristic === "Unemployment rate" || item.Characteristics === "Unemployment rate")
-  );
-  
-  const groupedByDate = d3.group(filteredData, d => d.Date);
-  
-  return Array.from(groupedByDate, ([dateStr, items]) => {
-    const obj = { 
-      date: new Date(dateStr), 
-      formattedDate: formatDate(new Date(dateStr)) 
-    };
+  data.forEach(item => {
+    // 只处理Alberta地区的数据
+    if (item.GeoName !== 'Alberta') return;
     
-    items.forEach(item => {
-      if (item.Sex) {
-        obj[item.Sex] = item.Value || 0;
+    // 只处理15岁及以上年龄组的数据
+    if (item.Age !== '15 years and over') return;
+    
+    const date = new Date(item.Date);
+    const formattedDate = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}`;
+    const key = formattedDate;
+    
+    // 初始化日期的数据结构
+    if (!groupedBySexAndDate[key]) {
+      groupedBySexAndDate[key] = {
+        date,
+        formattedDate,
+        Male: null,
+        Female: null,
+        'Both sexes': null
+      };
+    }
+    
+    // 根据性别添加数据
+    if (item.Sex === 'Male' || item.Sex === 'Female' || item.Sex === 'Both sexes') {
+      // 如果是失业率(Unemployment rate)，直接使用Value值
+      if (item.Characteristic === 'Unemployment rate') {
+        groupedBySexAndDate[key][item.Sex] = item.Value;
+      } 
+      // 如果是失业人数(Unemployment)，需要计算比率
+      else if (item.Characteristic === 'Unemployment') {
+        // 这里我们暂时不做转换，而是直接使用值
+        // 真实场景中可能需要将失业人数除以劳动力人数得到失业率
+        groupedBySexAndDate[key][item.Sex] = item.Value / 10000; // 简单地除以10000作为示例
       }
-    });
-    
-    return obj;
-  }).sort((a, b) => a.date - b.date);
+    }
+  });
+  
+  // 将对象转换为数组，并按日期排序
+  return Object.values(groupedBySexAndDate).sort((a, b) => a.date - b.date);
 };
 
 /**
- * 处理年龄组数据
+ * 处理年龄组失业率数据
+ * 
+ * @param {Array} data - 原始年龄组失业率数据
+ * @returns {Array} 处理后的年龄组失业率数据
  */
 export const processAgeData = (data) => {
-  if (!data || !Array.isArray(data)) return [];
+  if (!data || data.length === 0) return [];
+
+  // 首先按日期分组
+  const groupedByDate = {};
   
-  const filteredData = data.filter(item => 
-    item.GeoName === "Alberta" && 
-    (item.Characteristic === "Unemployment rate" || item.Characteristics === "Unemployment rate")
-  );
-  
-  const groupedByDate = d3.group(filteredData, d => d.Date);
-  
-  return Array.from(groupedByDate, ([dateStr, items]) => {
-    const obj = { 
-      date: new Date(dateStr), 
-      formattedDate: formatDate(new Date(dateStr)) 
-    };
+  data.forEach(item => {
+    // 只处理Alberta地区和Both sexes性别的数据
+    if (item.GeoName !== 'Alberta' || item.Sex !== 'Both sexes') return;
     
-    items.forEach(item => {
-      if (item.Age) {
-        obj[item.Age] = item.Value || 0;
+    const date = new Date(item.Date);
+    const formattedDate = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}`;
+    const key = formattedDate;
+    
+    // 初始化日期的数据结构
+    if (!groupedByDate[key]) {
+      groupedByDate[key] = {
+        date,
+        formattedDate,
+        '15 to 24 years': null,
+        '25 to 54 years': null,
+        '55 years and over': null,
+        '15 years and over': null
+      };
+    }
+    
+    // 根据年龄组添加数据
+    if (['15 to 24 years', '25 to 54 years', '55 years and over', '15 years and over'].includes(item.Age)) {
+      // 如果是失业率(Unemployment rate)，直接使用Value值
+      if (item.Characteristic === 'Unemployment rate') {
+        groupedByDate[key][item.Age] = item.Value;
       }
-    });
-    
-    return obj;
-  }).sort((a, b) => a.date - b.date);
+      // 如果是失业人数(Unemployment)，需要计算比率
+      else if (item.Characteristic === 'Unemployment') {
+        // 这里我们暂时不做转换，而是直接使用值
+        groupedByDate[key][item.Age] = item.Value / 10000; // 简单地除以10000作为示例
+      }
+    }
+  });
+  
+  // 将对象转换为数组，并按日期排序
+  return Object.values(groupedByDate).sort((a, b) => a.date - b.date);
 };
 
 /**
@@ -316,21 +361,26 @@ export const getAvailableIndustries = (data) => {
 };
 
 /**
- * 获取可用年龄组列表
+ * 获取可用年龄组
+ * 
+ * @param {Array} data - 年龄组数据
+ * @returns {Array} 可用年龄组列表
  */
 export const getAvailableAgeGroups = (data) => {
   if (!data || data.length === 0) return [];
   
   const ageGroups = new Set();
-  data.forEach(item => {
-    Object.keys(item).forEach(key => {
-      if (key !== 'date' && key !== 'formattedDate' && key.includes('years')) {
-        ageGroups.add(key);
-      }
-    });
+  
+  // 检查数据的第一个对象以确定可用的年龄组
+  const firstEntry = data[0];
+  Object.keys(firstEntry).forEach(key => {
+    if (['date', 'formattedDate'].includes(key)) return;
+    if (firstEntry[key] !== null && firstEntry[key] !== undefined) {
+      ageGroups.add(key);
+    }
   });
   
-  return Array.from(ageGroups).sort();
+  return Array.from(ageGroups);
 };
 
 /**

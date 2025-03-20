@@ -27,8 +27,8 @@ const RegionChart = ({ data }) => {
 
   return (
     <ChartContainer 
-      title="Alberta经济区域失业率对比" 
-      subtitle={`最新数据: ${dateDateStr}`}
+      title="Alberta Economic Region Unemployment Rate" 
+      subtitle={`Latest data: ${dateDateStr}`}
     >
       <ResponsiveContainer width="100%" height="100%">
         <BarChart
@@ -47,7 +47,7 @@ const RegionChart = ({ data }) => {
             dataKey="region" 
             tick={{ fontSize: 12 }}
           />
-          <Tooltip formatter={(value) => [`${value.toFixed(1)}%`, '失业率']} />
+          <Tooltip formatter={(value) => [`${value.toFixed(1)}%`, 'Unemployment']} />
           <Bar 
             dataKey="value" 
             fill="#AB47BC"
