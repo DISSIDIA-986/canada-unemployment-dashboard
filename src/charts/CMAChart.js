@@ -27,8 +27,8 @@ const CMAChart = ({ data }) => {
 
   return (
     <ChartContainer 
-      title="都市区失业率对比" 
-      subtitle={`最新数据: ${dateDateStr}`}
+      title="Unemployment Rate by Census Metropolitan Area" 
+      subtitle={`Latest data: ${dateDateStr}`}
     >
       <ResponsiveContainer width="100%" height="100%">
         <BarChart

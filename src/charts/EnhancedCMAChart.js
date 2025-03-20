@@ -118,8 +118,8 @@ const EnhancedCMAChart = ({ data }) => {
 
   return (
     <div className="bg-white p-4 rounded-lg shadow">
-      <h2 className="font-bold text-lg mb-2">Alberta都市区失业率地理分布</h2>
-      <div className="text-sm text-gray-500 mb-4">最新数据: {dateDateStr}</div>
+      <h2 className="font-bold text-lg mb-2">Unemployment Rate by Census Metropolitan Area</h2>
+      <div className="text-sm text-gray-500 mb-4">Latest data: {dateDateStr}</div>
       <div className="h-72" dangerouslySetInnerHTML={{ __html: svgContent }} />
     </div>
   );

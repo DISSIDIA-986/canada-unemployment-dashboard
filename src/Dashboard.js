@@ -8,6 +8,7 @@ import IndustryChart from './charts/IndustryChart';
 import SexChart from './charts/SexChart';
 import AgeChart from './charts/AgeChart';
 import CMAChart from './charts/CMAChart';
+import EnhancedCMAChart from './charts/EnhancedCMAChart';
 import EducationChart from './charts/EducationChart';
 import RegionChart from './charts/RegionChart';
 import OccupationChart from './charts/OccupationChart';
@@ -273,9 +274,9 @@ const Dashboard = () => {
       <div className="mb-6">
         <EnhancedCMAChart data={cityData} />
       </div>
-      <div className="mb-6">
+      {/* <div className="mb-6">
         <CMAChart data={cityData} />
-      </div>
+      </div> */}
       <div className="mb-6">
         <RegionChart data={regionData} />
       </div>
