@@ -30,7 +30,22 @@ const SexChart = ({ data }) => {
 
   // 早期返回放在所有hooks之后
   if (!data || data.length === 0) {
-    return <div>No data available</div>;
+    console.log("SexChart: No data available");
+    return (
+      <ChartContainer title="Unemployment Rate by Sex">
+        <div className="flex items-center justify-center h-full">
+          <p className="text-gray-500">No data available</p>
+        </div>
+      </ChartContainer>
+    );
+  }
+
+  console.log("SexChart data:", data.slice(0, 2));
+  console.log("Selected categories:", selectedCategories);
+  
+  // 为调试打印每个数据点包含的键
+  if (data.length > 0) {
+    console.log("Available keys in data:", Object.keys(data[0]));
   }
 
   // 性别类别颜色映射
@@ -80,13 +95,21 @@ const SexChart = ({ data }) => {
             tickFormatter={(value) => `${value}%`}
           />
           <Tooltip 
-            formatter={(value) => [`${value}%`, 'Unemployment Rate']}
+            formatter={(value, name) => {
+              return [`${value !== undefined ? value.toFixed(1) : 'N/A'}%`, name];
+            }}
             labelFormatter={(label) => label}
           />
           <Legend />
           
-          {selectedCategories.map(category => (
-            data[0] && data[0][category] !== undefined && (
+          {/* 检查每个性别类别是否有对应的数据，并显示线条 */}
+          {selectedCategories.map(category => {
+            // 检查是否有此类别的数据
+            const hasData = data.some(item => 
+              item[category] !== undefined && item[category] !== null
+            );
+            
+            return hasData ? (
               <Line
                 key={category}
                 type="monotone"
@@ -96,9 +119,10 @@ const SexChart = ({ data }) => {
                 strokeWidth={2}
                 dot={false}
                 activeDot={{ r: 6 }}
+                connectNulls
               />
-            )
-          ))}
+            ) : null;
+          })}
         </LineChart>
       </ResponsiveContainer>
     </ChartContainer>
