@@ -1,70 +1,49 @@
-# Getting Started with Create React App
+# Alberta Unemployment Dashboard
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+交互式仪表板，用于可视化和探索阿尔伯塔省的失业率数据。
 
-## Available Scripts
+## 安装步骤
 
-In the project directory, you can run:
+1. 克隆项目后，进入项目目录：
+   ```bash
+   cd alberta-dashboard
+   ```
 
-### `npm start`
+2. 安装依赖：
+   ```bash
+   npm install
+   ```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+3. 下载数据文件：
+   ```bash
+   python download_alberta_data.py
+   ```
+   这将创建一个`data`目录并下载所有必要的JSON文件。
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+4. 确保`data`目录中的JSON文件可以被React应用访问：
+   - 如果使用Create React App，将`data`目录移动到`public`目录中
+   ```bash
+   mkdir -p public/data
+   cp data/*.json public/data/
+   ```
 
-### `npm test`
+5. 启动开发服务器：
+   ```bash
+   npm start
+   ```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+6. 访问：
+   ```
+   http://localhost:3000
+   ```
 
-### `npm run build`
+## 功能
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- 查看阿尔伯塔省失业率趋势
+- 与其他省份进行比较
+- 按行业、性别、年龄和城市查看失业率数据
+- 可自定义时间范围（1年、3年、5年、10年或全部数据）
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 数据来源
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+数据来自Alberta Economic Dashboard (api.economicdata.alberta.ca)

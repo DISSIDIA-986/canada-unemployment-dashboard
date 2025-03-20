@@ -1,0 +1,5312 @@
+[
+  {
+    "Date": "1976-01-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 37000
+  },
+  {
+    "Date": "1976-02-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 32000
+  },
+  {
+    "Date": "1976-03-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 33000
+  },
+  {
+    "Date": "1976-04-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 30300
+  },
+  {
+    "Date": "1976-05-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 37200
+  },
+  {
+    "Date": "1976-06-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 34100
+  },
+  {
+    "Date": "1976-07-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 32600
+  },
+  {
+    "Date": "1976-08-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 32700
+  },
+  {
+    "Date": "1976-09-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 34800
+  },
+  {
+    "Date": "1976-10-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 36400
+  },
+  {
+    "Date": "1976-11-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 37100
+  },
+  {
+    "Date": "1976-12-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 38900
+  },
+  {
+    "Date": "1977-01-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 42700
+  },
+  {
+    "Date": "1977-02-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 40200
+  },
+  {
+    "Date": "1977-03-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 42900
+  },
+  {
+    "Date": "1977-04-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 38000
+  },
+  {
+    "Date": "1977-05-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 42600
+  },
+  {
+    "Date": "1977-06-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 39000
+  },
+  {
+    "Date": "1977-07-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 40400
+  },
+  {
+    "Date": "1977-08-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 41000
+  },
+  {
+    "Date": "1977-09-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 42900
+  },
+  {
+    "Date": "1977-10-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 43800
+  },
+  {
+    "Date": "1977-11-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 48100
+  },
+  {
+    "Date": "1977-12-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 48100
+  },
+  {
+    "Date": "1978-01-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 45900
+  },
+  {
+    "Date": "1978-02-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 49000
+  },
+  {
+    "Date": "1978-03-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 48000
+  },
+  {
+    "Date": "1978-04-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 47100
+  },
+  {
+    "Date": "1978-05-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 46600
+  },
+  {
+    "Date": "1978-06-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 47300
+  },
+  {
+    "Date": "1978-07-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 46900
+  },
+  {
+    "Date": "1978-08-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 48800
+  },
+  {
+    "Date": "1978-09-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 51800
+  },
+  {
+    "Date": "1978-10-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 50000
+  },
+  {
+    "Date": "1978-11-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 47200
+  },
+  {
+    "Date": "1978-12-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 44000
+  },
+  {
+    "Date": "1979-01-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 43200
+  },
+  {
+    "Date": "1979-02-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 46100
+  },
+  {
+    "Date": "1979-03-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 41300
+  },
+  {
+    "Date": "1979-04-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 46100
+  },
+  {
+    "Date": "1979-05-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 42900
+  },
+  {
+    "Date": "1979-06-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 42500
+  },
+  {
+    "Date": "1979-07-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 40900
+  },
+  {
+    "Date": "1979-08-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 41200
+  },
+  {
+    "Date": "1979-09-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 41800
+  },
+  {
+    "Date": "1979-10-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 41100
+  },
+  {
+    "Date": "1979-11-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 41700
+  },
+  {
+    "Date": "1979-12-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 43000
+  },
+  {
+    "Date": "1980-01-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 47000
+  },
+  {
+    "Date": "1980-02-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 46200
+  },
+  {
+    "Date": "1980-03-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 43200
+  },
+  {
+    "Date": "1980-04-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 42600
+  },
+  {
+    "Date": "1980-05-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 43500
+  },
+  {
+    "Date": "1980-06-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 45500
+  },
+  {
+    "Date": "1980-07-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 42900
+  },
+  {
+    "Date": "1980-08-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 46000
+  },
+  {
+    "Date": "1980-09-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 43400
+  },
+  {
+    "Date": "1980-10-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 43700
+  },
+  {
+    "Date": "1980-11-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 43900
+  },
+  {
+    "Date": "1980-12-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 45000
+  },
+  {
+    "Date": "1981-01-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 47800
+  },
+  {
+    "Date": "1981-02-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 49100
+  },
+  {
+    "Date": "1981-03-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 49700
+  },
+  {
+    "Date": "1981-04-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 44500
+  },
+  {
+    "Date": "1981-05-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 41400
+  },
+  {
+    "Date": "1981-06-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 41200
+  },
+  {
+    "Date": "1981-07-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 41500
+  },
+  {
+    "Date": "1981-08-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 40300
+  },
+  {
+    "Date": "1981-09-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 46300
+  },
+  {
+    "Date": "1981-10-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 52300
+  },
+  {
+    "Date": "1981-11-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 61600
+  },
+  {
+    "Date": "1981-12-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 58000
+  },
+  {
+    "Date": "1982-01-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 65800
+  },
+  {
+    "Date": "1982-02-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 64300
+  },
+  {
+    "Date": "1982-03-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 71600
+  },
+  {
+    "Date": "1982-04-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 81900
+  },
+  {
+    "Date": "1982-05-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 89300
+  },
+  {
+    "Date": "1982-06-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 98200
+  },
+  {
+    "Date": "1982-07-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 105600
+  },
+  {
+    "Date": "1982-08-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 102300
+  },
+  {
+    "Date": "1982-09-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 118300
+  },
+  {
+    "Date": "1982-10-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 121400
+  },
+  {
+    "Date": "1982-11-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 126300
+  },
+  {
+    "Date": "1982-12-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 131500
+  },
+  {
+    "Date": "1983-01-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 134300
+  },
+  {
+    "Date": "1983-02-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 138000
+  },
+  {
+    "Date": "1983-03-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 141500
+  },
+  {
+    "Date": "1983-04-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 139100
+  },
+  {
+    "Date": "1983-05-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 143400
+  },
+  {
+    "Date": "1983-06-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 146000
+  },
+  {
+    "Date": "1983-07-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 147200
+  },
+  {
+    "Date": "1983-08-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 140800
+  },
+  {
+    "Date": "1983-09-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 139900
+  },
+  {
+    "Date": "1983-10-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 135100
+  },
+  {
+    "Date": "1983-11-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 135300
+  },
+  {
+    "Date": "1983-12-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 142300
+  },
+  {
+    "Date": "1984-01-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 138000
+  },
+  {
+    "Date": "1984-02-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 133800
+  },
+  {
+    "Date": "1984-03-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 144000
+  },
+  {
+    "Date": "1984-04-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 141300
+  },
+  {
+    "Date": "1984-05-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 153200
+  },
+  {
+    "Date": "1984-06-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 149600
+  },
+  {
+    "Date": "1984-07-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 147200
+  },
+  {
+    "Date": "1984-08-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 147300
+  },
+  {
+    "Date": "1984-09-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 161300
+  },
+  {
+    "Date": "1984-10-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 148700
+  },
+  {
+    "Date": "1984-11-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 146900
+  },
+  {
+    "Date": "1984-12-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 146500
+  },
+  {
+    "Date": "1985-01-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 132500
+  },
+  {
+    "Date": "1985-02-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 138500
+  },
+  {
+    "Date": "1985-03-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 136300
+  },
+  {
+    "Date": "1985-04-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 132800
+  },
+  {
+    "Date": "1985-05-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 131200
+  },
+  {
+    "Date": "1985-06-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 124400
+  },
+  {
+    "Date": "1985-07-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 121900
+  },
+  {
+    "Date": "1985-08-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 122000
+  },
+  {
+    "Date": "1985-09-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 119600
+  },
+  {
+    "Date": "1985-10-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 121800
+  },
+  {
+    "Date": "1985-11-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 125900
+  },
+  {
+    "Date": "1985-12-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 118600
+  },
+  {
+    "Date": "1986-01-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 112200
+  },
+  {
+    "Date": "1986-02-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 113500
+  },
+  {
+    "Date": "1986-03-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 124400
+  },
+  {
+    "Date": "1986-04-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 130100
+  },
+  {
+    "Date": "1986-05-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 136300
+  },
+  {
+    "Date": "1986-06-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 143300
+  },
+  {
+    "Date": "1986-07-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 135100
+  },
+  {
+    "Date": "1986-08-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 138400
+  },
+  {
+    "Date": "1986-09-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 133100
+  },
+  {
+    "Date": "1986-10-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 137500
+  },
+  {
+    "Date": "1986-11-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 139200
+  },
+  {
+    "Date": "1986-12-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 137000
+  },
+  {
+    "Date": "1987-01-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 141000
+  },
+  {
+    "Date": "1987-02-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 140000
+  },
+  {
+    "Date": "1987-03-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 131300
+  },
+  {
+    "Date": "1987-04-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 134500
+  },
+  {
+    "Date": "1987-05-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 124000
+  },
+  {
+    "Date": "1987-06-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 128700
+  },
+  {
+    "Date": "1987-07-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 123000
+  },
+  {
+    "Date": "1987-08-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 126400
+  },
+  {
+    "Date": "1987-09-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 123700
+  },
+  {
+    "Date": "1987-10-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 110500
+  },
+  {
+    "Date": "1987-11-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 107500
+  },
+  {
+    "Date": "1987-12-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 110100
+  },
+  {
+    "Date": "1988-01-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 112800
+  },
+  {
+    "Date": "1988-02-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 107600
+  },
+  {
+    "Date": "1988-03-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 108600
+  },
+  {
+    "Date": "1988-04-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 103700
+  },
+  {
+    "Date": "1988-05-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 106300
+  },
+  {
+    "Date": "1988-06-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 102300
+  },
+  {
+    "Date": "1988-07-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 107400
+  },
+  {
+    "Date": "1988-08-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 107200
+  },
+  {
+    "Date": "1988-09-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 102000
+  },
+  {
+    "Date": "1988-10-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 108800
+  },
+  {
+    "Date": "1988-11-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 106800
+  },
+  {
+    "Date": "1988-12-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 101400
+  },
+  {
+    "Date": "1989-01-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 100000
+  },
+  {
+    "Date": "1989-02-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 98700
+  },
+  {
+    "Date": "1989-03-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 100900
+  },
+  {
+    "Date": "1989-04-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 100700
+  },
+  {
+    "Date": "1989-05-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 94600
+  },
+  {
+    "Date": "1989-06-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 97400
+  },
+  {
+    "Date": "1989-07-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 93200
+  },
+  {
+    "Date": "1989-08-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 99200
+  },
+  {
+    "Date": "1989-09-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 96300
+  },
+  {
+    "Date": "1989-10-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 87300
+  },
+  {
+    "Date": "1989-11-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 94500
+  },
+  {
+    "Date": "1989-12-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 93700
+  },
+  {
+    "Date": "1990-01-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 94500
+  },
+  {
+    "Date": "1990-02-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 91900
+  },
+  {
+    "Date": "1990-03-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 88500
+  },
+  {
+    "Date": "1990-04-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 92000
+  },
+  {
+    "Date": "1990-05-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 91500
+  },
+  {
+    "Date": "1990-06-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 84900
+  },
+  {
+    "Date": "1990-07-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 91500
+  },
+  {
+    "Date": "1990-08-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 90200
+  },
+  {
+    "Date": "1990-09-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 99400
+  },
+  {
+    "Date": "1990-10-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 101800
+  },
+  {
+    "Date": "1990-11-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 104900
+  },
+  {
+    "Date": "1990-12-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 107500
+  },
+  {
+    "Date": "1991-01-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 107500
+  },
+  {
+    "Date": "1991-02-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 103800
+  },
+  {
+    "Date": "1991-03-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 111500
+  },
+  {
+    "Date": "1991-04-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 110100
+  },
+  {
+    "Date": "1991-05-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 114300
+  },
+  {
+    "Date": "1991-06-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 116900
+  },
+  {
+    "Date": "1991-07-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 116300
+  },
+  {
+    "Date": "1991-08-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 113200
+  },
+  {
+    "Date": "1991-09-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 117300
+  },
+  {
+    "Date": "1991-10-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 119700
+  },
+  {
+    "Date": "1991-11-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 126000
+  },
+  {
+    "Date": "1991-12-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 127900
+  },
+  {
+    "Date": "1992-01-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 132300
+  },
+  {
+    "Date": "1992-02-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 137300
+  },
+  {
+    "Date": "1992-03-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 128900
+  },
+  {
+    "Date": "1992-04-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 125400
+  },
+  {
+    "Date": "1992-05-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 127100
+  },
+  {
+    "Date": "1992-06-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 139800
+  },
+  {
+    "Date": "1992-07-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 130400
+  },
+  {
+    "Date": "1992-08-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 134200
+  },
+  {
+    "Date": "1992-09-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 133700
+  },
+  {
+    "Date": "1992-10-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 133700
+  },
+  {
+    "Date": "1992-11-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 144800
+  },
+  {
+    "Date": "1992-12-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 137800
+  },
+  {
+    "Date": "1993-01-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 127100
+  },
+  {
+    "Date": "1993-02-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 125900
+  },
+  {
+    "Date": "1993-03-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 136600
+  },
+  {
+    "Date": "1993-04-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 140600
+  },
+  {
+    "Date": "1993-05-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 135700
+  },
+  {
+    "Date": "1993-06-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 138900
+  },
+  {
+    "Date": "1993-07-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 141500
+  },
+  {
+    "Date": "1993-08-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 141900
+  },
+  {
+    "Date": "1993-09-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 146600
+  },
+  {
+    "Date": "1993-10-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 134000
+  },
+  {
+    "Date": "1993-11-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 133600
+  },
+  {
+    "Date": "1993-12-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 138200
+  },
+  {
+    "Date": "1994-01-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 136200
+  },
+  {
+    "Date": "1994-02-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 128600
+  },
+  {
+    "Date": "1994-03-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 132300
+  },
+  {
+    "Date": "1994-04-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 128700
+  },
+  {
+    "Date": "1994-05-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 137400
+  },
+  {
+    "Date": "1994-06-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 139300
+  },
+  {
+    "Date": "1994-07-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 133400
+  },
+  {
+    "Date": "1994-08-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 121300
+  },
+  {
+    "Date": "1994-09-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 126800
+  },
+  {
+    "Date": "1994-10-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 121800
+  },
+  {
+    "Date": "1994-11-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 112200
+  },
+  {
+    "Date": "1994-12-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 110700
+  },
+  {
+    "Date": "1995-01-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 114500
+  },
+  {
+    "Date": "1995-02-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 111900
+  },
+  {
+    "Date": "1995-03-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 114400
+  },
+  {
+    "Date": "1995-04-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 115900
+  },
+  {
+    "Date": "1995-05-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 119200
+  },
+  {
+    "Date": "1995-06-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 112800
+  },
+  {
+    "Date": "1995-07-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 118300
+  },
+  {
+    "Date": "1995-08-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 121300
+  },
+  {
+    "Date": "1995-09-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 113900
+  },
+  {
+    "Date": "1995-10-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 115200
+  },
+  {
+    "Date": "1995-11-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 116900
+  },
+  {
+    "Date": "1995-12-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 117700
+  },
+  {
+    "Date": "1996-01-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 113700
+  },
+  {
+    "Date": "1996-02-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 110400
+  },
+  {
+    "Date": "1996-03-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 107600
+  },
+  {
+    "Date": "1996-04-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 99500
+  },
+  {
+    "Date": "1996-05-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 105400
+  },
+  {
+    "Date": "1996-06-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 111200
+  },
+  {
+    "Date": "1996-07-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 103900
+  },
+  {
+    "Date": "1996-08-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 97400
+  },
+  {
+    "Date": "1996-09-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 103400
+  },
+  {
+    "Date": "1996-10-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 101400
+  },
+  {
+    "Date": "1996-11-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 98000
+  },
+  {
+    "Date": "1996-12-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 94100
+  },
+  {
+    "Date": "1997-01-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 96500
+  },
+  {
+    "Date": "1997-02-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 98200
+  },
+  {
+    "Date": "1997-03-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 96200
+  },
+  {
+    "Date": "1997-04-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 94900
+  },
+  {
+    "Date": "1997-05-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 87400
+  },
+  {
+    "Date": "1997-06-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 88700
+  },
+  {
+    "Date": "1997-07-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 89400
+  },
+  {
+    "Date": "1997-08-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 87000
+  },
+  {
+    "Date": "1997-09-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 83800
+  },
+  {
+    "Date": "1997-10-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 86000
+  },
+  {
+    "Date": "1997-11-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 88500
+  },
+  {
+    "Date": "1997-12-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 89400
+  },
+  {
+    "Date": "1998-01-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 83000
+  },
+  {
+    "Date": "1998-02-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 83900
+  },
+  {
+    "Date": "1998-03-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 85100
+  },
+  {
+    "Date": "1998-04-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 80800
+  },
+  {
+    "Date": "1998-05-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 86500
+  },
+  {
+    "Date": "1998-06-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 86900
+  },
+  {
+    "Date": "1998-07-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 84400
+  },
+  {
+    "Date": "1998-08-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 85700
+  },
+  {
+    "Date": "1998-09-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 101200
+  },
+  {
+    "Date": "1998-10-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 99500
+  },
+  {
+    "Date": "1998-11-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 99400
+  },
+  {
+    "Date": "1998-12-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 94600
+  },
+  {
+    "Date": "1999-01-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 95500
+  },
+  {
+    "Date": "1999-02-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 95700
+  },
+  {
+    "Date": "1999-03-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 93100
+  },
+  {
+    "Date": "1999-04-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 93100
+  },
+  {
+    "Date": "1999-05-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 100000
+  },
+  {
+    "Date": "1999-06-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 89200
+  },
+  {
+    "Date": "1999-07-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 91100
+  },
+  {
+    "Date": "1999-08-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 95700
+  },
+  {
+    "Date": "1999-09-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 96600
+  },
+  {
+    "Date": "1999-10-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 84600
+  },
+  {
+    "Date": "1999-11-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 88100
+  },
+  {
+    "Date": "1999-12-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 90300
+  },
+  {
+    "Date": "2000-01-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 81800
+  },
+  {
+    "Date": "2000-02-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 81400
+  },
+  {
+    "Date": "2000-03-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 84500
+  },
+  {
+    "Date": "2000-04-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 81900
+  },
+  {
+    "Date": "2000-05-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 79400
+  },
+  {
+    "Date": "2000-06-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 82000
+  },
+  {
+    "Date": "2000-07-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 86200
+  },
+  {
+    "Date": "2000-08-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 87800
+  },
+  {
+    "Date": "2000-09-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 80600
+  },
+  {
+    "Date": "2000-10-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 79200
+  },
+  {
+    "Date": "2000-11-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 84000
+  },
+  {
+    "Date": "2000-12-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 83800
+  },
+  {
+    "Date": "2001-01-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 88800
+  },
+  {
+    "Date": "2001-02-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 81200
+  },
+  {
+    "Date": "2001-03-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 83500
+  },
+  {
+    "Date": "2001-04-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 84700
+  },
+  {
+    "Date": "2001-05-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 78200
+  },
+  {
+    "Date": "2001-06-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 78600
+  },
+  {
+    "Date": "2001-07-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 79700
+  },
+  {
+    "Date": "2001-08-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 75400
+  },
+  {
+    "Date": "2001-09-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 70800
+  },
+  {
+    "Date": "2001-10-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 78700
+  },
+  {
+    "Date": "2001-11-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 76600
+  },
+  {
+    "Date": "2001-12-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 91400
+  },
+  {
+    "Date": "2002-01-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 84600
+  },
+  {
+    "Date": "2002-02-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 93800
+  },
+  {
+    "Date": "2002-03-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 93900
+  },
+  {
+    "Date": "2002-04-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 98400
+  },
+  {
+    "Date": "2002-05-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 106900
+  },
+  {
+    "Date": "2002-06-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 96700
+  },
+  {
+    "Date": "2002-07-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 96700
+  },
+  {
+    "Date": "2002-08-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 88100
+  },
+  {
+    "Date": "2002-09-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 98900
+  },
+  {
+    "Date": "2002-10-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 97600
+  },
+  {
+    "Date": "2002-11-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 91900
+  },
+  {
+    "Date": "2002-12-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 88500
+  },
+  {
+    "Date": "2003-01-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 97300
+  },
+  {
+    "Date": "2003-02-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 94400
+  },
+  {
+    "Date": "2003-03-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 99900
+  },
+  {
+    "Date": "2003-04-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 104800
+  },
+  {
+    "Date": "2003-05-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 99700
+  },
+  {
+    "Date": "2003-06-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 94200
+  },
+  {
+    "Date": "2003-07-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 87900
+  },
+  {
+    "Date": "2003-08-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 92600
+  },
+  {
+    "Date": "2003-09-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 85600
+  },
+  {
+    "Date": "2003-10-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 87000
+  },
+  {
+    "Date": "2003-11-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 86200
+  },
+  {
+    "Date": "2003-12-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 87800
+  },
+  {
+    "Date": "2004-01-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 88100
+  },
+  {
+    "Date": "2004-02-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 92800
+  },
+  {
+    "Date": "2004-03-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 92400
+  },
+  {
+    "Date": "2004-04-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 82100
+  },
+  {
+    "Date": "2004-05-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 75500
+  },
+  {
+    "Date": "2004-06-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 85800
+  },
+  {
+    "Date": "2004-07-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 85100
+  },
+  {
+    "Date": "2004-08-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 79300
+  },
+  {
+    "Date": "2004-09-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 86000
+  },
+  {
+    "Date": "2004-10-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 88000
+  },
+  {
+    "Date": "2004-11-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 85700
+  },
+  {
+    "Date": "2004-12-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 82800
+  },
+  {
+    "Date": "2005-01-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 81900
+  },
+  {
+    "Date": "2005-02-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 76700
+  },
+  {
+    "Date": "2005-03-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 67500
+  },
+  {
+    "Date": "2005-04-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 74400
+  },
+  {
+    "Date": "2005-05-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 69400
+  },
+  {
+    "Date": "2005-06-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 73500
+  },
+  {
+    "Date": "2005-07-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 66800
+  },
+  {
+    "Date": "2005-08-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 70700
+  },
+  {
+    "Date": "2005-09-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 74600
+  },
+  {
+    "Date": "2005-10-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 77600
+  },
+  {
+    "Date": "2005-11-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 79600
+  },
+  {
+    "Date": "2005-12-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 82100
+  },
+  {
+    "Date": "2006-01-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 74500
+  },
+  {
+    "Date": "2006-02-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 62600
+  },
+  {
+    "Date": "2006-03-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 65500
+  },
+  {
+    "Date": "2006-04-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 67500
+  },
+  {
+    "Date": "2006-05-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 69800
+  },
+  {
+    "Date": "2006-06-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 71900
+  },
+  {
+    "Date": "2006-07-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 70800
+  },
+  {
+    "Date": "2006-08-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 81000
+  },
+  {
+    "Date": "2006-09-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 72300
+  },
+  {
+    "Date": "2006-10-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 67700
+  },
+  {
+    "Date": "2006-11-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 65700
+  },
+  {
+    "Date": "2006-12-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 74900
+  },
+  {
+    "Date": "2007-01-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 76600
+  },
+  {
+    "Date": "2007-02-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 77900
+  },
+  {
+    "Date": "2007-03-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 76000
+  },
+  {
+    "Date": "2007-04-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 72900
+  },
+  {
+    "Date": "2007-05-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 81200
+  },
+  {
+    "Date": "2007-06-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 78200
+  },
+  {
+    "Date": "2007-07-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 73400
+  },
+  {
+    "Date": "2007-08-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 71500
+  },
+  {
+    "Date": "2007-09-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 76400
+  },
+  {
+    "Date": "2007-10-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 75600
+  },
+  {
+    "Date": "2007-11-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 82300
+  },
+  {
+    "Date": "2007-12-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 73600
+  },
+  {
+    "Date": "2008-01-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 80700
+  },
+  {
+    "Date": "2008-02-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 82700
+  },
+  {
+    "Date": "2008-03-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 77600
+  },
+  {
+    "Date": "2008-04-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 76600
+  },
+  {
+    "Date": "2008-05-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 78400
+  },
+  {
+    "Date": "2008-06-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 70900
+  },
+  {
+    "Date": "2008-07-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 81900
+  },
+  {
+    "Date": "2008-08-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 80200
+  },
+  {
+    "Date": "2008-09-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 89200
+  },
+  {
+    "Date": "2008-10-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 84100
+  },
+  {
+    "Date": "2008-11-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 84200
+  },
+  {
+    "Date": "2008-12-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 104600
+  },
+  {
+    "Date": "2009-01-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 107300
+  },
+  {
+    "Date": "2009-02-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 124700
+  },
+  {
+    "Date": "2009-03-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 131800
+  },
+  {
+    "Date": "2009-04-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 143300
+  },
+  {
+    "Date": "2009-05-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 150400
+  },
+  {
+    "Date": "2009-06-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 152700
+  },
+  {
+    "Date": "2009-07-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 159600
+  },
+  {
+    "Date": "2009-08-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 156100
+  },
+  {
+    "Date": "2009-09-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 155100
+  },
+  {
+    "Date": "2009-10-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 165000
+  },
+  {
+    "Date": "2009-11-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 168100
+  },
+  {
+    "Date": "2009-12-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 152200
+  },
+  {
+    "Date": "2010-01-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 149600
+  },
+  {
+    "Date": "2010-02-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 149200
+  },
+  {
+    "Date": "2010-03-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 152600
+  },
+  {
+    "Date": "2010-04-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 154300
+  },
+  {
+    "Date": "2010-05-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 143500
+  },
+  {
+    "Date": "2010-06-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 140400
+  },
+  {
+    "Date": "2010-07-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 138700
+  },
+  {
+    "Date": "2010-08-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 137900
+  },
+  {
+    "Date": "2010-09-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 135000
+  },
+  {
+    "Date": "2010-10-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 135500
+  },
+  {
+    "Date": "2010-11-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 133200
+  },
+  {
+    "Date": "2010-12-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 126600
+  },
+  {
+    "Date": "2011-01-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 130600
+  },
+  {
+    "Date": "2011-02-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 128000
+  },
+  {
+    "Date": "2011-03-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 125600
+  },
+  {
+    "Date": "2011-04-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 128700
+  },
+  {
+    "Date": "2011-05-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 121400
+  },
+  {
+    "Date": "2011-06-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 125500
+  },
+  {
+    "Date": "2011-07-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 125200
+  },
+  {
+    "Date": "2011-08-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 126200
+  },
+  {
+    "Date": "2011-09-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 125800
+  },
+  {
+    "Date": "2011-10-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 114400
+  },
+  {
+    "Date": "2011-11-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 114300
+  },
+  {
+    "Date": "2011-12-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 111600
+  },
+  {
+    "Date": "2012-01-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 116200
+  },
+  {
+    "Date": "2012-02-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 112900
+  },
+  {
+    "Date": "2012-03-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 114700
+  },
+  {
+    "Date": "2012-04-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 114800
+  },
+  {
+    "Date": "2012-05-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 102300
+  },
+  {
+    "Date": "2012-06-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 104000
+  },
+  {
+    "Date": "2012-07-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 107000
+  },
+  {
+    "Date": "2012-08-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 98700
+  },
+  {
+    "Date": "2012-09-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 106000
+  },
+  {
+    "Date": "2012-10-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 109200
+  },
+  {
+    "Date": "2012-11-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 103000
+  },
+  {
+    "Date": "2012-12-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 111800
+  },
+  {
+    "Date": "2013-01-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 105900
+  },
+  {
+    "Date": "2013-02-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 108300
+  },
+  {
+    "Date": "2013-03-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 111300
+  },
+  {
+    "Date": "2013-04-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 101100
+  },
+  {
+    "Date": "2013-05-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 107800
+  },
+  {
+    "Date": "2013-06-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 111100
+  },
+  {
+    "Date": "2013-07-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 108500
+  },
+  {
+    "Date": "2013-08-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 111000
+  },
+  {
+    "Date": "2013-09-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 101800
+  },
+  {
+    "Date": "2013-10-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 110800
+  },
+  {
+    "Date": "2013-11-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 109300
+  },
+  {
+    "Date": "2013-12-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 114000
+  },
+  {
+    "Date": "2014-01-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 112400
+  },
+  {
+    "Date": "2014-02-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 109600
+  },
+  {
+    "Date": "2014-03-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 118400
+  },
+  {
+    "Date": "2014-04-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 118200
+  },
+  {
+    "Date": "2014-05-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 113000
+  },
+  {
+    "Date": "2014-06-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 118000
+  },
+  {
+    "Date": "2014-07-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 102600
+  },
+  {
+    "Date": "2014-08-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 119600
+  },
+  {
+    "Date": "2014-09-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 108400
+  },
+  {
+    "Date": "2014-10-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 120000
+  },
+  {
+    "Date": "2014-11-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 111500
+  },
+  {
+    "Date": "2014-12-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 116400
+  },
+  {
+    "Date": "2015-01-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 113300
+  },
+  {
+    "Date": "2015-02-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 130300
+  },
+  {
+    "Date": "2015-03-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 134300
+  },
+  {
+    "Date": "2015-04-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 138600
+  },
+  {
+    "Date": "2015-05-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 152200
+  },
+  {
+    "Date": "2015-06-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 149600
+  },
+  {
+    "Date": "2015-07-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 142300
+  },
+  {
+    "Date": "2015-08-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 147500
+  },
+  {
+    "Date": "2015-09-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 161300
+  },
+  {
+    "Date": "2015-10-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 152800
+  },
+  {
+    "Date": "2015-11-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 166400
+  },
+  {
+    "Date": "2015-12-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 171100
+  },
+  {
+    "Date": "2016-01-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 179100
+  },
+  {
+    "Date": "2016-02-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 186600
+  },
+  {
+    "Date": "2016-03-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 174400
+  },
+  {
+    "Date": "2016-04-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 181000
+  },
+  {
+    "Date": "2016-05-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 199600
+  },
+  {
+    "Date": "2016-06-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 196000
+  },
+  {
+    "Date": "2016-07-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 212300
+  },
+  {
+    "Date": "2016-08-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 200000
+  },
+  {
+    "Date": "2016-09-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 205100
+  },
+  {
+    "Date": "2016-10-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 204300
+  },
+  {
+    "Date": "2016-11-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 211700
+  },
+  {
+    "Date": "2016-12-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 207700
+  },
+  {
+    "Date": "2017-01-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 206500
+  },
+  {
+    "Date": "2017-02-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 196000
+  },
+  {
+    "Date": "2017-03-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 209500
+  },
+  {
+    "Date": "2017-04-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 196800
+  },
+  {
+    "Date": "2017-05-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 202100
+  },
+  {
+    "Date": "2017-06-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 186600
+  },
+  {
+    "Date": "2017-07-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 192100
+  },
+  {
+    "Date": "2017-08-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 201700
+  },
+  {
+    "Date": "2017-09-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 178800
+  },
+  {
+    "Date": "2017-10-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 184100
+  },
+  {
+    "Date": "2017-11-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 179500
+  },
+  {
+    "Date": "2017-12-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 175700
+  },
+  {
+    "Date": "2018-01-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 162100
+  },
+  {
+    "Date": "2018-02-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 157000
+  },
+  {
+    "Date": "2018-03-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 149200
+  },
+  {
+    "Date": "2018-04-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 163800
+  },
+  {
+    "Date": "2018-05-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 151200
+  },
+  {
+    "Date": "2018-06-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 161300
+  },
+  {
+    "Date": "2018-07-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 169600
+  },
+  {
+    "Date": "2018-08-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 165700
+  },
+  {
+    "Date": "2018-09-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 169500
+  },
+  {
+    "Date": "2018-10-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 168300
+  },
+  {
+    "Date": "2018-11-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 155600
+  },
+  {
+    "Date": "2018-12-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 156300
+  },
+  {
+    "Date": "2019-01-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 162700
+  },
+  {
+    "Date": "2019-02-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 179500
+  },
+  {
+    "Date": "2019-03-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 169400
+  },
+  {
+    "Date": "2019-04-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 161800
+  },
+  {
+    "Date": "2019-05-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 166200
+  },
+  {
+    "Date": "2019-06-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 165200
+  },
+  {
+    "Date": "2019-07-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 176200
+  },
+  {
+    "Date": "2019-08-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 188700
+  },
+  {
+    "Date": "2019-09-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 163400
+  },
+  {
+    "Date": "2019-10-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 165700
+  },
+  {
+    "Date": "2019-11-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 179600
+  },
+  {
+    "Date": "2019-12-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 174000
+  },
+  {
+    "Date": "2020-01-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 179100
+  },
+  {
+    "Date": "2020-02-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 183900
+  },
+  {
+    "Date": "2020-03-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 209700
+  },
+  {
+    "Date": "2020-04-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 293400
+  },
+  {
+    "Date": "2020-05-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 356400
+  },
+  {
+    "Date": "2020-06-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 372900
+  },
+  {
+    "Date": "2020-07-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 313500
+  },
+  {
+    "Date": "2020-08-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 303100
+  },
+  {
+    "Date": "2020-09-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 294300
+  },
+  {
+    "Date": "2020-10-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 285700
+  },
+  {
+    "Date": "2020-11-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 271800
+  },
+  {
+    "Date": "2020-12-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 261300
+  },
+  {
+    "Date": "2021-01-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 251500
+  },
+  {
+    "Date": "2021-02-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 243700
+  },
+  {
+    "Date": "2021-03-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 228300
+  },
+  {
+    "Date": "2021-04-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 215100
+  },
+  {
+    "Date": "2021-05-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 207100
+  },
+  {
+    "Date": "2021-06-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 216100
+  },
+  {
+    "Date": "2021-07-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 205300
+  },
+  {
+    "Date": "2021-08-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 196800
+  },
+  {
+    "Date": "2021-09-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 193500
+  },
+  {
+    "Date": "2021-10-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 192200
+  },
+  {
+    "Date": "2021-11-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 182100
+  },
+  {
+    "Date": "2021-12-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 171600
+  },
+  {
+    "Date": "2022-01-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 170000
+  },
+  {
+    "Date": "2022-02-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 163800
+  },
+  {
+    "Date": "2022-03-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 155800
+  },
+  {
+    "Date": "2022-04-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 151200
+  },
+  {
+    "Date": "2022-05-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 147100
+  },
+  {
+    "Date": "2022-06-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 128800
+  },
+  {
+    "Date": "2022-07-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 121100
+  },
+  {
+    "Date": "2022-08-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 139200
+  },
+  {
+    "Date": "2022-09-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 135100
+  },
+  {
+    "Date": "2022-10-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 138400
+  },
+  {
+    "Date": "2022-11-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 145300
+  },
+  {
+    "Date": "2022-12-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 143500
+  },
+  {
+    "Date": "2023-01-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 154600
+  },
+  {
+    "Date": "2023-02-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 152500
+  },
+  {
+    "Date": "2023-03-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 150200
+  },
+  {
+    "Date": "2023-04-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 150000
+  },
+  {
+    "Date": "2023-05-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 146800
+  },
+  {
+    "Date": "2023-06-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 151200
+  },
+  {
+    "Date": "2023-07-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 155400
+  },
+  {
+    "Date": "2023-08-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 146700
+  },
+  {
+    "Date": "2023-09-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 140000
+  },
+  {
+    "Date": "2023-10-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 154700
+  },
+  {
+    "Date": "2023-11-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 156700
+  },
+  {
+    "Date": "2023-12-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 168500
+  },
+  {
+    "Date": "2024-01-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 166900
+  },
+  {
+    "Date": "2024-02-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 166100
+  },
+  {
+    "Date": "2024-03-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 173600
+  },
+  {
+    "Date": "2024-04-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 196100
+  },
+  {
+    "Date": "2024-05-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 196500
+  },
+  {
+    "Date": "2024-06-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 195500
+  },
+  {
+    "Date": "2024-07-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 193000
+  },
+  {
+    "Date": "2024-08-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 207800
+  },
+  {
+    "Date": "2024-09-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 206200
+  },
+  {
+    "Date": "2024-10-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 207900
+  },
+  {
+    "Date": "2024-11-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 207600
+  },
+  {
+    "Date": "2024-12-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 185800
+  },
+  {
+    "Date": "2025-01-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 183700
+  },
+  {
+    "Date": "2025-02-01T00:00:00",
+    "GeoID": 48,
+    "GeoName": "Alberta",
+    "Characteristic": "Unemployment",
+    "Sex": "Both sexes",
+    "Age": "15 years and over",
+    "Value": 184800
+  }
+]
