@@ -303,6 +303,12 @@ export const processEducationData = (data) => {
  * @param {Array} data - 原始CMA城市失业率数据
  * @returns {Array} 处理后的CMA城市失业率数据
  */
+/**
+ * 处理CMA城市失业率数据 - 全加拿大版本
+ * 
+ * @param {Array} data - 原始CMA城市失业率数据
+ * @returns {Array} 处理后的CMA城市失业率数据
+ */
 export const processCMAData = (data) => {
   if (!data || data.length === 0) return [];
 
@@ -320,10 +326,8 @@ export const processCMAData = (data) => {
   const latestDate = sortedData.length > 0 ? sortedData[0].Date : null;
   const latestData = sortedData.filter(item => item.Date === latestDate);
   
-  // 只返回Alberta内的城市，并按失业率排序
-  return latestData
-    .filter(item => ['Calgary', 'Edmonton', 'Lethbridge', 'Red Deer'].includes(item.GeoName))
-    .sort((a, b) => (b.Value || 0) - (a.Value || 0));
+  // 返回所有CMA数据，不再限制只有Alberta的城市
+  return latestData.sort((a, b) => (b.Value || 0) - (a.Value || 0));
 };
 
 /**
