@@ -40,10 +40,15 @@ npm start
 - 自动从Alberta Economic Dashboard API获取数据
 
 项目结构:
-- 省级失业率比较
-- 行业失业率对比
-- 性别失业率差异
-- 城市失业率排名
+- Unemployment rate in Alberta
+- Unemployment rate by Province
+- Unemployment rate by Industry
+- Unemployment rate by Sex
+- Unemployment rate by Age
+- Unemployment rate by City
+- Unemployment rate by Region
+- Unemployment rate by Occupation
+- Unemployment rate by Education
 
 此解决方案简单高效，无需额外配置即可运行。
 
