@@ -17,10 +17,6 @@ const OccupationChart = ({ data, timeframe }) => {
   
   const filteredData = filterByTimeframe(data, timeframe);
   
-  if (!filteredData || filteredData.length === 0) {
-    return null;
-  }
-
   // 当数据变化时，更新默认选中的职业
   useEffect(() => {
     if (data && data.length > 0) {
@@ -31,6 +27,17 @@ const OccupationChart = ({ data, timeframe }) => {
     }
   }, [data]);
 
+  // 处理错误情况，但确保所有的hooks都已被调用
+  if (!filteredData || filteredData.length === 0) {
+    return (
+      <ChartContainer title="Unemployment Rate by Occupation">
+        <div className="flex items-center justify-center h-full">
+          <div className="text-gray-500">No occupation data available</div>
+        </div>
+      </ChartContainer>
+    );
+  }
+
   // 处理职业选择变化
   const handleOccupationSelection = (occupation) => {
     if (selectedOccupations.includes(occupation)) {
@@ -40,10 +47,13 @@ const OccupationChart = ({ data, timeframe }) => {
     }
   };
 
+  // 获取可用的职业列表
+  const availableOccupations = getAvailableOccupations(data);
+
   // 生成职业筛选器
   const occupationFilters = (
     <div className="flex flex-wrap gap-2 mt-2">
-      {getAvailableOccupations(data).map(occupation => (
+      {availableOccupations.map(occupation => (
         <div
           key={occupation}
           className={`px-3 py-1 rounded-full text-sm cursor-pointer ${

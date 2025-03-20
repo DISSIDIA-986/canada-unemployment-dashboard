@@ -108,32 +108,6 @@ const Dashboard = () => {
     fetchData();
   }, []);
 
-  // For debugging, let's log the data to see if it's available
-  useEffect(() => {
-    if (!loading) {
-      console.log("Data loaded:", {
-        albertaData: albertaData.length,
-        provinceData: provinceData.length,
-        industryData: industryData.length,
-        sexData: sexData.length,
-        ageData: ageData.length,
-        educationData: educationData.length,
-        cityData: cityData.length,
-        regionData: regionData.length,
-        occupationData: occupationData.length
-      });
-      
-      // Log sample data for debugging
-      if (filteredSexData.length > 0) {
-        console.log("Sample Sex Data:", filteredSexData[0]);
-      }
-      
-      if (filteredAgeData.length > 0) {
-        console.log("Sample Age Data:", filteredAgeData[0]);
-      }
-    }
-  }, [loading, albertaData, provinceData, industryData, sexData, ageData, educationData, cityData, regionData, occupationData]);
-
   // 基于时间范围过滤数据
   const filteredAlbertaData = useMemo(() => {
     return dataUtils.filterByTimeframe(albertaData, getTimeframeValue(selectedTimeframe));
@@ -162,6 +136,58 @@ const Dashboard = () => {
   const filteredOccupationData = useMemo(() => {
     return dataUtils.filterByTimeframe(occupationData, getTimeframeValue(selectedTimeframe));
   }, [occupationData, selectedTimeframe]);
+
+  // For debugging, let's log the data to see if it's available
+  useEffect(() => {
+    if (!loading) {
+      console.log("Data loaded:", {
+        albertaData: albertaData.length,
+        provinceData: provinceData.length,
+        industryData: industryData.length,
+        sexData: sexData.length,
+        ageData: ageData.length,
+        educationData: educationData.length,
+        cityData: cityData.length,
+        regionData: regionData.length,
+        occupationData: occupationData.length
+      });
+      
+      // Log sample data for debugging
+      if (filteredSexData.length > 0) {
+        console.log("Sample Sex Data:", filteredSexData[0]);
+      }
+      
+      if (filteredAgeData.length > 0) {
+        console.log("Sample Age Data:", filteredAgeData[0]);
+      }
+    }
+  }, [loading, albertaData, provinceData, industryData, sexData, ageData, educationData, cityData, regionData, occupationData, filteredSexData, filteredAgeData]);
+
+  // 添加调试信息，查看Tab切换是否正常工作
+  useEffect(() => {
+    console.log("Active tab:", activeTab);
+    if (activeTab === 'Industry & Occupation') {
+      console.log("Industry data available:", filteredIndustryData.length > 0);
+      console.log("Selected industries:", selectedIndustries);
+    }
+  }, [activeTab, filteredIndustryData, selectedIndustries]);
+
+  // Handle province and industry selection
+  const handleProvinceSelection = (province) => {
+    if (selectedProvinces.includes(province)) {
+      setSelectedProvinces(selectedProvinces.filter(p => p !== province));
+    } else {
+      setSelectedProvinces([...selectedProvinces, province]);
+    }
+  };
+
+  const handleIndustrySelection = (industry) => {
+    if (selectedIndustries.includes(industry)) {
+      setSelectedIndustries(selectedIndustries.filter(i => i !== industry));
+    } else {
+      setSelectedIndustries([...selectedIndustries, industry]);
+    }
+  };
 
   // 渲染加载状态
   if (loading) {
@@ -209,12 +235,15 @@ const Dashboard = () => {
 
   const renderIndustryTab = () => (
     <>
-      <div className="mb-6">
-        <IndustryChart 
-          data={filteredIndustryData} 
-          selectedIndustries={selectedIndustries}
-          onIndustrySelection={handleIndustrySelection}
-        />
+      <div className="mb-6 bg-white p-4 rounded-lg shadow">
+        <h2 className="font-bold text-lg mb-4">Industry Unemployment Trends</h2>
+        <div style={{ height: '400px' }}>
+          <IndustryChart 
+            data={filteredIndustryData} 
+            selectedIndustries={selectedIndustries}
+            onIndustrySelection={handleIndustrySelection}
+          />
+        </div>
       </div>
       <div className="mb-6">
         <OccupationChart 
@@ -252,23 +281,6 @@ const Dashboard = () => {
       </div>
     </>
   );
-
-  // Handle province and industry selection
-  const handleProvinceSelection = (province) => {
-    if (selectedProvinces.includes(province)) {
-      setSelectedProvinces(selectedProvinces.filter(p => p !== province));
-    } else {
-      setSelectedProvinces([...selectedProvinces, province]);
-    }
-  };
-
-  const handleIndustrySelection = (industry) => {
-    if (selectedIndustries.includes(industry)) {
-      setSelectedIndustries(selectedIndustries.filter(i => i !== industry));
-    } else {
-      setSelectedIndustries([...selectedIndustries, industry]);
-    }
-  };
 
   return (
     <div className="container mx-auto px-4 py-8 bg-gray-100 min-h-screen">

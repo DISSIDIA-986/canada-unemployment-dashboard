@@ -12,100 +12,169 @@ export const formatDate = (date) => {
  */
 export const filterByTimeframe = (data, timeframe) => {
   if (!data || data.length === 0) return [];
-  
-  const timeframes = {
-    '1y': 12,
-    '3y': 36,
-    '5y': 60,
-    '10y': 120,
-    'all': Infinity
-  };
-  
-  const months = timeframes[timeframe];
-  if (months === Infinity) return data;
-  
-  const latestDate = d3.max(data, d => d.date);
-  const cutoffDate = new Date(latestDate);
-  cutoffDate.setMonth(cutoffDate.getMonth() - months);
-  
-  return data.filter(d => d.date >= cutoffDate);
+
+  const now = new Date();
+  let cutoffDate;
+
+  switch (timeframe) {
+    case '1y':
+      cutoffDate = new Date(now.setFullYear(now.getFullYear() - 1));
+      break;
+    case '3y':
+      cutoffDate = new Date(now.setFullYear(now.getFullYear() - 3));
+      break;
+    case '5y':
+      cutoffDate = new Date(now.setFullYear(now.getFullYear() - 5));
+      break;
+    case '10y':
+      cutoffDate = new Date(now.setFullYear(now.getFullYear() - 10));
+      break;
+    case 'all':
+    default:
+      return data;
+  }
+
+  return data.filter(item => item.date >= cutoffDate);
 };
 
 /**
- * 处理Alberta总体失业率数据
+ * 处理Alberta失业率数据
+ * 
+ * @param {Array} data - 原始Alberta失业率数据
+ * @returns {Array} 处理后的Alberta失业率数据
  */
 export const processAlbertaData = (data) => {
-  if (!data || !Array.isArray(data)) return [];
-  
-  const filteredData = data.filter(item => 
-    item.GeoName === "Alberta" && 
-    (item.Characteristic === "Unemployment rate" || item.Characteristics === "Unemployment rate")
+  if (!data || data.length === 0) return [];
+
+  // 只保留Alberta的数据和失业率数据
+  const albertaData = data.filter(item => 
+    item.GeoName === 'Alberta' && 
+    item.Characteristic === 'Unemployment rate'
   );
-  
-  return filteredData.map(item => ({
-    date: new Date(item.Date),
-    value: item.Value || 0,
-    formattedDate: formatDate(new Date(item.Date))
-  })).sort((a, b) => a.date - b.date);
+
+  // 按日期排序并格式化数据
+  const processedData = albertaData.map(item => {
+    const date = new Date(item.Date);
+    return {
+      date,
+      formattedDate: `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}`,
+      value: item.Value
+    };
+  }).sort((a, b) => a.date - b.date);
+
+  return processedData;
 };
 
 /**
- * 处理省份数据
+ * 处理省份失业率数据
+ * 
+ * @param {Array} data - 原始省份失业率数据
+ * @returns {Array} 处理后的省份失业率数据
  */
 export const processProvinceData = (data) => {
-  if (!data || !Array.isArray(data)) return [];
-  
-  const filteredData = data.filter(item => 
-    (item.Characteristic === "Unemployment rate" || item.Characteristics === "Unemployment rate")
+  if (!data || data.length === 0) return [];
+
+  // 只保留失业率数据
+  const unemploymentRateData = data.filter(item => 
+    item.Characteristic === 'Unemployment rate' && 
+    item.Age === '15 years and over' &&
+    item.Sex === 'Both sexes'
   );
   
-  const groupedByDate = d3.group(filteredData, d => d.Date);
+  // 按日期分组
+  const groupedByDate = {};
   
-  return Array.from(groupedByDate, ([dateStr, items]) => {
-    const obj = { 
-      date: new Date(dateStr), 
-      formattedDate: formatDate(new Date(dateStr)) 
-    };
+  unemploymentRateData.forEach(item => {
+    const date = new Date(item.Date);
+    const formattedDate = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}`;
     
-    items.forEach(item => {
-      if (item.GeoName) {
-        obj[item.GeoName] = item.Value || 0;
-      }
-    });
+    if (!groupedByDate[formattedDate]) {
+      groupedByDate[formattedDate] = {
+        date,
+        formattedDate
+      };
+    }
     
-    return obj;
-  }).sort((a, b) => a.date - b.date);
+    // 添加省份数据
+    groupedByDate[formattedDate][item.GeoName] = item.Value;
+  });
+  
+  // 转换为数组并按日期排序
+  return Object.values(groupedByDate).sort((a, b) => a.date - b.date);
 };
 
 /**
- * 处理行业数据
+ * 处理行业失业率数据
+ * 
+ * @param {Array} data - 原始行业失业率数据
+ * @returns {Array} 处理后的行业失业率数据
  */
 export const processIndustryData = (data) => {
-  if (!data || !Array.isArray(data)) return [];
+  if (!data || data.length === 0) return [];
+
+  // 添加调试日志
+  console.log("Processing industry data, total records:", data.length);
+
+  // 只保留Alberta的数据
+  const albertaData = data.filter(item => item.GeoName === 'Alberta');
+  console.log("Alberta industry records:", albertaData.length);
   
-  const filteredData = data.filter(item => 
-    item.GeoName === "Alberta" && 
-    (item.Characteristic === "Unemployment rate" || item.Characteristics === "Unemployment rate")
+  // 检查是否有Unemployment rate特征
+  const hasUnemploymentRate = albertaData.some(item => item.Characteristic === 'Unemployment rate');
+  console.log("Has Unemployment rate:", hasUnemploymentRate);
+
+  // 可能同时存在Unemployment率直接值和Unemployment数量值
+  // 优先使用Unemployment rate，如果不存在则尝试使用Unemployment
+  const characteristicToUse = hasUnemploymentRate ? 'Unemployment rate' : 'Unemployment';
+  console.log("Using characteristic:", characteristicToUse);
+  
+  // 只保留失业率数据
+  const unemploymentRateData = albertaData.filter(item => 
+    item.Characteristic === characteristicToUse && 
+    item.Age === '15 years and over' &&
+    item.Sex === 'Both sexes'
   );
   
-  const groupedByDate = d3.group(filteredData, d => d.Date);
+  console.log("Filtered unemployment rate records:", unemploymentRateData.length);
+  if (unemploymentRateData.length > 0) {
+    console.log("Sample industry record:", unemploymentRateData[0]);
+  }
   
-  return Array.from(groupedByDate, ([dateStr, items]) => {
-    const obj = { 
-      date: new Date(dateStr), 
-      formattedDate: formatDate(new Date(dateStr)) 
-    };
+  // 按日期分组
+  const groupedByDate = {};
+  
+  unemploymentRateData.forEach(item => {
+    const date = new Date(item.Date);
+    const formattedDate = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}`;
     
-    items.forEach(item => {
-      if (item["NAICS Description"]) {
-        obj[item["NAICS Description"]] = item.Value || 0;
-      } else if (item.NAICS) {
-        obj[item.NAICS] = item.Value || 0;
+    if (!groupedByDate[formattedDate]) {
+      groupedByDate[formattedDate] = {
+        date,
+        formattedDate
+      };
+    }
+    
+    // 添加行业数据
+    const industryName = item['NAICS Description'];
+    if (industryName) {
+      // 如果使用的是Unemployment而不是Unemployment rate，需要将值转换为百分比
+      if (characteristicToUse === 'Unemployment') {
+        // 这里需要根据实际数据特点进行调整
+        // 假设Unemployment是绝对数值，需要除以相应的劳动力总数转为百分比
+        groupedByDate[formattedDate][industryName] = parseFloat((item.Value / 1000).toFixed(1));
+      } else {
+        groupedByDate[formattedDate][industryName] = item.Value;
       }
-    });
-    
-    return obj;
-  }).sort((a, b) => a.date - b.date);
+    }
+  });
+  
+  console.log("Grouped dates:", Object.keys(groupedByDate).length);
+  
+  // 转换为数组并按日期排序
+  const result = Object.values(groupedByDate).sort((a, b) => a.date - b.date);
+  console.log("Final processed industry data:", result.length);
+  
+  return result;
 };
 
 /**
@@ -222,157 +291,222 @@ export const processAgeData = (data) => {
     }
   });
   
+  console.log('Processed age data:', Object.values(groupedByDate).length);
+  
   // 将对象转换为数组，并按日期排序
   return Object.values(groupedByDate).sort((a, b) => a.date - b.date);
 };
 
 /**
- * 处理教育程度数据
+ * 处理教育程度失业率数据
+ * 
+ * @param {Array} data - 原始教育程度失业率数据
+ * @returns {Array} 处理后的教育程度失业率数据
  */
 export const processEducationData = (data) => {
-  if (!data || !Array.isArray(data)) return [];
+  if (!data || data.length === 0) return [];
+
+  // 首先按日期分组
+  const groupedByDate = {};
   
-  const filteredData = data.filter(item => 
-    item.GeoName === "Alberta" && 
-    (item.Characteristic === "Unemployment rate" || item.Characteristics === "Unemployment rate")
-  );
-  
-  const groupedByDate = d3.group(filteredData, d => d.Date);
-  
-  return Array.from(groupedByDate, ([dateStr, items]) => {
-    const obj = { 
-      date: new Date(dateStr), 
-      formattedDate: formatDate(new Date(dateStr)) 
-    };
+  data.forEach(item => {
+    // 只处理Alberta地区和失业率数据
+    if (item.GeoName !== 'Alberta' || item.Characteristics !== 'Unemployment rate') return;
     
-    items.forEach(item => {
-      if (item.Education) {
-        obj[item.Education] = item.Value || 0;
-      }
-    });
+    // 只处理15岁及以上年龄组和全部性别的数据
+    if (item.Age !== '15 years and over' || item.Sex !== 'Both sexes') return;
     
-    return obj;
-  }).sort((a, b) => a.date - b.date);
+    const date = new Date(item.Date);
+    const formattedDate = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}`;
+    
+    if (!groupedByDate[formattedDate]) {
+      groupedByDate[formattedDate] = {
+        date,
+        formattedDate
+      };
+    }
+    
+    // 添加教育程度数据
+    const educationLevel = item.Education;
+    if (educationLevel) {
+      groupedByDate[formattedDate][educationLevel] = item.Value;
+    }
+  });
+  
+  // 转换为数组并按日期排序
+  return Object.values(groupedByDate).sort((a, b) => a.date - b.date);
 };
 
 /**
- * 处理城市(CMA)数据
+ * 处理CMA城市失业率数据
+ * 
+ * @param {Array} data - 原始CMA城市失业率数据
+ * @returns {Array} 处理后的CMA城市失业率数据
  */
 export const processCMAData = (data) => {
-  if (!data || !Array.isArray(data)) return [];
-  
-  const datesWithData = data
-    .filter(item => item.Value !== null)
-    .map(item => new Date(item.Date));
-  
-  if (datesWithData.length === 0) return [];
-  
-  const latestDate = d3.max(datesWithData);
-  
-  if (!latestDate) return [];
-  
-  const latestData = data.filter(item => 
-    new Date(item.Date).getTime() === latestDate.getTime() && 
-    item.GeoName !== "Alberta" &&
-    item.Value !== null
+  if (!data || data.length === 0) return [];
+
+  // 仅保留失业率数据
+  const unemploymentRateData = data.filter(item => 
+    item.Characteristics === 'Unemployment rate'
   );
   
-  return latestData.sort((a, b) => (b.Value || 0) - (a.Value || 0));
+  // 找到最新的日期
+  const sortedData = [...unemploymentRateData].sort((a, b) => 
+    new Date(b.Date) - new Date(a.Date)
+  );
+  
+  // 获取最新日期的数据
+  const latestDate = sortedData.length > 0 ? sortedData[0].Date : null;
+  const latestData = sortedData.filter(item => item.Date === latestDate);
+  
+  // 只返回Alberta内的城市，并按失业率排序
+  return latestData
+    .filter(item => ['Calgary', 'Edmonton', 'Lethbridge', 'Red Deer'].includes(item.GeoName))
+    .sort((a, b) => (b.Value || 0) - (a.Value || 0));
 };
 
 /**
- * 处理经济区域数据
+ * 处理区域失业率数据
+ * 
+ * @param {Array} data - 原始区域失业率数据
+ * @returns {Array} 处理后的区域失业率数据
  */
 export const processRegionData = (data) => {
-  if (!data || !Array.isArray(data)) return [];
-  
-  const datesWithData = data
-    .filter(item => item.Value !== null)
-    .map(item => new Date(item.Date));
-  
-  if (datesWithData.length === 0) return [];
-  
-  const latestDate = d3.max(datesWithData);
-  
-  if (!latestDate) return [];
-  
-  const latestData = data.filter(item => 
-    new Date(item.Date).getTime() === latestDate.getTime() && 
-    item.Value !== null
+  if (!data || data.length === 0) return [];
+
+  // 仅保留失业率数据
+  const unemploymentRateData = data.filter(item => 
+    item.Characteristics === 'Unemployment rate'
   );
   
-  return latestData.sort((a, b) => (b.Value || 0) - (a.Value || 0));
+  // 找到最新的日期
+  const sortedData = [...unemploymentRateData].sort((a, b) => 
+    new Date(b.Date) - new Date(a.Date)
+  );
+  
+  // 获取最新日期的数据
+  const latestDate = sortedData.length > 0 ? sortedData[0].Date : null;
+  const latestData = sortedData.filter(item => item.Date === latestDate);
+  
+  // 只返回Alberta内的区域，并按失业率排序
+  return latestData
+    .filter(item => 
+      ['Banff-Jasper-Rocky Mountain House and Athabasca-Grande Prairie-Peace River', 
+      'Camrose-Drumheller', 
+      'Edmonton', 
+      'Lethbridge-Medicine Hat', 
+      'Red Deer', 
+      'Wood Buffalo-Cold Lake'].includes(item.GeoName)
+    )
+    .sort((a, b) => (b.Value || 0) - (a.Value || 0));
 };
 
 /**
- * 处理职业数据
+ * 处理职业失业率数据
+ * 
+ * @param {Array} data - 原始职业失业率数据
+ * @returns {Array} 处理后的职业失业率数据
  */
 export const processOccupationData = (data) => {
-  if (!data || !Array.isArray(data)) return [];
-  
-  const filteredData = data.filter(item => 
-    item.GeoName === "Alberta" && 
-    (item.Characteristic === "Unemployment rate" || item.Characteristics === "Unemployment rate")
+  if (!data || data.length === 0) return [];
+
+  // 只保留Alberta的数据、失业率数据和全部性别
+  const albertaData = data.filter(item => 
+    item.GeoName === 'Alberta' && 
+    item.Characteristics === 'Unemployment rate' &&
+    item.Sex === 'Both sexes'
   );
   
-  const groupedByDate = d3.group(filteredData, d => d.Date);
+  // 按日期分组
+  const groupedByDate = {};
   
-  return Array.from(groupedByDate, ([dateStr, items]) => {
-    const obj = { 
-      date: new Date(dateStr), 
-      formattedDate: formatDate(new Date(dateStr)) 
-    };
+  albertaData.forEach(item => {
+    const date = new Date(item.Date);
+    const formattedDate = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}`;
     
-    items.forEach(item => {
-      if (item["NOC Description"]) {
-        obj[item["NOC Description"]] = item.Value || 0;
-      } else if (item.NOC) {
-        obj[item.NOC] = item.Value || 0;
-      }
-    });
+    if (!groupedByDate[formattedDate]) {
+      groupedByDate[formattedDate] = {
+        date,
+        formattedDate
+      };
+    }
     
-    return obj;
-  }).sort((a, b) => a.date - b.date);
+    // 添加职业数据
+    const occupationName = item['NOC Description'];
+    if (occupationName) {
+      groupedByDate[formattedDate][occupationName] = item.Value;
+    }
+  });
+  
+  // 转换为数组并按日期排序
+  return Object.values(groupedByDate).sort((a, b) => a.date - b.date);
 };
 
 /**
- * 获取可用的省份列表
+ * 获取可用省份
+ * 
+ * @param {Array} data - 省份数据
+ * @returns {Array} 可用省份列表
  */
 export const getAvailableProvinces = (data) => {
   if (!data || data.length === 0) return [];
   
   const provinces = new Set();
+  
   data.forEach(item => {
     Object.keys(item).forEach(key => {
-      if (key !== 'date' && key !== 'formattedDate') {
+      if (!['date', 'formattedDate'].includes(key)) {
         provinces.add(key);
       }
     });
   });
   
-  return Array.from(provinces)
-    .filter(province => province !== 'undefined' && province !== 'null')
-    .sort();
+  return Array.from(provinces).sort();
 };
 
 /**
- * 获取可用的行业列表
+ * 获取可用行业
+ * 
+ * @param {Array} data - 行业数据
+ * @returns {Array} 可用行业列表
  */
 export const getAvailableIndustries = (data) => {
   if (!data || data.length === 0) return [];
   
   const industries = new Set();
+  
   data.forEach(item => {
     Object.keys(item).forEach(key => {
-      if (key !== 'date' && key !== 'formattedDate') {
+      if (!['date', 'formattedDate'].includes(key)) {
         industries.add(key);
       }
     });
   });
   
-  return Array.from(industries)
-    .filter(industry => industry !== 'undefined' && industry !== 'null')
-    .sort();
+  return Array.from(industries).sort();
+};
+
+/**
+ * 获取可用教育程度列表
+ * 
+ * @param {Array} data - 教育程度数据
+ * @returns {Array} 可用教育程度列表
+ */
+export const getAvailableEducationLevels = (data) => {
+  if (!data || data.length === 0) return [];
+  
+  const educationLevels = new Set();
+  
+  data.forEach(item => {
+    Object.keys(item).forEach(key => {
+      if (!['date', 'formattedDate'].includes(key)) {
+        educationLevels.add(key);
+      }
+    });
+  });
+  
+  return Array.from(educationLevels).sort();
 };
 
 /**
@@ -388,44 +522,32 @@ export const getAvailableAgeGroups = (data) => {
   
   // 检查数据的第一个对象以确定可用的年龄组
   const firstEntry = data[0];
-  Object.keys(firstEntry).forEach(key => {
-    if (['date', 'formattedDate'].includes(key)) return;
-    if (firstEntry[key] !== null && firstEntry[key] !== undefined) {
-      ageGroups.add(key);
-    }
-  });
+  if (firstEntry) {
+    Object.keys(firstEntry).forEach(key => {
+      if (['date', 'formattedDate'].includes(key)) return;
+      if (firstEntry[key] !== null && firstEntry[key] !== undefined) {
+        ageGroups.add(key);
+      }
+    });
+  }
   
   return Array.from(ageGroups);
 };
 
 /**
- * 获取可用教育程度列表
- */
-export const getAvailableEducationLevels = (data) => {
-  if (!data || data.length === 0) return [];
-  
-  const educationLevels = new Set();
-  data.forEach(item => {
-    Object.keys(item).forEach(key => {
-      if (key !== 'date' && key !== 'formattedDate') {
-        educationLevels.add(key);
-      }
-    });
-  });
-  
-  return Array.from(educationLevels).sort();
-};
-
-/**
  * 获取可用职业列表
+ * 
+ * @param {Array} data - 职业数据
+ * @returns {Array} 可用职业列表
  */
 export const getAvailableOccupations = (data) => {
   if (!data || data.length === 0) return [];
   
   const occupations = new Set();
+  
   data.forEach(item => {
     Object.keys(item).forEach(key => {
-      if (key !== 'date' && key !== 'formattedDate') {
+      if (!['date', 'formattedDate'].includes(key)) {
         occupations.add(key);
       }
     });
