@@ -824,22 +824,46 @@ const Dashboard = () => {
         {activeTab === '行业与职业' && (
           <>
             {renderIndustryComparison()}
-            {renderOccupationComparison()}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+              {renderOccupationComparison()}
+              <div className="bg-white p-4 rounded-lg shadow">
+                <div className="font-bold text-lg mb-4">行业分布</div>
+                <div className="h-72 flex items-center justify-center">
+                  <div className="text-gray-500">
+                    该图表展示各行业就业分布，数据正在准备中...
+                  </div>
+                </div>
+              </div>
+            </div>
           </>
         )}
 
         {activeTab === '人口特征' && (
           <>
-            {renderSexComparison()}
-            {renderAgeComparison()}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+              {renderSexComparison()}
+              {renderAgeComparison()}
+            </div>
             {renderEducationComparison()}
           </>
         )}
 
         {activeTab === '地理区域' && (
           <>
-            {renderCityComparison()}
-            {renderRegionComparison()}
+            <div className="grid grid-cols-1 md:grid-cols-1 gap-6 mb-6">
+              {renderCityComparison()}
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-1 gap-6 mb-6">
+              {renderRegionComparison()}
+            </div>
+            <div className="bg-white p-4 rounded-lg shadow mb-6">
+              <div className="font-bold text-lg mb-4">Alberta地区失业率地图</div>
+              <div className="h-96 flex items-center justify-center">
+                <div className="text-gray-500">
+                  地图视图正在开发中...
+                </div>
+              </div>
+            </div>
           </>
         )}
       </div>
