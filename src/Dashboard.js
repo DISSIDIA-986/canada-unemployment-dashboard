@@ -151,12 +151,12 @@ const Dashboard = () => {
         regionData: regionData.length,
         occupationData: occupationData.length
       });
-      
+
       // Log sample data for debugging
       if (filteredSexData.length > 0) {
         console.log("Sample Sex Data:", filteredSexData[0]);
       }
-      
+
       if (filteredAgeData.length > 0) {
         console.log("Sample Age Data:", filteredAgeData[0]);
       }
@@ -217,15 +217,15 @@ const Dashboard = () => {
   const renderOverviewTab = () => (
     <>
       <div className="mb-6">
-        <AlbertaOverviewChart 
-          data={filteredAlbertaData} 
+        <AlbertaOverviewChart
+          data={filteredAlbertaData}
           timeframe={getTimeframeValue(selectedTimeframe)}
         />
       </div>
 
       <div className="mb-6">
-        <ProvinceChart 
-          data={filteredProvinceData} 
+        <ProvinceChart
+          data={filteredProvinceData}
           selectedProvinces={selectedProvinces}
           onProvinceSelection={handleProvinceSelection}
         />
@@ -238,17 +238,17 @@ const Dashboard = () => {
       <div className="mb-6 bg-white p-4 rounded-lg shadow">
         <h2 className="font-bold text-lg mb-4">Industry Unemployment Trends</h2>
         <div style={{ height: '400px' }}>
-          <IndustryChart 
-            data={filteredIndustryData} 
+          <IndustryChart
+            data={filteredIndustryData}
             selectedIndustries={selectedIndustries}
             onIndustrySelection={handleIndustrySelection}
           />
         </div>
       </div>
       <div className="mb-6">
-        <OccupationChart 
+        <OccupationChart
           data={filteredOccupationData}
-          timeframe={getTimeframeValue(selectedTimeframe)} 
+          timeframe={getTimeframeValue(selectedTimeframe)}
         />
       </div>
     </>
@@ -270,6 +270,9 @@ const Dashboard = () => {
 
   const renderGeographicTab = () => (
     <>
+      <div className="mb-6">
+        <EnhancedCMAChart data={cityData} />
+      </div>
       <div className="mb-6">
         <CMAChart data={cityData} />
       </div>

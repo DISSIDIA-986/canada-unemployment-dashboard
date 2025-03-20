@@ -5,17 +5,17 @@ Each section shows the filename and the first element of the data array to provi
 
 ## age.json
 
-Array with 2360 elements. First element sample:
+Array with 15660 elements. First element sample:
 
 ```json
 {
-  "Date": "1976-01-01T00:00:00",
-  "GeoID": 48,
-  "GeoName": "Alberta",
-  "Characteristic": "Unemployment",
+  "Date": "2001-01-01T00:00:00",
+  "GeoID": "01",
+  "GeoName": "Canada",
+  "Characteristic": "Unemployment rate",
   "Sex": "Both sexes",
-  "Age": "15 years and over",
-  "Value": 37000
+  "Age": "45 years and over",
+  "Value": 5.9
 }
 ```
 
@@ -57,18 +57,18 @@ Array with 680 elements. First element sample:
 
 ## education.json
 
-Array with 3798 elements. First element sample:
+Array with 15660 elements. First element sample:
 
 ```json
 {
-  "Date": "1990-01-01T00:00:00",
-  "GeoID": "48",
-  "GeoName": "Alberta",
+  "Date": "2001-01-01T00:00:00",
+  "GeoID": "01",
+  "GeoName": "Canada",
   "Characteristics": "Unemployment rate",
-  "Education": "High school graduate",
+  "Education": "Total, all education levels",
   "Sex": "Both sexes",
-  "Age": "15 years and over",
-  "Value": 8.0
+  "Age": "45 years and over",
+  "Value": 5.9
 }
 ```
 
