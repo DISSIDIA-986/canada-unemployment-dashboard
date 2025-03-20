@@ -222,46 +222,35 @@ export const processSexData = (data) => {
 export const processAgeData = (data) => {
   if (!data || data.length === 0) return [];
 
-  // 首先按日期分组
+  console.log('原始年龄数据示例:', data[0]); // 添加调试日志
+  
   const groupedByDate = {};
   
   data.forEach(item => {
-    // 只处理Alberta地区和Both sexes性别的数据
-    if (item.GeoName !== 'Alberta' || item.Sex !== 'Both sexes') return;
+    // 放宽GeoName的筛选条件，同时接受Alberta和Canada
+    // 改为检测Characteristic包含Unemployment
+    if (!item.Characteristic || !item.Characteristic.includes('Unemployment')) return;
     
     const date = new Date(item.Date);
     const formattedDate = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}`;
     const key = formattedDate;
     
-    // 初始化日期的数据结构
     if (!groupedByDate[key]) {
       groupedByDate[key] = {
         date,
-        formattedDate,
-        '15 to 24 years': null,
-        '25 to 54 years': null,
-        '55 years and over': null,
-        '15 years and over': null
+        formattedDate
       };
     }
     
-    // 根据年龄组添加数据
-    if (['15 to 24 years', '25 to 54 years', '55 years and over', '15 years and over'].includes(item.Age)) {
-      // 如果是失业率(Unemployment rate)，直接使用Value值
-      if (item.Characteristic === 'Unemployment rate') {
-        groupedByDate[key][item.Age] = item.Value;
-      }
-      // 如果是失业人数(Unemployment)，需要计算比率
-      else if (item.Characteristic === 'Unemployment') {
-        // 这里我们暂时不做转换，而是直接使用值
-        groupedByDate[key][item.Age] = item.Value / 10000; // 简单地除以10000作为示例
-      }
+    // 保存数据，不再严格检查年龄组名称
+    if (item.Age) {
+      groupedByDate[key][item.Age] = item.Value;
     }
   });
   
-  console.log('Processed age data:', Object.values(groupedByDate).length);
+  console.log('处理后数据条数:', Object.keys(groupedByDate).length);
   
-  // 将对象转换为数组，并按日期排序
+  // 转换为数组，并按日期排序
   return Object.values(groupedByDate).sort((a, b) => a.date - b.date);
 };
 
@@ -274,15 +263,18 @@ export const processAgeData = (data) => {
 export const processEducationData = (data) => {
   if (!data || data.length === 0) return [];
 
-  // 首先按日期分组
+  console.log('原始教育数据示例:', data[0]); // 添加调试日志
+  
   const groupedByDate = {};
   
   data.forEach(item => {
-    // 只处理Alberta地区和失业率数据
-    if (item.GeoName !== 'Alberta' || item.Characteristics !== 'Unemployment rate') return;
+    // 检查字段大小写
+    const characteristics = item.Characteristics || item.characteristics;
+    const geoName = item.GeoName || item.geoname;
+    const education = item.Education || item.education;
     
-    // 只处理15岁及以上年龄组和全部性别的数据
-    if (item.Age !== '15 years and over' || item.Sex !== 'Both sexes') return;
+    // 放宽筛选条件
+    if (characteristics !== 'Unemployment rate') return;
     
     const date = new Date(item.Date);
     const formattedDate = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}`;
@@ -295,13 +287,13 @@ export const processEducationData = (data) => {
     }
     
     // 添加教育程度数据
-    const educationLevel = item.Education;
-    if (educationLevel) {
-      groupedByDate[formattedDate][educationLevel] = item.Value;
+    if (education) {
+      groupedByDate[formattedDate][education] = item.Value;
     }
   });
   
-  // 转换为数组并按日期排序
+  console.log('处理后数据条数:', Object.keys(groupedByDate).length);
+  
   return Object.values(groupedByDate).sort((a, b) => a.date - b.date);
 };
 

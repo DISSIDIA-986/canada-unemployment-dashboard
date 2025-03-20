@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import ChartContainer from '../components/ChartContainer';
 import { getAvailableAgeGroups } from '../utils/dataProcessing';
@@ -18,9 +18,16 @@ const AgeChart = ({ data }) => {
   
   // 选中的年龄组状态 - 移动到条件判断之前
   const [selectedAgeGroups, setSelectedAgeGroups] = useState(() => {
-    // 默认选择所有年龄组，如果data为空则是空数组
-    return [...ageGroups];
+    // 确保数据加载后再设置默认选择
+    return data && data.length > 0 ? [...ageGroups] : [];
   });
+
+  // 增加useEffect监听ageGroups变化
+  useEffect(() => {
+    if (ageGroups.length > 0) {
+      setSelectedAgeGroups([...ageGroups]);
+    }
+  }, [ageGroups]);
 
   // 处理年龄组选择 - 保持为普通函数
   const handleAgeGroupSelection = (ageGroup) => {
