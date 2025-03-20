@@ -4,15 +4,48 @@
 
 ## 安装步骤
 
-1. 克隆项目后，进入项目目录：
-   ```bash
-   cd alberta-dashboard
-   ```
+使用Tailwind CDN构建失业率仪表板项目步骤：
 
-2. 安装依赖：
-   ```bash
-   npm install
-   ```
+1. **创建基础React应用**
+```bash
+npx create-react-app alberta-dashboard
+cd alberta-dashboard
+npm install d3 recharts
+```
+
+2. **添加Tailwind CDN**
+修改 `public/index.html`，在`<head>`标签中添加：
+```html
+<script src="https://cdn.tailwindcss.com"></script>
+```
+
+3. **创建Dashboard组件**
+创建 `src/Dashboard.js` 文件：
+
+4. **更新App.js**
+修改 `src/App.js` 文件：
+
+
+
+5. **运行项目**
+```bash
+npm start
+```
+
+主要特点:
+- 使用Tailwind CDN避免复杂配置
+- 简化组件结构，使用基础HTML元素
+- 保留所有图表和数据分析功能
+- 跨浏览器兼容性良好
+- 自动从Alberta Economic Dashboard API获取数据
+
+项目结构:
+- 省级失业率比较
+- 行业失业率对比
+- 性别失业率差异
+- 城市失业率排名
+
+此解决方案简单高效，无需额外配置即可运行。
 
 3. 下载数据文件：
    ```bash
