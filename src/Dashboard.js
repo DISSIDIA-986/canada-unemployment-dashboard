@@ -271,12 +271,12 @@ const Dashboard = () => {
 
   const renderGeographicTab = () => (
     <>
-      <div className="mb-6">
-        <EnhancedCMAChart data={cityData} />
-      </div>
       {/* <div className="mb-6">
-        <CMAChart data={cityData} />
+        <EnhancedCMAChart data={cityData} />
       </div> */}
+      <div className="mb-6">
+        <CMAChart data={cityData} />
+      </div>
       <div className="mb-6">
         <RegionChart data={regionData} />
       </div>
