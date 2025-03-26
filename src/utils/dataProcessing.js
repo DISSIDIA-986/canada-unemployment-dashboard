@@ -115,10 +115,6 @@ export const processIndustryData = (data) => {
   // 添加调试日志
   console.log("Processing industry data, total records:", data.length);
 
-  // 不再限制只有Alberta的数据
-  // const albertaData = data.filter(item => item.GeoName === 'Alberta');
-  // console.log("Alberta industry records:", albertaData.length);
-  
   // 检查各种可能的特征名称
   const characteristics = new Set(data.map(item => item.Characteristics || item.Characteristic));
   console.log("Available characteristics:", Array.from(characteristics));
@@ -144,6 +140,16 @@ export const processIndustryData = (data) => {
     console.log("Sample industry record:", unemploymentRateData[0]);
   }
   
+  // 创建行业列表
+  const industries = new Set();
+  unemploymentRateData.forEach(item => {
+    const naicsDesc = item['NAICS Description'] || '';
+    if (naicsDesc && naicsDesc !== '') {
+      industries.add(naicsDesc);
+    }
+  });
+  console.log("Identified industries:", Array.from(industries));
+
   // 按日期分组
   const groupedByDate = {};
   
@@ -158,15 +164,17 @@ export const processIndustryData = (data) => {
       };
     }
     
-    // 找出行业描述字段
-    const industryName = item['NAICS Description'] || item.Industry;
-    if (industryName) {
-      // 如果使用的是Unemployment而不是Unemployment rate，需要将值转换为百分比
-      if (characteristicToUse === 'Unemployment') {
-        // 这里需要根据实际数据特点进行调整
-        groupedByDate[formattedDate][industryName] = parseFloat((item.Value / 1000).toFixed(1));
-      } else {
-        groupedByDate[formattedDate][industryName] = item.Value;
+    // 添加行业数据
+    const industryName = item['NAICS Description'] || '';
+    if (industryName && industryName !== '') {
+      let value = item.Value;
+      
+      // 处理值：确保是数字，处理NaN
+      if (value !== null && value !== undefined) {
+        value = parseFloat(value);
+        if (!isNaN(value)) {
+          groupedByDate[formattedDate][industryName] = value;
+        }
       }
     }
   });
@@ -176,6 +184,10 @@ export const processIndustryData = (data) => {
   // 转换为数组并按日期排序
   const result = Object.values(groupedByDate).sort((a, b) => a.date - b.date);
   console.log("Final processed industry data:", result.length);
+  
+  if (result.length > 0) {
+    console.log("Sample processed data:", result[0]);
+  }
   
   return result;
 };
