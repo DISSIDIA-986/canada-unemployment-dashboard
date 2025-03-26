@@ -115,25 +115,29 @@ export const processIndustryData = (data) => {
   // 添加调试日志
   console.log("Processing industry data, total records:", data.length);
 
-  // 只保留Alberta的数据
-  const albertaData = data.filter(item => item.GeoName === 'Alberta');
-  console.log("Alberta industry records:", albertaData.length);
+  // 不再限制只有Alberta的数据
+  // const albertaData = data.filter(item => item.GeoName === 'Alberta');
+  // console.log("Alberta industry records:", albertaData.length);
+  
+  // 检查各种可能的特征名称
+  const characteristics = new Set(data.map(item => item.Characteristics || item.Characteristic));
+  console.log("Available characteristics:", Array.from(characteristics));
   
   // 检查是否有Unemployment rate特征
-  const hasUnemploymentRate = albertaData.some(item => item.Characteristic === 'Unemployment rate');
+  const hasUnemploymentRate = data.some(item => 
+    (item.Characteristics || item.Characteristic) === 'Unemployment rate'
+  );
   console.log("Has Unemployment rate:", hasUnemploymentRate);
 
-  // 可能同时存在Unemployment率直接值和Unemployment数量值
   // 优先使用Unemployment rate，如果不存在则尝试使用Unemployment
   const characteristicToUse = hasUnemploymentRate ? 'Unemployment rate' : 'Unemployment';
   console.log("Using characteristic:", characteristicToUse);
   
-  // 只保留失业率数据
-  const unemploymentRateData = albertaData.filter(item => 
-    item.Characteristic === characteristicToUse && 
-    item.Age === '15 years and over' &&
-    item.Sex === 'Both sexes'
-  );
+  // 只保留失业率数据，支持两种可能的字段名
+  const unemploymentRateData = data.filter(item => {
+    const charField = item.Characteristics || item.Characteristic;
+    return charField === characteristicToUse;
+  });
   
   console.log("Filtered unemployment rate records:", unemploymentRateData.length);
   if (unemploymentRateData.length > 0) {
@@ -154,13 +158,12 @@ export const processIndustryData = (data) => {
       };
     }
     
-    // 添加行业数据
-    const industryName = item['NAICS Description'];
+    // 找出行业描述字段
+    const industryName = item['NAICS Description'] || item.Industry;
     if (industryName) {
       // 如果使用的是Unemployment而不是Unemployment rate，需要将值转换为百分比
       if (characteristicToUse === 'Unemployment') {
         // 这里需要根据实际数据特点进行调整
-        // 假设Unemployment是绝对数值，需要除以相应的劳动力总数转为百分比
         groupedByDate[formattedDate][industryName] = parseFloat((item.Value / 1000).toFixed(1));
       } else {
         groupedByDate[formattedDate][industryName] = item.Value;
