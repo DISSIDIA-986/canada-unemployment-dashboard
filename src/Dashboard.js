@@ -19,7 +19,7 @@ import RegionChart from './charts/RegionChart';
 import OccupationChart from './charts/OccupationChart';
 import EnhancedRegionChart from './charts/EnhancedRegionChart';
 
-const Dashboard = () => {
+const Dashboard = (props) => {
   // 状态变量
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -371,6 +371,15 @@ const Dashboard = () => {
         {activeTab === 'Demographics' && renderDemographicTab()}
         {activeTab === 'Geography' && renderGeographicTab()}
       </div>
+      {/* 在 Dashboard.js 中修改链接按钮部分 */}
+      <div className="mt-4 mb-6">
+        <button 
+          onClick={() => props.onNavigate('jobVacancy')} 
+          className="inline-block bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"
+        >
+          View Job Vacancy Analysis
+        </button>
+      </div>
 
       <div className="text-sm text-gray-500 mt-8">
         Data Source: Statistics Canada. Labour force Survey
@@ -380,3 +389,4 @@ const Dashboard = () => {
 };
 
 export default Dashboard;
+
