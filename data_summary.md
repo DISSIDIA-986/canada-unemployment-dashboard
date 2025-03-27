@@ -5,7 +5,7 @@ Each section shows the filename and the first element of the data array to provi
 
 ## age.json
 
-Array with 15660 elements. First element sample:
+Array with 1740 elements. First element sample:
 
 ```json
 {
@@ -13,9 +13,9 @@ Array with 15660 elements. First element sample:
   "GeoID": "01",
   "GeoName": "Canada",
   "Characteristic": "Unemployment rate",
-  "Sex": "Both sexes",
-  "Age": "45 years and over",
-  "Value": 5.9
+  "Sex": "Female",
+  "Age": "55 years and over",
+  "Value": 5.4
 }
 ```
 
@@ -41,15 +41,15 @@ Array with 7080 elements. First element sample:
 
 ## city.json
 
-Array with 680 elements. First element sample:
+Array with 10809 elements. First element sample:
 
 ```json
 {
-  "Date": "2011-01-01T00:00:00",
-  "GeoID": "48",
-  "GeoName": "Alberta",
+  "Date": "2006-03-01T00:00:00",
+  "GeoID": "219",
+  "GeoName": "Canada",
   "Characteristics": "Unemployment rate",
-  "Value": 6.0
+  "Value": 6.6
 }
 ```
 
@@ -76,19 +76,19 @@ Array with 15660 elements. First element sample:
 
 ## industry.json
 
-Array with 12056 elements. First element sample:
+Array with 24360 elements. First element sample:
 
 ```json
 {
-  "Date": "1976-01-01T00:00:00",
-  "GeoID": "48",
-  "GeoName": "Alberta",
-  "NAICS": "55, 56",
-  "NAICS Description": "Business, building and other support services",
-  "Characteristic": "Unemployment",
+  "Date": "2001-01-01T00:00:00",
+  "GeoID": "2021A000011124",
+  "GeoName": "Canada",
+  "NAICS Description": "Total, all industries",
+  "Characteristic": "Unemployment rate",
   "Sex": "Both sexes",
   "Age": "15 years and over",
-  "Value": 1800.0
+  "Value": 12.6,
+  "NAICS": ""
 }
 ```
 
@@ -149,14 +149,14 @@ Array with 14238 elements. First element sample:
 
 ## sex.json
 
-Array with 1180 elements. First element sample:
+Array with 1740 elements. First element sample:
 
 ```json
 {
-  "Date": "1976-01-01",
-  "Value": 5.2,
+  "Date": "2001-01-01",
+  "Value": 5.4,
   "Series": "Female",
-  "labels": "1976-01-01T00:00:00"
+  "labels": "2001-01-01T00:00:00"
 }
 ```
 
