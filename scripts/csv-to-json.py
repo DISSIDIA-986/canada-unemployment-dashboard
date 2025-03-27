@@ -28,97 +28,115 @@ def read_csv_files(directory, file_names):
             print(f"读取文件 {file_name} 出错: {e}")
     return dfs
 
-def clean_and_transform_data(dfs):
-    """清洗并转换数据到目标格式"""
+def process_csv_to_json(dfs):
+    """处理CSV数据为一致的JSON格式"""
     if not dfs:
         return []
-        
+    
     # 合并所有DataFrame
     merged_df = pd.concat(dfs, ignore_index=True)
     
-    # 选择并重命名列
-    # 尝试找到匹配的列名
-    column_mapping = {}
-    if 'REF_DATE' in merged_df.columns:
-        column_mapping['REF_DATE'] = 'Date'
-    if 'DGUID' in merged_df.columns:
-        column_mapping['DGUID'] = 'GeoID'
-    if 'GEO' in merged_df.columns:
-        column_mapping['GEO'] = 'GeoName'
+    # 打印列名，帮助调试
+    print("所有列名:", merged_df.columns.tolist())
     
-    # 查找劳动力特征列
-    labour_force_col = None
-    for col in merged_df.columns:
-        if 'Labour force' in col or 'Characteristic' in col:
-            labour_force_col = col
-            column_mapping[col] = 'Characteristics'
-            break
-            
-    # 查找行业列
+    # 找到合适的列名
+    ref_date_col = 'REF_DATE' if 'REF_DATE' in merged_df.columns else None
+    geo_col = 'GEO' if 'GEO' in merged_df.columns else None
+    dguid_col = 'DGUID' if 'DGUID' in merged_df.columns else None
     industry_col = None
     for col in merged_df.columns:
-        if 'North American Industry Classification System' in col or 'Industry' in col:
+        if 'North American Industry' in col:
             industry_col = col
-            column_mapping[col] = 'NAICS Description'
             break
-    
-    # 查找数值列
-    value_col = None
+    labor_force_col = None
     for col in merged_df.columns:
-        if col == 'VALUE' or col == 'Value':
-            value_col = col
-            column_mapping[col] = 'Value'
+        if 'Labour force' in col:
+            labor_force_col = col
             break
+    value_col = 'VALUE' if 'VALUE' in merged_df.columns else None
     
-    # 重命名列
-    df = merged_df.rename(columns=column_mapping)
-    
-    # 确保所有必需的列存在
-    required_cols = ['Date', 'GeoID', 'GeoName', 'Characteristics', 'Value']
-    missing_cols = [col for col in required_cols if col not in df.columns]
-    
-    if missing_cols:
-        print(f"警告: 缺少必需列: {missing_cols}")
-        print("可用列:", df.columns.tolist())
-        # 尝试为缺失列添加默认值
-        for col in missing_cols:
-            df[col] = None
-    
-    # 处理日期格式
-    if 'Date' in df.columns:
-        df['Date'] = pd.to_datetime(df['Date'], errors='coerce').dt.strftime('%Y-%m-%dT00:00:00')
+    if not all([ref_date_col, geo_col, dguid_col, industry_col, labor_force_col, value_col]):
+        print("缺少必要的列:", {
+            "Date": ref_date_col,
+            "GeoName": geo_col,
+            "GeoID": dguid_col,
+            "Industry": industry_col,
+            "Characteristic": labor_force_col,
+            "Value": value_col
+        })
+        missing_cols = [col for col, val in {
+            "Date": ref_date_col,
+            "GeoName": geo_col,
+            "GeoID": dguid_col,
+            "Industry": industry_col,
+            "Characteristic": labor_force_col,
+            "Value": value_col
+        }.items() if val is None]
+        print(f"缺少的列: {missing_cols}")
+        return []
     
     # 筛选失业率数据
-    unemployment_filter = df['Characteristics'].str.contains('Unemployment rate|Unemployment|失业率', case=False, na=False)
-    df = df[unemployment_filter]
+    unemployment_filter = merged_df[labor_force_col].str.contains('Unemployment rate', case=False)
+    filtered_df = merged_df[unemployment_filter].copy()
     
-    # 选择需要的列
-    result_df = df[required_cols].copy()
+    print(f"筛选出 {filtered_df.shape[0]} 条失业率数据")
     
-    # 处理NaN值和无效值
-    result_df = result_df.replace([np.nan, np.inf, -np.inf], None)
-    
-    # 转换为正确格式的列表
-    result_list = []
-    for _, row in result_df.iterrows():
-        record = {}
-        for col in required_cols:
-            if col == 'Value' and row[col] is not None:
-                try:
-                    record[col] = float(row[col])
-                except (ValueError, TypeError):
-                    record[col] = None
+    # 处理数据为期望的格式
+    result = []
+    for _, row in filtered_df.iterrows():
+        try:
+            # 提取值并处理NaN
+            value = row[value_col]
+            if pd.isna(value):
+                value = None
             else:
-                record[col] = row[col]
-        result_list.append(record)
+                value = float(value)
+                
+            # 创建记录
+            record = {
+                "Date": pd.to_datetime(row[ref_date_col]).strftime('%Y-%m-%dT00:00:00'),
+                "GeoID": row[dguid_col],
+                "GeoName": row[geo_col],
+                "NAICS Description": row[industry_col],
+                "Characteristic": "Unemployment rate",
+                "Sex": "Both sexes", # 假设这个字段
+                "Age": "15 years and over", # 假设这个字段
+                "Value": value
+            }
+            
+            # 尝试添加NAICS代码
+            industry_name = row[industry_col]
+            naics_code = ""
+            if industry_name:
+                # 尝试从行业名称中提取NAICS代码 [xx-xx] 或 [xx]
+                import re
+                code_match = re.search(r'\[([^\]]+)\]', industry_name)
+                if code_match:
+                    naics_code = code_match.group(1)
+                    # 移除行业名称中的代码部分
+                    clean_name = re.sub(r'\s*\[[^\]]+\]', '', industry_name).strip()
+                    record["NAICS Description"] = clean_name
+            
+            record["NAICS"] = naics_code
+            
+            result.append(record)
+        except Exception as e:
+            print(f"处理行时出错: {e}")
+            continue
     
-    return result_list
+    print(f"成功创建 {len(result)} 条记录")
+    
+    # 显示样例数据
+    if result:
+        print("样例数据:", json.dumps(result[0], indent=2))
+    
+    return result
 
 def save_json(data, output_file):
     """将数据保存为JSON文件"""
     try:
         with open(output_file, 'w', encoding='utf-8') as f:
-            json.dump(data, f, ensure_ascii=False, indent=2, default=lambda x: None)
+            json.dump(data, f, ensure_ascii=False, indent=2)
         print(f"数据已成功保存到 {output_file}")
         return True
     except Exception as e:
@@ -138,15 +156,10 @@ def main():
         print("错误: 无法读取任何CSV文件")
         return
     
-    # 将第一个DataFrame的列名打印出来
-    if dfs[0].shape[0] > 0:
-        print("第一个CSV文件的列名:", dfs[0].columns.tolist())
-        print("第一行数据示例:", dfs[0].iloc[0].to_dict())
-    
-    # 转换数据为目标格式
-    result_data = clean_and_transform_data(dfs)
+    # 处理数据
+    result_data = process_csv_to_json(dfs)
     if not result_data:
-        print("错误: 无法转换数据")
+        print("错误: 无法处理数据")
         return
     
     # 保存JSON文件
@@ -154,11 +167,6 @@ def main():
     if success:
         print(f"成功转换 {len(result_data)} 条记录")
         print(f"文件已保存为: {OUTPUT_FILE}")
-        # 显示数据样例
-        if result_data:
-            print("\n数据示例 (前2条记录):")
-            for i, record in enumerate(result_data[:2]):
-                print(f"记录 {i+1}:", json.dumps(record, ensure_ascii=False))
     else:
         print("转换失败")
 

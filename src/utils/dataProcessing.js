@@ -112,48 +112,24 @@ export const processProvinceData = (data) => {
 export const processIndustryData = (data) => {
   if (!data || data.length === 0) return [];
 
-  // 添加调试日志
   console.log("Processing industry data, total records:", data.length);
-
-  // 检查各种可能的特征名称
-  const characteristics = new Set(data.map(item => item.Characteristics || item.Characteristic));
-  console.log("Available characteristics:", Array.from(characteristics));
   
-  // 检查是否有Unemployment rate特征
-  const hasUnemploymentRate = data.some(item => 
-    (item.Characteristics || item.Characteristic) === 'Unemployment rate'
-  );
-  console.log("Has Unemployment rate:", hasUnemploymentRate);
-
-  // 优先使用Unemployment rate，如果不存在则尝试使用Unemployment
-  const characteristicToUse = hasUnemploymentRate ? 'Unemployment rate' : 'Unemployment';
-  console.log("Using characteristic:", characteristicToUse);
-  
-  // 只保留失业率数据，支持两种可能的字段名
-  const unemploymentRateData = data.filter(item => {
-    const charField = item.Characteristics || item.Characteristic;
-    return charField === characteristicToUse;
-  });
-  
-  console.log("Filtered unemployment rate records:", unemploymentRateData.length);
-  if (unemploymentRateData.length > 0) {
-    console.log("Sample industry record:", unemploymentRateData[0]);
+  // 检查第一条数据结构
+  if (data.length > 0) {
+    console.log("Sample industry record:", data[0]);
   }
   
-  // 创建行业列表
-  const industries = new Set();
-  unemploymentRateData.forEach(item => {
-    const naicsDesc = item['NAICS Description'] || '';
-    if (naicsDesc && naicsDesc !== '') {
-      industries.add(naicsDesc);
-    }
-  });
-  console.log("Identified industries:", Array.from(industries));
-
+  // 只保留Alberta的数据和Unemployment rate数据
+  const filteredData = data.filter(item => 
+    (item.Characteristic === 'Unemployment rate' || item.Characteristics === 'Unemployment rate')
+  );
+  
+  console.log("Filtered unemployment rate records:", filteredData.length);
+  
   // 按日期分组
   const groupedByDate = {};
   
-  unemploymentRateData.forEach(item => {
+  filteredData.forEach(item => {
     const date = new Date(item.Date);
     const formattedDate = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}`;
     
@@ -165,17 +141,9 @@ export const processIndustryData = (data) => {
     }
     
     // 添加行业数据
-    const industryName = item['NAICS Description'] || '';
-    if (industryName && industryName !== '') {
-      let value = item.Value;
-      
-      // 处理值：确保是数字，处理NaN
-      if (value !== null && value !== undefined) {
-        value = parseFloat(value);
-        if (!isNaN(value)) {
-          groupedByDate[formattedDate][industryName] = value;
-        }
-      }
+    const industryName = item['NAICS Description'];
+    if (industryName) {
+      groupedByDate[formattedDate][industryName] = item.Value;
     }
   });
   
@@ -185,8 +153,13 @@ export const processIndustryData = (data) => {
   const result = Object.values(groupedByDate).sort((a, b) => a.date - b.date);
   console.log("Final processed industry data:", result.length);
   
+  // 打印行业列表
   if (result.length > 0) {
-    console.log("Sample processed data:", result[0]);
+    const firstRecord = result[0];
+    const industries = Object.keys(firstRecord).filter(key => 
+      key !== 'date' && key !== 'formattedDate'
+    );
+    console.log("Available industries:", industries);
   }
   
   return result;

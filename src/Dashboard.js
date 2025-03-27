@@ -30,7 +30,7 @@ const Dashboard = () => {
   const [selectedTimeframe, setSelectedTimeframe] = useState('10 Years');
   const [activeTab, setActiveTab] = useState('Overview');
   const [selectedProvinces, setSelectedProvinces] = useState(['Alberta', 'Canada', 'British Columbia', 'Ontario']);
-  const [selectedIndustries, setSelectedIndustries] = useState(['Total, all industries', 'Construction']);
+  const [selectedIndustries, setSelectedIndustries] = useState(['Total, all industries', 'Construction [23]']);
 
   // 时间范围映射
   const timeframeMapping = {
