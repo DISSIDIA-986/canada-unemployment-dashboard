@@ -1,4 +1,4 @@
-/alberta-dashboard
+/canada-unemployment-dashboard
   /public
     /data               // JSON数据文件
       alberta.json      // Alberta省总体失业率

@@ -8,8 +8,8 @@
 
 1. **创建基础React应用**
 ```bash
-npx create-react-app alberta-dashboard
-cd alberta-dashboard
+npx create-react-app canada-unemployment-dashboard
+cd canada-unemployment-dashboard
 npm install d3 recharts
 ```
 

@@ -7,7 +7,7 @@ import re
 
 # 配置文件路径
 DATA_DIR = "/Users/niuyp/Downloads/1410002201"
-OUTPUT_DIR = "/Users/niuyp/Documents/github.com/alberta-dashboard/scripts/"
+OUTPUT_DIR = "/Users/niuyp/Documents/github.com/canada-unemployment-dashboard/scripts/"
 FILE_NAMES = [
     '1410002201_databaseLoadingData.csv',      # 15-24岁
     '1410002201_databaseLoadingData (1).csv',  # 25-54岁
