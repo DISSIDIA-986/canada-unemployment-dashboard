@@ -371,11 +371,12 @@ const Dashboard = (props) => {
         {activeTab === 'Demographics' && renderDemographicTab()}
         {activeTab === 'Geography' && renderGeographicTab()}
       </div>
-      {/* 在 Dashboard.js 中修改链接按钮部分 */}
-      <div className="mt-4 mb-6">
+      
+      {/* 将按钮移到这里，添加更多顶部边距 */}
+      <div className="mt-12 mb-6 text-center">
         <button 
           onClick={() => props.onNavigate('jobVacancy')} 
-          className="inline-block bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"
+          className="inline-block bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-6 rounded"
         >
           View Job Vacancy Analysis
         </button>
