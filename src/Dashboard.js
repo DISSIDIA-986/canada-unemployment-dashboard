@@ -373,7 +373,7 @@ const Dashboard = () => {
       </div>
 
       <div className="text-sm text-gray-500 mt-8">
-        Data Source: Alberta Economic Dashboard (api.economicdata.alberta.ca)
+        Data Source: Statistics Canada. Labour force Survey (api.economicdata.alberta.ca)
       </div>
     </div>
   );

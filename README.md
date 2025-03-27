@@ -37,7 +37,7 @@ npm start
 - 简化组件结构，使用基础HTML元素
 - 保留所有图表和数据分析功能
 - 跨浏览器兼容性良好
-- 自动从Alberta Economic Dashboard API获取数据
+- 自动从Statistics Canada. Labour force Survey API获取数据
 
 项目结构:
 - Unemployment rate in Alberta
@@ -84,4 +84,4 @@ npm start
 
 ## 数据来源
 
-数据来自Alberta Economic Dashboard (api.economicdata.alberta.ca)
+数据来自Statistics Canada. Labour force Survey (api.economicdata.alberta.ca)
