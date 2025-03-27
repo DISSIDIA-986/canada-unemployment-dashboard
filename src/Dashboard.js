@@ -1,5 +1,10 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import * as dataUtils from './utils/dataProcessing';
+import { 
+  filterByTimeframe, 
+  getAvailableIndustries,
+  getAvailableProvinces 
+} from './utils/dataProcessing';
 
 // Import all chart components
 import AlbertaOverviewChart from './charts/AlbertaOverviewChart';
@@ -238,6 +243,24 @@ const Dashboard = () => {
     <>
       <div className="mb-6 bg-white p-4 rounded-lg shadow">
         <h2 className="font-bold text-lg mb-4">Industry Unemployment Trends</h2>
+        <div className="mb-4">
+          <p className="text-sm text-gray-600 mb-2">选择行业查看失业率趋势:</p>
+          <div className="flex flex-wrap gap-2">
+            {dataUtils.getAvailableIndustries(filteredIndustryData).map(industry => (
+              <div
+                key={industry}
+                className={`px-3 py-1 rounded-full text-sm cursor-pointer ${
+                  selectedIndustries.includes(industry) 
+                    ? 'bg-blue-100 text-blue-800' 
+                    : 'bg-gray-100 text-gray-500'
+                }`}
+                onClick={() => handleIndustrySelection(industry)}
+              >
+                {industry.length > 25 ? industry.substring(0, 25) + '...' : industry}
+              </div>
+            ))}
+          </div>
+        </div>
         <div style={{ height: '400px' }}>
           <IndustryChart
             data={filteredIndustryData}
