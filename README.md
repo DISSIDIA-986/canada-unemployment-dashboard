@@ -25,8 +25,6 @@ npm install d3 recharts
 4. **更新App.js**
 修改 `src/App.js` 文件：
 
-
-
 5. **运行项目**
 ```bash
 npm start
@@ -74,6 +72,34 @@ npm start
    ```
    http://localhost:3000
    ```
+
+## GitHub Pages 部署
+
+项目包含自动化脚本用于简化 GitHub Pages 部署流程。
+
+### 使用部署脚本
+
+在 `scripts` 目录下的 `rebuild-gh-pages.sh` 脚本用于自动创建和部署 gh-pages 分支：
+
+```bash
+# 赋予脚本执行权限（仅需执行一次）
+chmod +x scripts/rebuild-gh-pages.sh
+
+# 运行部署脚本
+./scripts/rebuild-gh-pages.sh
+```
+
+脚本将执行以下操作：
+1. 保存当前分支状态
+2. 检出 main 分支并更新
+3. 删除现有的 gh-pages 分支（如果存在）
+4. 创建新的 gh-pages 分支
+5. 自动更新 package.json 配置 homepage 属性
+6. 提交更改并推送到远程
+7. 运行 npm run deploy 部署到 GitHub Pages
+8. 返回到原始分支
+
+使用此脚本可以避免手动处理本地开发与 GitHub Pages 部署之间的配置差异。
 
 ## 功能
 
