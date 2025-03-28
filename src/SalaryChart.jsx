@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { 
   LineChart, Line, BarChart, Bar, XAxis, YAxis, CartesianGrid, 
-  Tooltip, Legend, ResponsiveContainer, PieChart, Pie, Cell,
-  RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Radar
+  Tooltip, Legend, ResponsiveContainer, PieChart, Pie, Cell
 } from 'recharts';
 
 const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', '#8884d8', '#82ca9d', '#ffc658', '#8dd1e1'];
@@ -14,7 +13,9 @@ const SalaryChart = () => {
   const [activeTab, setActiveTab] = useState('overview');
   const [selectedOccupations, setSelectedOccupations] = useState([]);
   const [selectedProvinces, setSelectedProvinces] = useState(['NAT', 'ON', 'AB', 'BC', 'QC']);
-  const [selectedReferencePeriod, setSelectedReferencePeriod] = useState('2021');
+  const [availableYears, setAvailableYears] = useState([]);
+  const [selectedYear, setSelectedYear] = useState(null);
+  const [filteredData, setFilteredData] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -26,10 +27,29 @@ const SalaryChart = () => {
         const jsonData = await response.json();
         setData(jsonData);
         
-        // Set default selected occupations (top 5 by average salary)
-        const uniqueOccupations = [...new Set(jsonData.map(item => item.NOC_Title_eng))];
-        const topOccupations = uniqueOccupations.slice(0, 5);
-        setSelectedOccupations(topOccupations);
+        // 提取所有可用的年份
+        const years = [...new Set(jsonData.map(item => item.Reference_Period))]
+          .filter(year => year !== null && year !== 'NA')
+          .sort((a, b) => b - a); // 降序排列，最新年份在前
+        
+        setAvailableYears(years);
+        // 设置默认选择最新的年份
+        const defaultYear = years.length > 0 ? years[0] : null;
+        setSelectedYear(defaultYear);
+        
+        // 根据默认年份过滤数据
+        const yearFilteredData = defaultYear ? 
+          jsonData.filter(item => item.Reference_Period === defaultYear) : 
+          jsonData;
+        
+        setFilteredData(yearFilteredData);
+        
+        // 设置默认选择的职业（按平均薪资排名前5）
+        const uniqueOccupations = [...new Set(yearFilteredData
+          .filter(item => item.prov === 'NAT')
+          .map(item => item.NOC_Title_eng))]
+          .slice(0, 5);
+        setSelectedOccupations(uniqueOccupations);
         
         setLoading(false);
       } catch (err) {
@@ -41,6 +61,30 @@ const SalaryChart = () => {
 
     fetchData();
   }, []);
+
+  // 当年份选择变化时更新过滤后的数据
+  useEffect(() => {
+    if (data.length > 0 && selectedYear) {
+      const newFilteredData = data.filter(item => item.Reference_Period === selectedYear);
+      setFilteredData(newFilteredData);
+      
+      // 更新选中的职业为新过滤数据的前5个
+      const uniqueOccupations = [...new Set(newFilteredData
+        .filter(item => item.prov === 'NAT')
+        .sort((a, b) => b.Average_Wage_Salaire_Moyen - a.Average_Wage_Salaire_Moyen)
+        .map(item => item.NOC_Title_eng))]
+        .slice(0, 5);
+        
+      // 只有当没有选择任何职业时才重置选择
+      if (selectedOccupations.length === 0) {
+        setSelectedOccupations(uniqueOccupations);
+      }
+    }
+  }, [selectedYear, data]);
+
+  const handleYearChange = (year) => {
+    setSelectedYear(year);
+  };
 
   const handleOccupationSelection = (occupation) => {
     if (selectedOccupations.includes(occupation)) {
@@ -56,25 +100,6 @@ const SalaryChart = () => {
     } else {
       setSelectedProvinces([...selectedProvinces, province]);
     }
-  };
-
-  const handleReferencePeriodSelection = (period) => {
-    setSelectedReferencePeriod(period);
-  };
-
-  // Get available reference periods
-  const getAvailableReferencePeriods = () => {
-    const periods = [...new Set(data.map(item => 
-      item.Reference_Period ? item.Reference_Period.toString() : 'NA'))];
-    return periods.filter(p => p !== 'NA').sort();
-  };
-
-  const filterByReferencePeriod = (dataArray) => {
-    if (selectedReferencePeriod === '(Select All)') {
-      return dataArray;
-    }
-    return dataArray.filter(item => 
-      item.Reference_Period && item.Reference_Period.toString() === selectedReferencePeriod);
   };
 
   if (loading) {
@@ -97,38 +122,38 @@ const SalaryChart = () => {
     );
   }
 
-  if (!data || data.length === 0) {
+  if (!filteredData || filteredData.length === 0) {
     return (
       <div className="bg-white p-4 rounded-lg shadow">
         <h2 className="font-bold text-lg mb-4">Salary Data</h2>
-        <div>No data available</div>
+        <div>No data available for the selected year: {selectedYear}</div>
+        <button
+          onClick={() => setSelectedYear(availableYears[0])}
+          className="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+        >
+          Reset to {availableYears[0]}
+        </button>
       </div>
     );
   }
 
-  // Get national occupation data
+  // 按职业类型获取全国数据
   const getNationalOccupationData = () => {
-    let nationalData = data.filter(item => item.prov === 'NAT');
+    const nationalData = filteredData.filter(item => item.prov === 'NAT');
     
-    // Apply reference period filter
-    nationalData = filterByReferencePeriod(nationalData);
-    
-    // Sort by average salary
+    // 按平均薪资排序
     return nationalData
       .filter(item => item.Average_Wage_Salaire_Moyen !== null)
       .sort((a, b) => b.Average_Wage_Salaire_Moyen - a.Average_Wage_Salaire_Moyen)
-      .slice(0, 20); // Top 20 occupations
+      .slice(0, 20); // 只取前20个职业
   };
 
-  // Get provincial average data formatted for radar chart
+  // 获取各省份平均薪资比较
   const getProvincialAverageData = () => {
-    // Get all unique provinces excluding national
-    const provinces = [...new Set(data.map(item => item.prov))].filter(p => p !== 'NAT');
+    // 获取所有独特的省份代码
+    const provinces = [...new Set(filteredData.map(item => item.prov))].filter(p => p !== 'NAT');
     
-    // Apply reference period filter
-    const filteredData = filterByReferencePeriod(data);
-    
-    // Calculate average salary for each province
+    // 计算每个省份的平均薪资
     const result = provinces.map(prov => {
       const provincialData = filteredData.filter(item => item.prov === prov);
       const totalSalary = provincialData.reduce((sum, item) => {
@@ -140,130 +165,25 @@ const SalaryChart = () => {
       return {
         province: prov,
         provinceName,
-        averageSalary: provincialData.length > 0 ? totalSalary / provincialData.length : 0
-      };
-    });
-    
-    // Format data for radar chart
-    const radarData = [
-      ...result
-        .filter(item => !isNaN(item.averageSalary) && item.averageSalary > 0)
-        .sort((a, b) => b.averageSalary - a.averageSalary)
-        .map(item => ({
-          subject: item.provinceName,
-          'Average Salary': Math.round(item.averageSalary / 1000),
-          fullValue: item.averageSalary
-        }))
-    ];
-    
-    return radarData;
-  };
-
-  // Get provincial median data formatted for radar chart
-  const getProvincialMedianData = () => {
-    // Get all unique provinces excluding national
-    const provinces = [...new Set(data.map(item => item.prov))].filter(p => p !== 'NAT');
-    
-    // Apply reference period filter
-    const filteredData = filterByReferencePeriod(data);
-    
-    // Calculate median salary for each province
-    const result = provinces.map(prov => {
-      const provincialData = filteredData.filter(item => item.prov === prov);
-      const medianSalaries = provincialData
-        .filter(item => item.Median_Wage_Salaire_Median !== null)
-        .map(item => item.Median_Wage_Salaire_Median);
-      
-      // Calculate median of medians (this is a simplification)
-      medianSalaries.sort((a, b) => a - b);
-      const medianSalary = medianSalaries.length > 0 ? 
-        (medianSalaries.length % 2 === 0
-          ? (medianSalaries[medianSalaries.length / 2 - 1] + medianSalaries[medianSalaries.length / 2]) / 2
-          : medianSalaries[Math.floor(medianSalaries.length / 2)]) : 0;
-      
-      const provinceName = provincialData[0]?.ER_Name || prov;
-      
-      return {
-        province: prov,
-        provinceName,
-        medianSalary
-      };
-    });
-    
-    // Format data for radar chart
-    const radarData = [
-      ...result
-        .filter(item => !isNaN(item.medianSalary) && item.medianSalary > 0)
-        .sort((a, b) => b.medianSalary - a.medianSalary)
-        .map(item => ({
-          subject: item.provinceName,
-          'Median Salary': Math.round(item.medianSalary / 1000),
-          fullValue: item.medianSalary
-        }))
-    ];
-    
-    return radarData;
-  };
-
-  // Get combined provincial salary data (average and median)
-  const getProvincialCombinedData = () => {
-    // Get all unique provinces excluding national
-    const provinces = [...new Set(data.map(item => item.prov))].filter(p => p !== 'NAT');
-    
-    // Apply reference period filter
-    const filteredData = filterByReferencePeriod(data);
-    
-    // Calculate average and median salary for each province
-    const result = provinces.map(prov => {
-      const provincialData = filteredData.filter(item => item.prov === prov);
-      
-      // Calculate average
-      const totalSalary = provincialData.reduce((sum, item) => {
-        return sum + (item.Average_Wage_Salaire_Moyen || 0);
-      }, 0);
-      const averageSalary = provincialData.length > 0 ? totalSalary / provincialData.length : 0;
-      
-      // Calculate median
-      const medianSalaries = provincialData
-        .filter(item => item.Median_Wage_Salaire_Median !== null)
-        .map(item => item.Median_Wage_Salaire_Median);
-      
-      medianSalaries.sort((a, b) => a - b);
-      const medianSalary = medianSalaries.length > 0 ? 
-        (medianSalaries.length % 2 === 0
-          ? (medianSalaries[medianSalaries.length / 2 - 1] + medianSalaries[medianSalaries.length / 2]) / 2
-          : medianSalaries[Math.floor(medianSalaries.length / 2)]) : 0;
-      
-      const provinceName = provincialData[0]?.ER_Name || prov;
-      
-      return {
-        subject: provinceName,
-        'Average Salary': Math.round(averageSalary / 1000),
-        'Median Salary': Math.round(medianSalary / 1000),
-        averageFullValue: averageSalary,
-        medianFullValue: medianSalary
+        averageSalary: totalSalary / provincialData.length
       };
     });
     
     return result
-      .filter(item => !isNaN(item['Average Salary']) && !isNaN(item['Median Salary']) && 
-               item['Average Salary'] > 0 && item['Median Salary'] > 0)
-      .sort((a, b) => b['Average Salary'] - a['Average Salary']);
+      .filter(item => !isNaN(item.averageSalary) && item.averageSalary > 0)
+      .sort((a, b) => b.averageSalary - a.averageSalary);
   };
 
-  // Get occupation by province data
+  // 按职业和省份获取薪资比较数据
   const getOccupationByProvinceData = () => {
     if (selectedOccupations.length === 0) return [];
     
-    // Apply reference period filter
-    const filteredData = filterByReferencePeriod(data);
-    
-    const result = filteredData.filter(item => 
+    const filteredByOccupationData = filteredData.filter(item => 
       selectedOccupations.includes(item.NOC_Title_eng) &&
       selectedProvinces.includes(item.prov)
     );
     
-    return result.map(item => ({
+    return filteredByOccupationData.map(item => ({
       occupation: item.NOC_Title_eng,
       province: item.prov,
       provinceName: item.ER_Name,
@@ -274,12 +194,9 @@ const SalaryChart = () => {
     }));
   };
 
-  // Get salary range data
+  // 获取薪资范围数据
   const getSalaryRangeData = () => {
-    let nationalData = data.filter(item => item.prov === 'NAT');
-    
-    // Apply reference period filter
-    nationalData = filterByReferencePeriod(nationalData);
+    const nationalData = filteredData.filter(item => item.prov === 'NAT');
     
     return nationalData
       .filter(item => 
@@ -287,7 +204,7 @@ const SalaryChart = () => {
         item.High_Wage_Salaire_Maximal !== null
       )
       .sort((a, b) => b.Median_Wage_Salaire_Median - a.Median_Wage_Salaire_Median)
-      .slice(0, 15) // Top 15 occupations
+      .slice(0, 15) // 只取前15个职业
       .map(item => ({
         occupation: item.NOC_Title_eng.length > 30 
           ? item.NOC_Title_eng.substring(0, 30) + '...' 
@@ -301,28 +218,26 @@ const SalaryChart = () => {
       }));
   };
 
-  // Get available occupations
+  // 获取可选择的所有职业
   const getAvailableOccupations = () => {
-    const filteredData = filterByReferencePeriod(data);
     const uniqueOccupations = [...new Set(filteredData.map(item => item.NOC_Title_eng))];
     return uniqueOccupations.sort();
   };
 
-  // Get available provinces
+  // 获取可选择的所有省份
   const getAvailableProvinces = () => {
-    const filteredData = filterByReferencePeriod(data);
     return [...new Set(filteredData.map(item => item.prov))].map(prov => {
       const provinceName = filteredData.find(item => item.prov === prov)?.ER_Name || prov;
       return { code: prov, name: provinceName };
     }).sort((a, b) => {
-      // Ensure NAT (national) is first
+      // 确保NAT（全国）排在最前面
       if (a.code === 'NAT') return -1;
       if (b.code === 'NAT') return 1;
       return a.name.localeCompare(b.name);
     });
   };
 
-  // Custom tooltip
+  // 自定义工具提示
   const customTooltip = ({ active, payload, label }) => {
     if (active && payload && payload.length) {
       return (
@@ -338,55 +253,36 @@ const SalaryChart = () => {
     }
     return null;
   };
-  
-  // Custom radar tooltip
-  const radarTooltip = ({ active, payload }) => {
-    if (active && payload && payload.length) {
-      const province = payload[0].payload.subject;
-      return (
-        <div className="bg-white p-2 border border-gray-200 shadow-sm">
-          <p className="font-medium">{province}</p>
-          {payload.map((entry, index) => (
-            <p key={index} style={{ color: entry.color }}>
-              {`${entry.name}: $${
-                entry.name === 'Average Salary (CAD)' 
-                  ? payload[0].payload.averageFullValue.toLocaleString()
-                  : payload[0].payload.medianFullValue.toLocaleString()
-              }`}
-            </p>
-          ))}
-        </div>
-      );
-    }
-    return null;
-  };
 
-  // Render overview tab
+  // 渲染年份选择器
+  const renderYearSelector = () => (
+    <div className="mb-4">
+      <p className="text-sm text-gray-600 mb-2">Select Year:</p>
+      <div className="flex flex-wrap gap-2">
+        {availableYears.map((year) => (
+          <button
+            key={year}
+            onClick={() => handleYearChange(year)}
+            className={`px-4 py-2 rounded-md text-sm ${
+              selectedYear === year 
+                ? 'bg-blue-500 text-white' 
+                : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+            }`}
+          >
+            {year}
+          </button>
+        ))}
+      </div>
+    </div>
+  );
+
+  // 渲染概览标签页
   const renderOverviewTab = () => (
     <div>
-      <div className="mb-4">
-        <p className="text-sm text-gray-600 mb-2">Reference Period:</p>
-        <div className="flex flex-wrap gap-2">
-          {getAvailableReferencePeriods().map((period) => (
-            <div
-              key={period}
-              className={`px-3 py-1 rounded-full text-sm cursor-pointer ${
-                selectedReferencePeriod === period 
-                  ? 'bg-purple-100 text-purple-800' 
-                  : 'bg-gray-100 text-gray-500'
-              }`}
-              onClick={() => handleReferencePeriodSelection(period)}
-            >
-              {period}
-            </div>
-          ))}
-        </div>
-      </div>
-
+      {renderYearSelector()}
+      
       <div className="mb-6">
-        <h3 className="font-semibold text-lg mb-3">
-          Highest Paying Occupations in Canada ({selectedReferencePeriod})
-        </h3>
+        <h3 className="font-semibold text-lg mb-3">Highest Paying Occupations in Canada ({selectedYear})</h3>
         <div className="h-96">
           <ResponsiveContainer width="100%" height="100%">
             <BarChart
@@ -423,49 +319,33 @@ const SalaryChart = () => {
       </div>
 
       <div className="mb-6">
-        <h3 className="font-semibold text-lg mb-3">
-          Provincial Salary Comparison ({selectedReferencePeriod})
-        </h3>
-        <div className="h-96">
+        <h3 className="font-semibold text-lg mb-3">Average Salary by Province ({selectedYear})</h3>
+        <div className="h-80">
           <ResponsiveContainer width="100%" height="100%">
-            <RadarChart 
-              outerRadius={150} 
-              width={800} 
-              height={600} 
-              data={getProvincialCombinedData()}
+            <BarChart
+              data={getProvincialAverageData()}
+              margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
             >
-              <PolarGrid />
-              <PolarAngleAxis dataKey="subject" tick={{ fontSize: 12 }} />
-              <PolarRadiusAxis 
-                angle={90} 
-                domain={[0, 'auto']}
-                tickFormatter={(value) => `$${value}k`}
+              <CartesianGrid strokeDasharray="3 3" />
+              <XAxis dataKey="provinceName" />
+              <YAxis 
+                tickFormatter={(value) => `$${value.toLocaleString()}`}
+                label={{ value: 'Average Salary (CAD)', angle: -90, position: 'insideLeft' }}
               />
-              <Tooltip content={radarTooltip} />
+              <Tooltip formatter={(value) => `$${value.toLocaleString()}`} />
               <Legend />
-              <Radar 
+              <Bar 
+                dataKey="averageSalary" 
                 name="Average Salary (CAD)" 
-                dataKey="Average Salary" 
-                stroke="#0088FE" 
                 fill="#0088FE" 
-                fillOpacity={0.6} 
               />
-              <Radar 
-                name="Median Salary (CAD)" 
-                dataKey="Median Salary" 
-                stroke="#00C49F" 
-                fill="#00C49F" 
-                fillOpacity={0.6} 
-              />
-            </RadarChart>
+            </BarChart>
           </ResponsiveContainer>
         </div>
       </div>
 
       <div className="mb-6">
-        <h3 className="font-semibold text-lg mb-3">
-          Salary Ranges by Occupation ({selectedReferencePeriod})
-        </h3>
+        <h3 className="font-semibold text-lg mb-3">Salary Ranges by Occupation ({selectedYear})</h3>
         <div className="h-96">
           <ResponsiveContainer width="100%" height="100%">
             <BarChart
@@ -511,28 +391,11 @@ const SalaryChart = () => {
     </div>
   );
 
-  // Render occupation comparison tab
+  // 渲染职业比较标签页
   const renderOccupationTab = () => (
     <div>
-      <div className="mb-4">
-        <p className="text-sm text-gray-600 mb-2">Reference Period:</p>
-        <div className="flex flex-wrap gap-2">
-          {getAvailableReferencePeriods().map((period) => (
-            <div
-              key={period}
-              className={`px-3 py-1 rounded-full text-sm cursor-pointer ${
-                selectedReferencePeriod === period 
-                  ? 'bg-purple-100 text-purple-800' 
-                  : 'bg-gray-100 text-gray-500'
-              }`}
-              onClick={() => handleReferencePeriodSelection(period)}
-            >
-              {period}
-            </div>
-          ))}
-        </div>
-      </div>
-
+      {renderYearSelector()}
+      
       <div className="mb-6">
         <h3 className="font-semibold text-lg mb-3">Select Occupations to Compare</h3>
         <div className="mb-4">
@@ -609,30 +472,13 @@ const SalaryChart = () => {
     </div>
   );
 
-  // Render detailed data tab
+  // 渲染详细数据标签页
   const renderDetailedTab = () => (
     <div>
-      <div className="mb-4">
-        <p className="text-sm text-gray-600 mb-2">Reference Period:</p>
-        <div className="flex flex-wrap gap-2">
-          {getAvailableReferencePeriods().map((period) => (
-            <div
-              key={period}
-              className={`px-3 py-1 rounded-full text-sm cursor-pointer ${
-                selectedReferencePeriod === period 
-                  ? 'bg-purple-100 text-purple-800' 
-                  : 'bg-gray-100 text-gray-500'
-              }`}
-              onClick={() => handleReferencePeriodSelection(period)}
-            >
-              {period}
-            </div>
-          ))}
-        </div>
-      </div>
-
+      {renderYearSelector()}
+      
       <div className="mb-6">
-        <h3 className="font-semibold text-lg mb-3">Detailed Salary Statistics</h3>
+        <h3 className="font-semibold text-lg mb-3">Detailed Salary Statistics ({selectedYear})</h3>
         <div className="overflow-x-auto">
           <table className="min-w-full bg-white border border-gray-200">
             <thead>
@@ -646,7 +492,7 @@ const SalaryChart = () => {
               </tr>
             </thead>
             <tbody>
-              {filterByReferencePeriod(data)
+              {filteredData
                 .filter(item => item.prov === 'NAT')
                 .sort((a, b) => b.Average_Wage_Salaire_Moyen - a.Average_Wage_Salaire_Moyen)
                 .slice(0, 20)
@@ -683,12 +529,20 @@ const SalaryChart = () => {
     </div>
   );
 
+  // 获取当前显示的数据源标题
+  const getDataSourceTitle = () => {
+    const dataSource = filteredData.length > 0 && filteredData[0]?.Data_Source_E ? 
+      filteredData[0].Data_Source_E : 
+      `${selectedYear} Data`;
+    return dataSource;
+  };
+
   return (
     <div className="bg-white p-6 rounded-lg shadow">
       <div className="flex items-center justify-between mb-6">
         <h2 className="font-bold text-xl">Canadian Salary Analysis</h2>
         <div className="text-sm text-gray-500">
-          Data Source: {selectedReferencePeriod} Census
+          Data Source: {getDataSourceTitle()}
         </div>
       </div>
 
@@ -722,7 +576,7 @@ const SalaryChart = () => {
       </div>
 
       <div className="text-xs text-gray-500 mt-6">
-        Data Source: Statistics Canada. {selectedReferencePeriod} Census of Population.
+        Data Source: Statistics Canada. {getDataSourceTitle()}.
       </div>
     </div>
   );
