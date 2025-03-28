@@ -13,7 +13,6 @@ import IndustryChart from './charts/IndustryChart';
 import SexChart from './charts/SexChart';
 import AgeChart from './charts/AgeChart';
 import CMAChart from './charts/CMAChart';
-import EnhancedCMAChart from './charts/EnhancedCMAChart';
 import EducationChart from './charts/EducationChart';
 import RegionChart from './charts/RegionChart';
 import OccupationChart from './charts/OccupationChart';
@@ -372,13 +371,19 @@ const Dashboard = (props) => {
         {activeTab === 'Geography' && renderGeographicTab()}
       </div>
       
-      {/* 将按钮移到这里，添加更多顶部边距 */}
-      <div className="mt-12 mb-6 text-center">
+      {/* 导航按钮区域 */}
+      <div className="mt-12 mb-6 text-center flex justify-center space-x-4">
         <button 
           onClick={() => props.onNavigate('jobVacancy')} 
-          className="inline-block bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-6 rounded"
+          className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-6 rounded"
         >
           View Job Vacancy Analysis
+        </button>
+        <button 
+          onClick={() => props.onNavigate('salary')} 
+          className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-6 rounded"
+        >
+          View Salary Analysis
         </button>
       </div>
 
@@ -390,4 +395,3 @@ const Dashboard = (props) => {
 };
 
 export default Dashboard;
-
