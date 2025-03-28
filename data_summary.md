@@ -2,6 +2,7 @@
 
 This document provides a summary of the JSON data files used by the Alberta Dashboard application.
 Each section shows the filename and the first element of the data array to provide insight into the data structure.
+For arrays with more than 3 elements, only the first element is shown to keep the output concise.
 
 ## age.json
 
@@ -208,6 +209,186 @@ Data structure:
   "latest_data": {
     "date": "2024-12",
     "industries": [
+      {
+        "industry": "Health care and social assistance",
+        "job_vacancies": 101530,
+        "payroll_employees": 2427145,
+        "job_vacancy_rate": 4
+      }
+    ]
+  },
+  "time_series": {
+    "all_industries": [
+      {
+        "date": "2015-04",
+        "job_vacancies": 482925,
+        "payroll_employees": 14803985,
+        "job_vacancy_rate": 3.2
+      }
+    ],
+    "agriculture_forestry_fishing_and_hunting": [
+      {
+        "date": "2015-04",
+        "job_vacancies": 18300,
+        "payroll_employees": 170000,
+        "job_vacancy_rate": 9.7
+      }
+    ],
+    "mining_quarrying_and_oil_and_gas_extraction": [
+      {
+        "date": "2015-04",
+        "job_vacancies": 2560,
+        "payroll_employees": 217605,
+        "job_vacancy_rate": 1.2
+      }
+    ],
+    "utilities": [
+      {
+        "date": "2015-04",
+        "job_vacancies": 840,
+        "payroll_employees": 113120,
+        "job_vacancy_rate": null
+      }
+    ],
+    "construction": [
+      {
+        "date": "2015-04",
+        "job_vacancies": 33310,
+        "payroll_employees": 888005,
+        "job_vacancy_rate": 3.6
+      }
+    ],
+    "manufacturing": [
+      {
+        "date": "2015-04",
+        "job_vacancies": 34900,
+        "payroll_employees": 1463495,
+        "job_vacancy_rate": 2.3
+      }
+    ],
+    "wholesale_trade": [
+      {
+        "date": "2015-04",
+        "job_vacancies": 17040,
+        "payroll_employees": 771705,
+        "job_vacancy_rate": 2.2
+      }
+    ],
+    "retail_trade": [
+      {
+        "date": "2015-04",
+        "job_vacancies": 63045,
+        "payroll_employees": 1875720,
+        "job_vacancy_rate": 3.3
+      }
+    ],
+    "transportation_and_warehousing": [
+      {
+        "date": "2015-04",
+        "job_vacancies": 17760,
+        "payroll_employees": 710355,
+        "job_vacancy_rate": 2.4
+      }
+    ],
+    "information_and_cultural_industries": [
+      {
+        "date": "2015-04",
+        "job_vacancies": 14095,
+        "payroll_employees": 345515,
+        "job_vacancy_rate": 3.9
+      }
+    ],
+    "finance_and_insurance": [
+      {
+        "date": "2015-04",
+        "job_vacancies": 23180,
+        "payroll_employees": 708240,
+        "job_vacancy_rate": 3.2
+      }
+    ],
+    "real_estate_and_rental_and_leasing": [
+      {
+        "date": "2015-04",
+        "job_vacancies": 7800,
+        "payroll_employees": 276970,
+        "job_vacancy_rate": 2.7
+      }
+    ],
+    "professional_scientific_and_technical_services": [
+      {
+        "date": "2015-04",
+        "job_vacancies": null,
+        "payroll_employees": 847475,
+        "job_vacancy_rate": null
+      }
+    ],
+    "management_of_companies_and_enterprises": [
+      {
+        "date": "2015-04",
+        "job_vacancies": 1935,
+        "payroll_employees": 101165,
+        "job_vacancy_rate": 1.9
+      }
+    ],
+    "administrative_and_support_waste_management_and_remediation_services": [
+      {
+        "date": "2015-04",
+        "job_vacancies": 42165,
+        "payroll_employees": 751950,
+        "job_vacancy_rate": 5.3
+      }
+    ],
+    "educational_services": [
+      {
+        "date": "2015-04",
+        "job_vacancies": 15650,
+        "payroll_employees": 1330315,
+        "job_vacancy_rate": 1.2
+      }
+    ],
+    "health_care_and_social_assistance": [
+      {
+        "date": "2015-04",
+        "job_vacancies": 36835,
+        "payroll_employees": 1810980,
+        "job_vacancy_rate": 2
+      }
+    ],
+    "arts_entertainment_and_recreation": [
+      {
+        "date": "2015-04",
+        "job_vacancies": 19000,
+        "payroll_employees": 233330,
+        "job_vacancy_rate": 7.5
+      }
+    ],
+    "accommodation_and_food_services": [
+      {
+        "date": "2015-04",
+        "job_vacancies": 71320,
+        "payroll_employees": 1178825,
+        "job_vacancy_rate": 5.7
+      }
+    ],
+    "other_services_except_public_administration": [
+      {
+        "date": "2015-04",
+        "job_vacancies": 18640,
+        "payroll_employees": 540945,
+        "job_vacancy_rate": 3.3
+      }
+    ],
+    "public_administration": [
+      {
+        "date": "2015-04",
+        "job_vacancies": 11425,
+        "payroll_employees": 468270,
+        "job_vacancy_rate": 2.4
+      }
+    ]
+  },
+  "industry_data": {
+    "vacancy_rates": [
       {
         "industry": "Health care and social assistance",
         "job_vacancies": 101530,
