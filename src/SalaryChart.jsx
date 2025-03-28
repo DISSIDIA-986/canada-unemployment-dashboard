@@ -28,8 +28,7 @@ const SalaryChart = () => {
         
         // Set default selected occupations (top 5 by average salary)
         const uniqueOccupations = [...new Set(jsonData.map(item => item.NOC_Title_eng))];
-        const topOccupations = uniqueOccupations
-          .slice(0, 5);
+        const topOccupations = uniqueOccupations.slice(0, 5);
         setSelectedOccupations(topOccupations);
         
         setLoading(false);
@@ -65,15 +64,17 @@ const SalaryChart = () => {
 
   // Get available reference periods
   const getAvailableReferencePeriods = () => {
-    const periods = [...new Set(data.map(item => item.Reference_Period || 'NA'))];
-    return ['(Select All)', ...periods].filter(p => p); // Remove empty values
+    const periods = [...new Set(data.map(item => 
+      item.Reference_Period ? item.Reference_Period.toString() : 'NA'))];
+    return periods.filter(p => p !== 'NA').sort();
   };
 
   const filterByReferencePeriod = (dataArray) => {
     if (selectedReferencePeriod === '(Select All)') {
       return dataArray;
     }
-    return dataArray.filter(item => (item.Reference_Period || 'NA') === selectedReferencePeriod);
+    return dataArray.filter(item => 
+      item.Reference_Period && item.Reference_Period.toString() === selectedReferencePeriod);
   };
 
   if (loading) {
@@ -119,7 +120,7 @@ const SalaryChart = () => {
       .slice(0, 20); // Top 20 occupations
   };
 
-  // Get provincial average salary data
+  // Get provincial average data formatted for radar chart
   const getProvincialAverageData = () => {
     // Get all unique provinces excluding national
     const provinces = [...new Set(data.map(item => item.prov))].filter(p => p !== 'NAT');
@@ -158,7 +159,7 @@ const SalaryChart = () => {
     return radarData;
   };
 
-  // Get provincial median salary data
+  // Get provincial median data formatted for radar chart
   const getProvincialMedianData = () => {
     // Get all unique provinces excluding national
     const provinces = [...new Set(data.map(item => item.prov))].filter(p => p !== 'NAT');
@@ -329,7 +330,7 @@ const SalaryChart = () => {
           <p className="font-medium">{label}</p>
           {payload.map((entry, index) => (
             <p key={index} style={{ color: entry.color }}>
-              {`${entry.name}: ${entry.value.toLocaleString()}`}
+              {`${entry.name}: $${entry.value.toLocaleString()}`}
             </p>
           ))}
         </div>
@@ -347,7 +348,7 @@ const SalaryChart = () => {
           <p className="font-medium">{province}</p>
           {payload.map((entry, index) => (
             <p key={index} style={{ color: entry.color }}>
-              {`${entry.name}: ${
+              {`${entry.name}: $${
                 entry.name === 'Average Salary (CAD)' 
                   ? payload[0].payload.averageFullValue.toLocaleString()
                   : payload[0].payload.medianFullValue.toLocaleString()
@@ -384,7 +385,7 @@ const SalaryChart = () => {
 
       <div className="mb-6">
         <h3 className="font-semibold text-lg mb-3">
-          Highest Paying Occupations in Canada ({selectedReferencePeriod === '(Select All)' ? 'All Periods' : selectedReferencePeriod})
+          Highest Paying Occupations in Canada ({selectedReferencePeriod})
         </h3>
         <div className="h-96">
           <ResponsiveContainer width="100%" height="100%">
@@ -423,7 +424,7 @@ const SalaryChart = () => {
 
       <div className="mb-6">
         <h3 className="font-semibold text-lg mb-3">
-          Provincial Salary Comparison ({selectedReferencePeriod === '(Select All)' ? 'All Periods' : selectedReferencePeriod})
+          Provincial Salary Comparison ({selectedReferencePeriod})
         </h3>
         <div className="h-96">
           <ResponsiveContainer width="100%" height="100%">
@@ -438,16 +439,9 @@ const SalaryChart = () => {
               <PolarRadiusAxis 
                 angle={90} 
                 domain={[0, 'auto']}
-                tickFormatter={(value) => `${value}k`}
+                tickFormatter={(value) => `$${value}k`}
               />
-              <Tooltip 
-                formatter={(value, name, props) => {
-                  const fullValue = name === 'Average Salary' ? 
-                    props.payload.averageFullValue : 
-                    props.payload.medianFullValue;
-                  return [`${fullValue.toLocaleString()}`, name];
-                }}
-              />
+              <Tooltip content={radarTooltip} />
               <Legend />
               <Radar 
                 name="Average Salary (CAD)" 
@@ -470,7 +464,7 @@ const SalaryChart = () => {
 
       <div className="mb-6">
         <h3 className="font-semibold text-lg mb-3">
-          Salary Ranges by Occupation ({selectedReferencePeriod === '(Select All)' ? 'All Periods' : selectedReferencePeriod})
+          Salary Ranges by Occupation ({selectedReferencePeriod})
         </h3>
         <div className="h-96">
           <ResponsiveContainer width="100%" height="100%">
@@ -694,7 +688,7 @@ const SalaryChart = () => {
       <div className="flex items-center justify-between mb-6">
         <h2 className="font-bold text-xl">Canadian Salary Analysis</h2>
         <div className="text-sm text-gray-500">
-          Data Source: Statistics Canada
+          Data Source: {selectedReferencePeriod} Census
         </div>
       </div>
 
@@ -728,7 +722,7 @@ const SalaryChart = () => {
       </div>
 
       <div className="text-xs text-gray-500 mt-6">
-        Data Source: Statistics Canada. {selectedReferencePeriod === '(Select All)' ? 'Multiple Years' : selectedReferencePeriod} Census of Population.
+        Data Source: Statistics Canada. {selectedReferencePeriod} Census of Population.
       </div>
     </div>
   );
