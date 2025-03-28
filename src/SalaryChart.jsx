@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { 
   LineChart, Line, BarChart, Bar, XAxis, YAxis, CartesianGrid, 
-  Tooltip, Legend, ResponsiveContainer, PieChart, Pie, Cell
+  Tooltip, Legend, ResponsiveContainer, PieChart, Pie, Cell,
+  RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Radar
 } from 'recharts';
 
 const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', '#8884d8', '#82ca9d', '#ffc658', '#8dd1e1'];
@@ -142,9 +143,19 @@ const SalaryChart = () => {
       };
     });
     
-    return result
-      .filter(item => !isNaN(item.averageSalary) && item.averageSalary > 0)
-      .sort((a, b) => b.averageSalary - a.averageSalary);
+    // Format data for radar chart
+    const radarData = [
+      ...result
+        .filter(item => !isNaN(item.averageSalary) && item.averageSalary > 0)
+        .sort((a, b) => b.averageSalary - a.averageSalary)
+        .map(item => ({
+          subject: item.provinceName,
+          'Average Salary': Math.round(item.averageSalary / 1000),
+          fullValue: item.averageSalary
+        }))
+    ];
+    
+    return radarData;
   };
 
   // Get provincial median salary data
@@ -178,24 +189,65 @@ const SalaryChart = () => {
       };
     });
     
-    return result
-      .filter(item => !isNaN(item.medianSalary) && item.medianSalary > 0)
-      .sort((a, b) => b.medianSalary - a.medianSalary);
+    // Format data for radar chart
+    const radarData = [
+      ...result
+        .filter(item => !isNaN(item.medianSalary) && item.medianSalary > 0)
+        .sort((a, b) => b.medianSalary - a.medianSalary)
+        .map(item => ({
+          subject: item.provinceName,
+          'Median Salary': Math.round(item.medianSalary / 1000),
+          fullValue: item.medianSalary
+        }))
+    ];
+    
+    return radarData;
   };
 
   // Get combined provincial salary data (average and median)
   const getProvincialCombinedData = () => {
-    const averageData = getProvincialAverageData();
-    const medianData = getProvincialMedianData();
+    // Get all unique provinces excluding national
+    const provinces = [...new Set(data.map(item => item.prov))].filter(p => p !== 'NAT');
     
-    // Merge the two datasets
-    return averageData.map(avgItem => {
-      const medianItem = medianData.find(item => item.province === avgItem.province);
+    // Apply reference period filter
+    const filteredData = filterByReferencePeriod(data);
+    
+    // Calculate average and median salary for each province
+    const result = provinces.map(prov => {
+      const provincialData = filteredData.filter(item => item.prov === prov);
+      
+      // Calculate average
+      const totalSalary = provincialData.reduce((sum, item) => {
+        return sum + (item.Average_Wage_Salaire_Moyen || 0);
+      }, 0);
+      const averageSalary = provincialData.length > 0 ? totalSalary / provincialData.length : 0;
+      
+      // Calculate median
+      const medianSalaries = provincialData
+        .filter(item => item.Median_Wage_Salaire_Median !== null)
+        .map(item => item.Median_Wage_Salaire_Median);
+      
+      medianSalaries.sort((a, b) => a - b);
+      const medianSalary = medianSalaries.length > 0 ? 
+        (medianSalaries.length % 2 === 0
+          ? (medianSalaries[medianSalaries.length / 2 - 1] + medianSalaries[medianSalaries.length / 2]) / 2
+          : medianSalaries[Math.floor(medianSalaries.length / 2)]) : 0;
+      
+      const provinceName = provincialData[0]?.ER_Name || prov;
+      
       return {
-        ...avgItem,
-        medianSalary: medianItem?.medianSalary || 0
+        subject: provinceName,
+        'Average Salary': Math.round(averageSalary / 1000),
+        'Median Salary': Math.round(medianSalary / 1000),
+        averageFullValue: averageSalary,
+        medianFullValue: medianSalary
       };
     });
+    
+    return result
+      .filter(item => !isNaN(item['Average Salary']) && !isNaN(item['Median Salary']) && 
+               item['Average Salary'] > 0 && item['Median Salary'] > 0)
+      .sort((a, b) => b['Average Salary'] - a['Average Salary']);
   };
 
   // Get occupation by province data
@@ -277,7 +329,29 @@ const SalaryChart = () => {
           <p className="font-medium">{label}</p>
           {payload.map((entry, index) => (
             <p key={index} style={{ color: entry.color }}>
-              {`${entry.name}: $${entry.value.toLocaleString()}`}
+              {`${entry.name}: ${entry.value.toLocaleString()}`}
+            </p>
+          ))}
+        </div>
+      );
+    }
+    return null;
+  };
+  
+  // Custom radar tooltip
+  const radarTooltip = ({ active, payload }) => {
+    if (active && payload && payload.length) {
+      const province = payload[0].payload.subject;
+      return (
+        <div className="bg-white p-2 border border-gray-200 shadow-sm">
+          <p className="font-medium">{province}</p>
+          {payload.map((entry, index) => (
+            <p key={index} style={{ color: entry.color }}>
+              {`${entry.name}: ${
+                entry.name === 'Average Salary (CAD)' 
+                  ? payload[0].payload.averageFullValue.toLocaleString()
+                  : payload[0].payload.medianFullValue.toLocaleString()
+              }`}
             </p>
           ))}
         </div>
@@ -353,35 +427,43 @@ const SalaryChart = () => {
         </h3>
         <div className="h-96">
           <ResponsiveContainer width="100%" height="100%">
-            <BarChart
+            <RadarChart 
+              outerRadius={150} 
+              width={800} 
+              height={600} 
               data={getProvincialCombinedData()}
-              layout="vertical"
-              margin={{ top: 5, right: 30, left: 150, bottom: 5 }}
             >
-              <CartesianGrid strokeDasharray="3 3" />
-              <XAxis 
-                type="number"
-                tickFormatter={(value) => `$${value.toLocaleString()}`}
+              <PolarGrid />
+              <PolarAngleAxis dataKey="subject" tick={{ fontSize: 12 }} />
+              <PolarRadiusAxis 
+                angle={90} 
+                domain={[0, 'auto']}
+                tickFormatter={(value) => `${value}k`}
               />
-              <YAxis 
-                type="category"
-                dataKey="provinceName"
-                width={120}
-                tick={{ fontSize: 12 }}
+              <Tooltip 
+                formatter={(value, name, props) => {
+                  const fullValue = name === 'Average Salary' ? 
+                    props.payload.averageFullValue : 
+                    props.payload.medianFullValue;
+                  return [`${fullValue.toLocaleString()}`, name];
+                }}
               />
-              <Tooltip formatter={(value) => `$${value.toLocaleString()}`} content={customTooltip} />
               <Legend />
-              <Bar 
-                dataKey="averageSalary" 
+              <Radar 
                 name="Average Salary (CAD)" 
+                dataKey="Average Salary" 
+                stroke="#0088FE" 
                 fill="#0088FE" 
+                fillOpacity={0.6} 
               />
-              <Bar 
-                dataKey="medianSalary" 
+              <Radar 
                 name="Median Salary (CAD)" 
+                dataKey="Median Salary" 
+                stroke="#00C49F" 
                 fill="#00C49F" 
+                fillOpacity={0.6} 
               />
-            </BarChart>
+            </RadarChart>
           </ResponsiveContainer>
         </div>
       </div>
