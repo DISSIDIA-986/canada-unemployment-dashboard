@@ -153,57 +153,50 @@ const SalaryChart = () => {
       .slice(0, 20); // 只取前20个职业
   };
 
-  // 获取各省份平均薪资比较，用于雷达图
+  // 获取各省份薪资数据（最低、中位数、最高）
   const getProvincialSalaryData = () => {
     // 获取所有独特的省份代码（除了NAT）
     const provinces = [...new Set(filteredData.map(item => item.prov))].filter(p => p !== 'NAT');
     
-    // 计算每个省份的平均薪资和中位数薪资
-    return provinces.map(prov => {
+    // 计算每个省份的薪资数据
+    const provinceData = provinces.map(prov => {
       const provincialData = filteredData.filter(item => item.prov === prov);
       
-      // 计算平均薪资
-      const totalAvgSalary = provincialData.reduce((sum, item) => {
-        return sum + (item.Average_Wage_Salaire_Moyen || 0);
-      }, 0);
-      
-      // 计算中位数薪资
-      const totalMedianSalary = provincialData.reduce((sum, item) => {
-        return sum + (item.Median_Wage_Salaire_Median || 0);
-      }, 0);
-      
+      // 获取省份名称
       const provinceName = provincialData[0]?.ER_Name || prov;
+      
+      // 计算该省平均的最低、中位数和最高薪资
+      const avgLowSalary = provincialData.reduce((sum, item) => {
+        return sum + (item.Low_Wage_Salaire_Minium || 0);
+      }, 0) / provincialData.length;
+      
+      const avgMedianSalary = provincialData.reduce((sum, item) => {
+        return sum + (item.Median_Wage_Salaire_Median || 0);
+      }, 0) / provincialData.length;
+      
+      const avgHighSalary = provincialData.reduce((sum, item) => {
+        return sum + (item.High_Wage_Salaire_Maximal || 0);
+      }, 0) / provincialData.length;
       
       return {
         province: prov,
-        provinceName: provinceName.length > 15 ? provinceName.substring(0, 15) + '...' : provinceName,
-        averageSalary: totalAvgSalary / provincialData.length,
-        medianSalary: totalMedianSalary / provincialData.length
+        provinceName: provinceName,
+        lowSalary: avgLowSalary,
+        medianSalary: avgMedianSalary,
+        highSalary: avgHighSalary,
+        averageSalary: provincialData.reduce((sum, item) => {
+          return sum + (item.Average_Wage_Salaire_Moyen || 0);
+        }, 0) / provincialData.length
       };
-    }).filter(item => !isNaN(item.averageSalary) && item.averageSalary > 0);
-  };
-
-  // 获取用于雷达图的格式化数据
-  const getRadarChartData = () => {
-    const provincialData = getProvincialSalaryData();
-    
-    // 转换成雷达图所需的数据格式
-    const radarData = provincialData.map(item => ({
-      subject: item.provinceName,
-      A: Math.round(item.averageSalary / 1000), // 转换为千元单位，方便显示
-      B: Math.round(item.medianSalary / 1000),
-      fullMark: 150, // 最大刻度参考值
-    }));
-    
-    return radarData;
-  };
-  
-  // 获取用于对比条形图的数据
-  const getProvinceBarData = () => {
-    const provincialData = getProvincialSalaryData();
+    }).filter(item => 
+      !isNaN(item.lowSalary) && 
+      !isNaN(item.medianSalary) && 
+      !isNaN(item.highSalary) && 
+      item.lowSalary > 0
+    );
     
     // 按平均薪资降序排序
-    return provincialData.sort((a, b) => b.averageSalary - a.averageSalary);
+    return provinceData.sort((a, b) => b.medianSalary - a.medianSalary);
   };
 
   // 按职业和省份获取薪资比较数据
@@ -352,62 +345,46 @@ const SalaryChart = () => {
 
       <div className="mb-6">
         <h3 className="font-semibold text-lg mb-3">Salary by Province ({selectedYear})</h3>
-        <div className="flex flex-col lg:flex-row">
-          {/* 雷达图 */}
-          <div className="lg:w-1/2 h-80">
-            <ResponsiveContainer width="100%" height="100%">
-              <RadarChart outerRadius={90} data={getRadarChartData()}>
-                <PolarGrid />
-                <PolarAngleAxis dataKey="subject" />
-                <PolarRadiusAxis angle={30} domain={[0, 150]} />
-                <Radar 
-                  name="Average Salary (CAD $k)" 
-                  dataKey="A" 
-                  stroke="#8884d8" 
-                  fill="#8884d8" 
-                  fillOpacity={0.6} 
-                />
-                <Radar 
-                  name="Median Salary (CAD $k)" 
-                  dataKey="B" 
-                  stroke="#82ca9d" 
-                  fill="#82ca9d" 
-                  fillOpacity={0.6} 
-                />
-                <Legend />
-                <Tooltip formatter={(value) => `$${value}k`} />
-              </RadarChart>
-            </ResponsiveContainer>
-          </div>
-          
-          {/* 条形图 */}
-          <div className="lg:w-1/2 h-80">
-            <ResponsiveContainer width="100%" height="100%">
-              <BarChart
-                data={getProvinceBarData()}
-                margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
-              >
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="provinceName" />
-                <YAxis 
-                  tickFormatter={(value) => `$${value/1000}k`}
-                  label={{ value: 'Salary (CAD)', angle: -90, position: 'insideLeft' }}
-                />
-                <Tooltip formatter={(value) => `$${value.toLocaleString()}`} />
-                <Legend />
-                <Bar 
-                  dataKey="averageSalary" 
-                  name="Average Salary" 
-                  fill="#8884d8" 
-                />
-                <Bar 
-                  dataKey="medianSalary" 
-                  name="Median Salary" 
-                  fill="#82ca9d" 
-                />
-              </BarChart>
-            </ResponsiveContainer>
-          </div>
+        <div className="h-96">
+          <ResponsiveContainer width="100%" height="100%">
+            <BarChart
+              data={getProvincialSalaryData()}
+              layout="vertical"
+              margin={{ top: 5, right: 30, left: 200, bottom: 5 }}
+            >
+              <CartesianGrid strokeDasharray="3 3" />
+              <XAxis 
+                type="number" 
+                tickFormatter={(value) => `${value.toLocaleString()}`}
+              />
+              <YAxis 
+                type="category" 
+                dataKey="provinceName" 
+                width={180}
+                tick={{ fontSize: 12 }}
+              />
+              <Tooltip formatter={(value) => `${value.toLocaleString()}`} />
+              <Legend />
+              <Bar 
+                dataKey="lowSalary" 
+                name="Minimum" 
+                stackId="a" 
+                fill="#8884d8" 
+              />
+              <Bar 
+                dataKey="medianSalary" 
+                name="Median" 
+                stackId="a" 
+                fill="#82ca9d" 
+              />
+              <Bar 
+                dataKey="highSalary" 
+                name="Maximum" 
+                stackId="a" 
+                fill="#ffc658" 
+              />
+            </BarChart>
+          </ResponsiveContainer>
         </div>
       </div>
 
