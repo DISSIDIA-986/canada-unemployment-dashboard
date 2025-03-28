@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { 
   LineChart, Line, BarChart, Bar, XAxis, YAxis, CartesianGrid, 
-  Tooltip, Legend, ResponsiveContainer, PieChart, Pie, Cell
+  Tooltip, Legend, ResponsiveContainer, PieChart, Pie, Cell,
+  RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Radar
 } from 'recharts';
 
 const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', '#8884d8', '#82ca9d', '#ffc658', '#8dd1e1'];
@@ -29,12 +30,14 @@ const SalaryChart = () => {
         
         // 提取所有可用的年份
         const years = [...new Set(jsonData.map(item => item.Reference_Period))]
-          .filter(year => year !== null && year !== 'NA')
+          .filter(year => year !== null && year !== 'NA' && typeof year !== 'undefined')
           .sort((a, b) => b - a); // 降序排列，最新年份在前
         
+        console.log("Available years from data:", years);
         setAvailableYears(years);
+        
         // 设置默认选择最新的年份
-        const defaultYear = years.length > 0 ? years[0] : null;
+        const defaultYear = years.length > 0 ? years[0] : 2021;
         setSelectedYear(defaultYear);
         
         // 根据默认年份过滤数据
@@ -66,6 +69,7 @@ const SalaryChart = () => {
   useEffect(() => {
     if (data.length > 0 && selectedYear) {
       const newFilteredData = data.filter(item => item.Reference_Period === selectedYear);
+      console.log(`Filtered data for year ${selectedYear}:`, newFilteredData.length);
       setFilteredData(newFilteredData);
       
       // 更新选中的职业为新过滤数据的前5个
@@ -83,6 +87,7 @@ const SalaryChart = () => {
   }, [selectedYear, data]);
 
   const handleYearChange = (year) => {
+    console.log("Changing year to:", year);
     setSelectedYear(year);
   };
 
@@ -148,30 +153,57 @@ const SalaryChart = () => {
       .slice(0, 20); // 只取前20个职业
   };
 
-  // 获取各省份平均薪资比较
-  const getProvincialAverageData = () => {
-    // 获取所有独特的省份代码
+  // 获取各省份平均薪资比较，用于雷达图
+  const getProvincialSalaryData = () => {
+    // 获取所有独特的省份代码（除了NAT）
     const provinces = [...new Set(filteredData.map(item => item.prov))].filter(p => p !== 'NAT');
     
-    // 计算每个省份的平均薪资
-    const result = provinces.map(prov => {
+    // 计算每个省份的平均薪资和中位数薪资
+    return provinces.map(prov => {
       const provincialData = filteredData.filter(item => item.prov === prov);
-      const totalSalary = provincialData.reduce((sum, item) => {
+      
+      // 计算平均薪资
+      const totalAvgSalary = provincialData.reduce((sum, item) => {
         return sum + (item.Average_Wage_Salaire_Moyen || 0);
+      }, 0);
+      
+      // 计算中位数薪资
+      const totalMedianSalary = provincialData.reduce((sum, item) => {
+        return sum + (item.Median_Wage_Salaire_Median || 0);
       }, 0);
       
       const provinceName = provincialData[0]?.ER_Name || prov;
       
       return {
         province: prov,
-        provinceName,
-        averageSalary: totalSalary / provincialData.length
+        provinceName: provinceName.length > 15 ? provinceName.substring(0, 15) + '...' : provinceName,
+        averageSalary: totalAvgSalary / provincialData.length,
+        medianSalary: totalMedianSalary / provincialData.length
       };
-    });
+    }).filter(item => !isNaN(item.averageSalary) && item.averageSalary > 0);
+  };
+
+  // 获取用于雷达图的格式化数据
+  const getRadarChartData = () => {
+    const provincialData = getProvincialSalaryData();
     
-    return result
-      .filter(item => !isNaN(item.averageSalary) && item.averageSalary > 0)
-      .sort((a, b) => b.averageSalary - a.averageSalary);
+    // 转换成雷达图所需的数据格式
+    const radarData = provincialData.map(item => ({
+      subject: item.provinceName,
+      A: Math.round(item.averageSalary / 1000), // 转换为千元单位，方便显示
+      B: Math.round(item.medianSalary / 1000),
+      fullMark: 150, // 最大刻度参考值
+    }));
+    
+    return radarData;
+  };
+  
+  // 获取用于对比条形图的数据
+  const getProvinceBarData = () => {
+    const provincialData = getProvincialSalaryData();
+    
+    // 按平均薪资降序排序
+    return provincialData.sort((a, b) => b.averageSalary - a.averageSalary);
   };
 
   // 按职业和省份获取薪资比较数据
@@ -319,28 +351,63 @@ const SalaryChart = () => {
       </div>
 
       <div className="mb-6">
-        <h3 className="font-semibold text-lg mb-3">Average Salary by Province ({selectedYear})</h3>
-        <div className="h-80">
-          <ResponsiveContainer width="100%" height="100%">
-            <BarChart
-              data={getProvincialAverageData()}
-              margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
-            >
-              <CartesianGrid strokeDasharray="3 3" />
-              <XAxis dataKey="provinceName" />
-              <YAxis 
-                tickFormatter={(value) => `$${value.toLocaleString()}`}
-                label={{ value: 'Average Salary (CAD)', angle: -90, position: 'insideLeft' }}
-              />
-              <Tooltip formatter={(value) => `$${value.toLocaleString()}`} />
-              <Legend />
-              <Bar 
-                dataKey="averageSalary" 
-                name="Average Salary (CAD)" 
-                fill="#0088FE" 
-              />
-            </BarChart>
-          </ResponsiveContainer>
+        <h3 className="font-semibold text-lg mb-3">Salary by Province ({selectedYear})</h3>
+        <div className="flex flex-col lg:flex-row">
+          {/* 雷达图 */}
+          <div className="lg:w-1/2 h-80">
+            <ResponsiveContainer width="100%" height="100%">
+              <RadarChart outerRadius={90} data={getRadarChartData()}>
+                <PolarGrid />
+                <PolarAngleAxis dataKey="subject" />
+                <PolarRadiusAxis angle={30} domain={[0, 150]} />
+                <Radar 
+                  name="Average Salary (CAD $k)" 
+                  dataKey="A" 
+                  stroke="#8884d8" 
+                  fill="#8884d8" 
+                  fillOpacity={0.6} 
+                />
+                <Radar 
+                  name="Median Salary (CAD $k)" 
+                  dataKey="B" 
+                  stroke="#82ca9d" 
+                  fill="#82ca9d" 
+                  fillOpacity={0.6} 
+                />
+                <Legend />
+                <Tooltip formatter={(value) => `$${value}k`} />
+              </RadarChart>
+            </ResponsiveContainer>
+          </div>
+          
+          {/* 条形图 */}
+          <div className="lg:w-1/2 h-80">
+            <ResponsiveContainer width="100%" height="100%">
+              <BarChart
+                data={getProvinceBarData()}
+                margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
+              >
+                <CartesianGrid strokeDasharray="3 3" />
+                <XAxis dataKey="provinceName" />
+                <YAxis 
+                  tickFormatter={(value) => `$${value/1000}k`}
+                  label={{ value: 'Salary (CAD)', angle: -90, position: 'insideLeft' }}
+                />
+                <Tooltip formatter={(value) => `$${value.toLocaleString()}`} />
+                <Legend />
+                <Bar 
+                  dataKey="averageSalary" 
+                  name="Average Salary" 
+                  fill="#8884d8" 
+                />
+                <Bar 
+                  dataKey="medianSalary" 
+                  name="Median Salary" 
+                  fill="#82ca9d" 
+                />
+              </BarChart>
+            </ResponsiveContainer>
+          </div>
         </div>
       </div>
 
