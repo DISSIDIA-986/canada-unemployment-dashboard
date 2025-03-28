@@ -95,6 +95,22 @@ Array with 24360 elements. First element sample:
 
 **Available fields:** `Age`, `Characteristic`, `Date`, `GeoID`, `GeoName`, `NAICS`, `NAICS Description`, `Sex`, `Value`
 
+## noc_2021.json
+
+Array with 822 elements. First element sample:
+
+```json
+{
+  "Level": 1,
+  "Hierarchical structure": "Broad Category",
+  "Code - NOC 2021 V1.0": 0,
+  "Class title": "Legislative and senior management occupations",
+  "Class definition": "This broad category comprises legislators and senior management occupations."
+}
+```
+
+**Available fields:** `Class definition`, `Class title`, `Code - NOC 2021 V1.0`, `Hierarchical structure`, `Level`
+
 ## occupation.json
 
 Array with 27480 elements. First element sample:
