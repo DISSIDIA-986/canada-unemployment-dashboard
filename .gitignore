@@ -26,3 +26,11 @@ oss.md
 # csv, xlsx
 *.csv
 *.xlsx
+
+# images
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.svg
+*.webp
