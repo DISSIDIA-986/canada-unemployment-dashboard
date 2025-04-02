@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Dashboard from './Dashboard';
 import JobVacancyPage from './pages/JobVacancyPage';
 import SalaryPage from './pages/SalaryPage';
+import AnalysisResultsPage from './pages/AnalysisResultsPage';
 import './App.css';
 
 function App() {
@@ -16,6 +17,8 @@ function App() {
         <JobVacancyPage onNavigate={setCurrentPage} />
       ) : currentPage === 'salary' ? (
         <SalaryPage onNavigate={setCurrentPage} />
+      ) : currentPage === 'analysisResults' ? (
+        <AnalysisResultsPage onNavigate={setCurrentPage} />
       ) : (
         <Dashboard onNavigate={setCurrentPage} />
       )}
