@@ -364,7 +364,7 @@ const Dashboard = (props) => {
       </div>
 
       {/* 标签页内容 */}
-      <div className="mt-6">
+      <div className="mt-6 min-h-[500px]">
         {activeTab === 'Overview' && renderOverviewTab()}
         {activeTab === 'Industry & Occupation' && renderIndustryTab()}
         {activeTab === 'Demographics' && renderDemographicTab()}
@@ -372,7 +372,7 @@ const Dashboard = (props) => {
       </div>
       
       {/* 导航按钮区域 */}
-      <div className="mt-12 mb-6 text-center flex justify-center space-x-4">
+      <div className="mt-24 mb-6 text-center flex justify-center space-x-4">
         <button 
           onClick={() => props.onNavigate('jobVacancy')} 
           className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-6 rounded"
