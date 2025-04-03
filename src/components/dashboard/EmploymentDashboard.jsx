@@ -2,6 +2,15 @@ import { useState } from 'react';
 
 const Dashboard = () => {
   const [activeTab, setActiveTab] = useState('overview');
+  // 图片查看器状态
+  const [viewerOpen, setViewerOpen] = useState(false);
+  const [viewerImage, setViewerImage] = useState({ url: '', alt: '' });
+  
+  // 打开图片查看器的函数
+  const openImageViewer = (url, alt) => {
+    setViewerImage({ url, alt });
+    setViewerOpen(true);
+  };
   
   return (
     <div className="min-h-screen bg-gray-50">
@@ -29,13 +38,13 @@ const Dashboard = () => {
       
       {/* Main Content */}
       <main className="container mx-auto px-4 py-6">
-        {activeTab === 'overview' && <OverviewPanel />}
-        {activeTab === 'unemployment' && <UnemploymentPanel />}
-        {activeTab === 'education' && <EducationPanel />}
-        {activeTab === 'regional' && <RegionalPanel />}
-        {activeTab === 'demographic' && <DemographicPanel />}
-        {activeTab === 'occupation' && <OccupationPanel />}
-        {activeTab === 'career' && <CareerPanel />}
+        {activeTab === 'overview' && <OverviewPanel openImageViewer={openImageViewer} />}
+        {activeTab === 'unemployment' && <UnemploymentPanel openImageViewer={openImageViewer} />}
+        {activeTab === 'education' && <EducationPanel openImageViewer={openImageViewer} />}
+        {activeTab === 'regional' && <RegionalPanel openImageViewer={openImageViewer} />}
+        {activeTab === 'demographic' && <DemographicPanel openImageViewer={openImageViewer} />}
+        {activeTab === 'occupation' && <OccupationPanel openImageViewer={openImageViewer} />}
+        {activeTab === 'career' && <CareerPanel openImageViewer={openImageViewer} />}
       </main>
       
       <footer className="bg-gray-100 border-t mt-8 py-4">
@@ -44,6 +53,61 @@ const Dashboard = () => {
           <p className="mt-1">Last Updated: April 2025</p>
         </div>
       </footer>
+      
+      {/* 图片查看器模态框 */}
+      <ImageViewer 
+        isOpen={viewerOpen} 
+        imageUrl={viewerImage.url} 
+        alt={viewerImage.alt}
+        onClose={() => setViewerOpen(false)} 
+      />
+    </div>
+  );
+};
+
+// 图片查看器组件
+const ImageViewer = ({ isOpen, imageUrl, alt, onClose }) => {
+  if (!isOpen) return null;
+  
+  return (
+    <div 
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-75 p-4"
+      onClick={onClose}
+    >
+      <div 
+        className="max-w-4xl max-h-[90vh] bg-white rounded-lg overflow-hidden shadow-xl"
+        onClick={e => e.stopPropagation()}
+      >
+        <div className="p-4 border-b flex justify-between items-center">
+          <h3 className="font-bold text-lg">{alt || 'Image Preview'}</h3>
+          <button 
+            onClick={onClose}
+            className="text-gray-500 hover:text-gray-700"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+        <div className="bg-gray-100 p-4 flex items-center justify-center">
+          <img 
+            src={imageUrl} 
+            alt={alt || 'Full size image'} 
+            className="max-w-full max-h-[70vh] object-contain"
+            onError={(e) => {
+              e.target.src = "https://via.placeholder.com/800x600?text=Image+Not+Available";
+            }}
+          />
+        </div>
+        <div className="p-4 flex justify-end">
+          <button 
+            onClick={onClose}
+            className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+          >
+            Close
+          </button>
+        </div>
+      </div>
     </div>
   );
 };
@@ -68,21 +132,51 @@ const Card = ({ title, children, className = "" }) => (
   </div>
 );
 
+// 可点击放大的图片组件
+const ZoomableImage = ({ src, alt, className, openImageViewer }) => (
+  <div className="relative group cursor-pointer" onClick={() => openImageViewer(src, alt)}>
+    <img 
+      src={src} 
+      alt={alt} 
+      className={`${className} transition-transform group-hover:scale-105`}
+      onError={(e) => {
+        e.target.src = "https://via.placeholder.com/400x300?text=Image+Not+Available";
+      }}
+    />
+    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+      <div className="bg-blue-500 bg-opacity-75 text-white p-2 rounded-full">
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m4-3H6" />
+        </svg>
+      </div>
+    </div>
+  </div>
+);
+
 // Image Card Component
-const ImageCard = ({ title, description, imageName }) => {
+const ImageCard = ({ title, description, imageName, openImageViewer }) => {
   const imageUrl = `https://dissidia.oss-cn-beijing.aliyuncs.com/Capstone406/figures/${imageName}`;
   
   return (
     <div className="bg-white rounded-lg shadow overflow-hidden h-full flex flex-col">
-      <div className="p-4 bg-gray-50 flex-1">
-        <img 
-          src={imageUrl} 
-          alt={title} 
-          className="w-full h-48 object-contain"
-          onError={(e) => {
-            e.target.src = "https://via.placeholder.com/400x300?text=Image+Not+Available";
-          }} 
-        />
+      <div className="p-4 bg-gray-50 flex-1 cursor-pointer" onClick={() => openImageViewer(imageUrl, title)}>
+        <div className="relative group">
+          <img 
+            src={imageUrl} 
+            alt={title} 
+            className="w-full h-48 object-contain transition-transform group-hover:scale-105"
+            onError={(e) => {
+              e.target.src = "https://via.placeholder.com/400x300?text=Image+Not+Available";
+            }}
+          />
+          <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+            <div className="bg-blue-500 bg-opacity-70 text-white p-2 rounded-full">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m4-3H6" />
+              </svg>
+            </div>
+          </div>
+        </div>
       </div>
       <div className="p-4">
         <h3 className="text-lg font-medium">{title}</h3>
@@ -124,7 +218,7 @@ const StatBox = ({ title, value, trend, description }) => {
 };
 
 // Overview Panel
-const OverviewPanel = () => (
+const OverviewPanel = ({ openImageViewer }) => (
   <div className="space-y-6">
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
       <Card>
@@ -198,16 +292,19 @@ const OverviewPanel = () => (
         title="National Unemployment Trend" 
         description="Historical unemployment rates for Canada"
         imageName="canada_unemployment.png" 
+        openImageViewer={openImageViewer}
       />
       <ImageCard 
         title="Education Impact" 
         description="How education levels affect unemployment rates"
         imageName="unemployment_by_Education_impact.png" 
+        openImageViewer={openImageViewer}
       />
       <ImageCard 
         title="Regional Disparities" 
         description="Unemployment rates by province"
         imageName="province_comparison.png" 
+        openImageViewer={openImageViewer}
       />
     </div>
     
@@ -236,16 +333,17 @@ const OverviewPanel = () => (
 );
 
 // Unemployment Trends Panel
-const UnemploymentPanel = () => (
+const UnemploymentPanel = ({ openImageViewer }) => (
   <div className="space-y-6">
     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
       <Card className="md:col-span-2">
         <h2 className="text-xl font-bold mb-4">Unemployment Forecast</h2>
         <div className="aspect-video bg-gray-50 rounded flex items-center justify-center">
-          <img 
+          <ZoomableImage 
             src="https://dissidia.oss-cn-beijing.aliyuncs.com/Capstone406/figures/unemployment_forecast_overall.png" 
             alt="Overall Unemployment Forecast" 
             className="max-w-full max-h-full"
+            openImageViewer={openImageViewer}
           />
         </div>
         <p className="mt-4 text-gray-700">
@@ -307,31 +405,37 @@ const UnemploymentPanel = () => (
         title="Provincial Forecast Comparison" 
         description="Side-by-side comparison of provincial unemployment forecasts"
         imageName="province_forecast_comparison.png" 
+        openImageViewer={openImageViewer}
       />
       <ImageCard 
         title="British Columbia Forecast" 
         description="Projected to maintain the lowest unemployment rate"
         imageName="unemployment_forecast_british_columbia.png" 
+        openImageViewer={openImageViewer}
       />
       <ImageCard 
         title="Alberta Forecast" 
         description="Expected to improve gradually from oil price shocks"
         imageName="unemployment_forecast_alberta.png" 
+        openImageViewer={openImageViewer}
       />
       <ImageCard 
         title="Canada National Forecast" 
         description="Projected to remain near historic lows"
         imageName="unemployment_forecast_canada.png" 
+        openImageViewer={openImageViewer}
       />
       <ImageCard 
         title="Newfoundland & Labrador Forecast" 
         description="Projected to remain highest nationally"
         imageName="unemployment_forecast_newfoundland_and_labrador.png" 
+        openImageViewer={openImageViewer}
       />
       <ImageCard 
         title="Prince Edward Island Forecast" 
         description="Shows strong seasonal tourism-driven fluctuations"
         imageName="unemployment_forecast_prince_edward_island.png" 
+        openImageViewer={openImageViewer}
       />
     </div>
     
@@ -339,10 +443,11 @@ const UnemploymentPanel = () => (
       <h2 className="text-xl font-bold mb-4">Unemployment Risk Factors</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
-          <img 
+          <ZoomableImage 
             src="https://dissidia.oss-cn-beijing.aliyuncs.com/Capstone406/figures/unemployment_feature_mdi_ranking.png" 
             alt="Feature Importance" 
             className="w-full"
+            openImageViewer={openImageViewer}
           />
         </div>
         <div className="space-y-4">
@@ -399,26 +504,29 @@ const UnemploymentPanel = () => (
         title="Risk Score Distribution" 
         description="Distribution of unemployment risk across the population"
         imageName="risk_score_distribution.png" 
+        openImageViewer={openImageViewer}
       />
       <ImageCard 
         title="Factor Correlations" 
         description="How different unemployment factors relate to each other"
         imageName="category_correlation_matrix.png" 
+        openImageViewer={openImageViewer}
       />
     </div>
   </div>
 );
 
 // Education Panel
-const EducationPanel = () => (
+const EducationPanel = ({ openImageViewer }) => (
   <div className="space-y-6">
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
       <Card>
         <h2 className="text-xl font-bold mb-4">Education Impact on Unemployment</h2>
-        <img 
+        <ZoomableImage 
           src="https://dissidia.oss-cn-beijing.aliyuncs.com/Capstone406/figures/unemployment_by_Education_impact.png" 
           alt="Education Impact" 
           className="w-full mb-4"
+          openImageViewer={openImageViewer}
         />
         <p className="text-gray-700">
           Education is the strongest predictor of unemployment risk. Higher education consistently reduces risks, with university graduates facing minimal unemployment (5.4%). Low-educated groups remain disproportionately vulnerable, even during economic recoveries.
@@ -517,26 +625,30 @@ const EducationPanel = () => (
         title="Education Comparison" 
         description="Side-by-side comparison of unemployment rates by education"
         imageName="education_comparison.png" 
+        openImageViewer={openImageViewer}
       />
       <ImageCard 
         title="Education & Age Interaction" 
         description="How education and age together influence unemployment"
         imageName="interaction_heatmap_Education_Age.png" 
+        openImageViewer={openImageViewer}
       />
       <ImageCard 
         title="Education & Region Interaction" 
         description="How education impacts unemployment across regions"
         imageName="interaction_heatmap_Education_GeoName.png" 
+        openImageViewer={openImageViewer}
       />
     </div>
     
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
       <Card>
         <h2 className="text-xl font-bold mb-4">Education Level Forecasts</h2>
-        <img 
+        <ZoomableImage 
           src="https://dissidia.oss-cn-beijing.aliyuncs.com/Capstone406/figures/education_forecast_comparison.png" 
           alt="Education Forecast Comparison" 
           className="w-full mb-4"
+          openImageViewer={openImageViewer}
         />
         <p className="text-gray-700">
           Forecasts reveal persistent gaps in unemployment rates by education level. University graduates are projected to maintain the lowest unemployment rates (around 5.4%), largely immune to economic cycles. In contrast, those with some high school education face rates nearly triple that level (12.0%).
@@ -602,15 +714,16 @@ const EducationPanel = () => (
 );
 
 // Regional Panel
-const RegionalPanel = () => (
+const RegionalPanel = ({ openImageViewer }) => (
   <div className="space-y-6">
     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
       <Card className="md:col-span-2">
         <h2 className="text-xl font-bold mb-4">Regional Unemployment Disparities</h2>
-        <img 
+        <ZoomableImage 
           src="https://dissidia.oss-cn-beijing.aliyuncs.com/Capstone406/figures/province_comparison.png" 
           alt="Provincial Comparison" 
           className="w-full mb-4"
+          openImageViewer={openImageViewer}
         />
         <p className="text-gray-700">
           Canada exhibits persistent regional unemployment disparities. Western provinces (e.g., British Columbia) maintain low rates, while Atlantic provinces (e.g., Newfoundland) face chronic high unemployment. These regional disparities persist even after accounting for individual characteristics like education and age.
@@ -619,10 +732,11 @@ const RegionalPanel = () => (
       
       <Card>
         <h2 className="text-xl font-bold mb-4">Regional Impact on Unemployment</h2>
-        <img 
+        <ZoomableImage 
           src="https://dissidia.oss-cn-beijing.aliyuncs.com/Capstone406/figures/unemployment_by_GeoName_impact.png" 
           alt="Geographic Impact" 
           className="w-full mb-4"
+          openImageViewer={openImageViewer}
         />
         <div className="text-sm text-gray-600">
           <p>The chart shows how different regions impact unemployment risk, controlling for other factors. Eastern provinces show significantly higher unemployment risk, while Western provinces show lower risk.</p>
@@ -633,10 +747,11 @@ const RegionalPanel = () => (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
       <Card>
         <h2 className="text-xl font-bold mb-4">Provincial Salary Comparison</h2>
-        <img 
+        <ZoomableImage 
           src="https://dissidia.oss-cn-beijing.aliyuncs.com/Capstone406/figures/regional_salary_comparison.png" 
           alt="Regional Salary Comparison" 
           className="w-full mb-4"
+          openImageViewer={openImageViewer}
         />
         <p className="text-gray-700">
           Regional disparities in average wages are evident. Resource-rich provinces like Alberta have significantly higher wages compared to Atlantic provinces. Regions with higher wages generally exhibit lower unemployment rates, reflecting the influence of economic strength on both income and employment.
@@ -645,10 +760,11 @@ const RegionalPanel = () => (
       
       <Card>
         <h2 className="text-xl font-bold mb-4">Regional Job Vacancies</h2>
-        <img 
+        <ZoomableImage 
           src="https://dissidia.oss-cn-beijing.aliyuncs.com/Capstone406/figures/regional_vacancies.png" 
           alt="Regional Vacancies" 
           className="w-full mb-4"
+          openImageViewer={openImageViewer}
         />
         <p className="text-gray-700">
           Job vacancies are unevenly distributed geographically. Economic and population hubs like Ontario and Western provinces have the highest vacancy counts, whereas remote or economically weaker provinces have fewer openings. This uneven distribution contributes to regional labor market imbalances.
@@ -661,16 +777,19 @@ const RegionalPanel = () => (
         title="Region & Education Interaction" 
         description="How region and education together affect unemployment"
         imageName="interaction_line_Education_GeoName.png" 
+        openImageViewer={openImageViewer}
       />
       <ImageCard 
         title="Region & Age Interaction" 
         description="How region and age together affect unemployment"
         imageName="interaction_line_Age_GeoName.png" 
+        openImageViewer={openImageViewer}
       />
       <ImageCard 
         title="Region & Gender Interaction" 
         description="How region and gender together affect unemployment"
         imageName="interaction_line_Sex_GeoName.png" 
+        openImageViewer={openImageViewer}
       />
     </div>
     
@@ -707,15 +826,16 @@ const RegionalPanel = () => (
 );
 
 // Demographic Panel
-const DemographicPanel = () => (
+const DemographicPanel = ({ openImageViewer }) => (
   <div className="space-y-6">
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
       <Card>
         <h2 className="text-xl font-bold mb-4">Age Impact on Unemployment</h2>
-        <img 
+        <ZoomableImage 
           src="https://dissidia.oss-cn-beijing.aliyuncs.com/Capstone406/figures/unemployment_by_Age_impact.png" 
           alt="Age Impact" 
           className="w-full mb-4"
+          openImageViewer={openImageViewer}
         />
         <p className="text-gray-700">
           Age strongly influences unemployment risk. Younger individuals (ages 15–24) face the highest unemployment rates, which decline sharply for those aged 30–40 and rise slightly after age 50. Youth unemployment rates are multiple times higher than those for adults (25–54).
@@ -724,10 +844,11 @@ const DemographicPanel = () => (
       
       <Card>
         <h2 className="text-xl font-bold mb-4">Gender Gap Trends</h2>
-        <img 
+        <ZoomableImage 
           src="https://dissidia.oss-cn-beijing.aliyuncs.com/Capstone406/figures/gender_gap_canada_gap.png" 
           alt="Gender Gap Trend" 
           className="w-full mb-4"
+          openImageViewer={openImageViewer}
         />
         <p className="text-gray-700">
           Gender differences in unemployment are minimal and transient. From 2001 to 2025, Canada's male unemployment rate has been on average 1.4 percentage points higher than female rate. The gender gap fluctuates over time, with males historically having slightly higher rates, but gaps narrow with education and economic recovery.
@@ -738,10 +859,11 @@ const DemographicPanel = () => (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
       <Card>
         <h2 className="text-xl font-bold mb-4">Age Group Comparison</h2>
-        <img 
+        <ZoomableImage 
           src="https://dissidia.oss-cn-beijing.aliyuncs.com/Capstone406/figures/age_comparison.png" 
           alt="Age Comparison" 
           className="w-full mb-4"
+          openImageViewer={openImageViewer}
         />
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
           <div className="bg-red-50 p-3 rounded">
@@ -761,10 +883,11 @@ const DemographicPanel = () => (
       
       <Card>
         <h2 className="text-xl font-bold mb-4">Gender Comparison</h2>
-        <img 
+        <ZoomableImage 
           src="https://dissidia.oss-cn-beijing.aliyuncs.com/Capstone406/figures/gender_gap_canada.png" 
           alt="Gender Gap Overview" 
           className="w-full mb-4"
+          openImageViewer={openImageViewer}
         />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-center">
           <div className="bg-blue-50 p-3 rounded">
@@ -787,16 +910,19 @@ const DemographicPanel = () => (
         title="Age & Education Interaction" 
         description="How age and education together affect unemployment"
         imageName="interaction_heatmap_Education_Age.png" 
+        openImageViewer={openImageViewer}
       />
       <ImageCard 
         title="Gender & Education Interaction" 
         description="How gender and education together affect unemployment"
         imageName="interaction_heatmap_Education_Sex.png" 
+        openImageViewer={openImageViewer}
       />
       <ImageCard 
         title="Age & Gender Interaction" 
         description="How age and gender together affect unemployment"
         imageName="interaction_heatmap_Sex_Age.png" 
+        openImageViewer={openImageViewer}
       />
     </div>
     
@@ -884,15 +1010,16 @@ const DemographicPanel = () => (
 );
 
 // Occupation Panel
-const OccupationPanel = () => (
+const OccupationPanel = ({ openImageViewer }) => (
   <div className="space-y-6">
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
       <Card>
         <h2 className="text-xl font-bold mb-4">Industry Vacancy Rates</h2>
-        <img 
+        <ZoomableImage 
           src="https://dissidia.oss-cn-beijing.aliyuncs.com/Capstone406/figures/industry_vacancies.png" 
           alt="Industry Vacancies" 
           className="w-full mb-4"
+          openImageViewer={openImageViewer}
         />
         <p className="text-gray-700">
           Job vacancy rates vary widely across industries. Sectors such as Health Care (4.0%), Other Services (3.3%), and Accommodation and Food Services (3.1%) show high vacancy rates, indicating strong labor demand. In contrast, traditional industries like Manufacturing (1.8%) and Educational Services (1.3%) have fewer vacancies.
@@ -978,10 +1105,11 @@ const OccupationPanel = () => (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       <Card>
         <h2 className="text-xl font-bold mb-4">Vacancy Trends</h2>
-        <img 
+        <ZoomableImage 
           src="https://dissidia.oss-cn-beijing.aliyuncs.com/Capstone406/figures/vacancy_trends.png" 
           alt="Vacancy Trends" 
           className="w-full mb-4"
+          openImageViewer={openImageViewer}
         />
         <p className="text-sm text-gray-600">
           Total job vacancies surged in recent years, peaking in 2021–2022 as businesses ramped up hiring during economic recovery. While growth has slowed since then, vacancies remain elevated compared to pre-pandemic levels.
@@ -990,10 +1118,11 @@ const OccupationPanel = () => (
       
       <Card>
         <h2 className="text-xl font-bold mb-4">Occupation Trends</h2>
-        <img 
+        <ZoomableImage 
           src="https://dissidia.oss-cn-beijing.aliyuncs.com/Capstone406/figures/occupation_trends.png" 
           alt="Occupation Trends" 
           className="w-full mb-4"
+          openImageViewer={openImageViewer}
         />
         <p className="text-sm text-gray-600">
           High-skilled, high-wage professions show strong growth and low unemployment. Technical roles and healthcare occupations are expanding rapidly, while some traditional sectors show stagnation or decline.
@@ -1002,10 +1131,11 @@ const OccupationPanel = () => (
       
       <Card>
         <h2 className="text-xl font-bold mb-4">Critical Skills</h2>
-        <img 
+        <ZoomableImage 
           src="https://dissidia.oss-cn-beijing.aliyuncs.com/Capstone406/figures/occupation_skills.png" 
           alt="Occupation Skills" 
           className="w-full mb-4"
+          openImageViewer={openImageViewer}
         />
         <div className="space-y-1">
           <div className="flex justify-between">
@@ -1035,10 +1165,11 @@ const OccupationPanel = () => (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
       <Card>
         <h2 className="text-xl font-bold mb-4">Salary Distribution</h2>
-        <img 
+        <ZoomableImage 
           src="https://dissidia.oss-cn-beijing.aliyuncs.com/Capstone406/figures/salary_distribution_analysis.png" 
           alt="Salary Distribution" 
           className="w-full mb-4"
+          openImageViewer={openImageViewer}
         />
         <p className="text-gray-700">
           The overall wage distribution is right-skewed, with most workers concentrated in low-to-middle income brackets. The median wage is notably lower than the highest earnings, highlighting income inequality in the labor market.
@@ -1047,10 +1178,11 @@ const OccupationPanel = () => (
       
       <Card>
         <h2 className="text-xl font-bold mb-4">Occupation Salary Comparison</h2>
-        <img 
+        <ZoomableImage 
           src="https://dissidia.oss-cn-beijing.aliyuncs.com/Capstone406/figures/occupation_salary_comparison.png" 
           alt="Occupation Salary Comparison" 
           className="w-full mb-4"
+          openImageViewer={openImageViewer}
         />
         <p className="text-gray-700">
           Average wage levels differ markedly across occupational categories. High-skilled professions (e.g., professional occupations) command the highest salaries, while low-skilled roles (e.g., service jobs) have the lowest wages. This inverse relationship between wages and unemployment rates suggests that higher-paying jobs are associated with lower unemployment risks.
@@ -1136,7 +1268,7 @@ const OccupationPanel = () => (
 );
 
 // Career Advisory Panel
-const CareerPanel = () => (
+const CareerPanel = ({ openImageViewer }) => (
   <div className="space-y-6">
     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
       <Card className="md:col-span-2">
