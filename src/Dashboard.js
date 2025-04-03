@@ -395,7 +395,7 @@ const Dashboard = (props) => {
           onClick={() => props.onNavigate('employmentDashboard')} 
           className="bg-purple-500 hover:bg-purple-600 text-white font-bold py-2 px-6 rounded"
         >
-          View Advanced Employment Analysis Insights
+          Advanced Analysis Insights
       </button>
       </div>
 
