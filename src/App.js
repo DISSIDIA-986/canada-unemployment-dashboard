@@ -3,7 +3,8 @@ import Dashboard from './Dashboard';
 import JobVacancyPage from './pages/JobVacancyPage';
 import SalaryPage from './pages/SalaryPage';
 import AnalysisResultsPage from './pages/AnalysisResultsPage';
-import EmploymentDashboardPage from './pages/EmploymentDashboardPage'; // 导入新页面
+import EmploymentDashboardPage from './pages/EmploymentDashboardPage';
+import AICareerAdvisorPage from './pages/AICareerAdvisorPage';
 import './App.css';
 
 function App() {
@@ -22,6 +23,8 @@ function App() {
         <AnalysisResultsPage onNavigate={setCurrentPage} />
       ) : currentPage === 'employmentDashboard' ? ( // 添加新的条件
         <EmploymentDashboardPage onNavigate={setCurrentPage} />
+      ) : currentPage === 'aiCareerAdvisor' ? ( // 添加新的条件
+        <AICareerAdvisorPage onNavigate={setCurrentPage} />
       ) : (
         <Dashboard onNavigate={setCurrentPage} />
       )}

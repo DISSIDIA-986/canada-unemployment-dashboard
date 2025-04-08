@@ -397,6 +397,11 @@ const Dashboard = (props) => {
         >
           Advanced Analysis Insights
       </button>
+      <button
+        onClick={() => props.onNavigate('aiCareerAdvisor')}
+        className="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-6 rounded">
+        AI Career Advisor
+      </button>
       </div>
 
       <div className="text-sm text-gray-500 mt-8">
