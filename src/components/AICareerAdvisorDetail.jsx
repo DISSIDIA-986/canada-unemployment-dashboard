@@ -1,10 +1,24 @@
 import React, { useState } from 'react';
+import ImageViewer from './ImageViewer'; // 导入 ImageViewer 组件
 
 const AICareerAdvisorDetail = () => {
   const [activeTab, setActiveTab] = useState('architecture');
+  const [viewerOpen, setViewerOpen] = useState(false);
+  const [currentImage, setCurrentImage] = useState('');
 
   // OSS 图片基础路径
   const baseImageUrl = 'https://dissidia.oss-cn-beijing.aliyuncs.com/Capstone406/chatbot';
+
+  // 打开图片查看器
+  const openImageViewer = (imageSrc) => {
+    setCurrentImage(imageSrc);
+    setViewerOpen(true);
+  };
+
+  // 关闭图片查看器
+  const closeImageViewer = () => {
+    setViewerOpen(false);
+  };
 
   // 定义图表和描述内容
   const tabContent = {
@@ -66,21 +80,22 @@ const AICareerAdvisorDetail = () => {
   // 渲染当前选中的选项卡内容
   const renderTabContent = () => {
     const content = tabContent[activeTab];
-    
+
     return (
       <div className="mb-8">
         <h2 className="text-2xl font-semibold mb-4">{content.title}</h2>
         <p className="text-gray-700 mb-6">{content.description}</p>
-        
+
         <div className="mb-6 flex justify-center">
-          <img 
-            src={content.image} 
-            alt={content.title} 
-            className="max-w-full h-auto rounded-lg shadow-lg"
+          <img
+            src={content.image}
+            alt={content.title}
+            className="max-w-full h-auto rounded-lg shadow-lg cursor-zoom-in"
             style={{ maxHeight: '500px' }}
+            onClick={() => openImageViewer(content.image)}
           />
         </div>
-        
+
         <div className="bg-blue-50 p-6 rounded-lg">
           <h3 className="text-lg font-medium mb-3">Key Components:</h3>
           <ul className="list-disc pl-6 space-y-2">
@@ -132,6 +147,14 @@ const AICareerAdvisorDetail = () => {
       </div>
 
       {renderTabContent()}
+
+      {/* 添加图片查看器组件 */}
+      <ImageViewer
+        src={currentImage}
+        alt="Enlarged diagram"
+        isOpen={viewerOpen}
+        onClose={closeImageViewer}
+      />
 
       <div className="mt-8 p-4 bg-gray-50 rounded-lg">
         <h3 className="text-lg font-medium mb-3">Try AI Career Advisor</h3>
