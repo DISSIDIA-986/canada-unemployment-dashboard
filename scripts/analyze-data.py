@@ -4,7 +4,7 @@ from collections import defaultdict
 
 # 数据文件列表
 data_files = ['alberta.json', 'province.json', 'industry.json', 'sex.json', 
-              'age.json', 'city.json', 'region.json', 'occupation.json', 'education.json']
+              'age.json', 'city.json', 'region.json', 'occupation.json', 'education.json','salary.json', 'vacancy_data.json', 'noc_2021.json']
 
 # 存储各文件的字段信息
 file_fields = {}
