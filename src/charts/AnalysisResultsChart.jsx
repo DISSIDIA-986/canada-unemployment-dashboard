@@ -89,10 +89,10 @@ const chartCategories = [
     description: 'How different factors interact and affect unemployment',
     charts: [
       { filename: 'category_correlation_matrix.png', title: 'Category Correlation Matrix', description: 'Correlations between different unemployment factors' },
-      { filename: 'interaction_heatmap_Education_Age.png', title: 'Education & Age Interaction', description: 'How education and age interact to affect unemployment' },
-      { filename: 'interaction_heatmap_Education_Sex.png', title: 'Education & Gender Interaction', description: 'How education and gender interact to affect unemployment' },
+      { filename: 'heatmap_educational_attainment_age_group.png', title: 'Education & Age Interaction', description: 'How education and age interact to affect unemployment' },
+      { filename: 'heatmap_educational_attainment_gender.png', title: 'Education & Gender Interaction', description: 'How education and gender interact to affect unemployment' },
       { filename: 'interaction_heatmap_Education_GeoName.png', title: 'Education & Region Interaction', description: 'How education and location interact to affect unemployment' },
-      { filename: 'interaction_heatmap_Sex_Age.png', title: 'Gender & Age Interaction', description: 'How gender and age interact to affect unemployment' },
+      { filename: 'heatmap_gender_age_group.png', title: 'Gender & Age Interaction', description: 'How gender and age interact to affect unemployment' },
       { filename: 'interaction_heatmap_Sex_GeoName.png', title: 'Gender & Region Interaction', description: 'How gender and location interact to affect unemployment' },
       { filename: 'interaction_heatmap_Age_GeoName.png', title: 'Age & Region Interaction', description: 'How age and location interact to affect unemployment' }
     ]

@@ -630,7 +630,7 @@ const EducationPanel = ({ openImageViewer }) => (
       <ImageCard 
         title="Education & Age Interaction" 
         description="How education and age together influence unemployment"
-        imageName="interaction_heatmap_Education_Age.png" 
+        imageName="heatmap_educational_attainment_age_group.png" 
         openImageViewer={openImageViewer}
       />
       <ImageCard 
@@ -909,19 +909,19 @@ const DemographicPanel = ({ openImageViewer }) => (
       <ImageCard 
         title="Age & Education Interaction" 
         description="How age and education together affect unemployment"
-        imageName="interaction_heatmap_Education_Age.png" 
+        imageName="heatmap_educational_attainment_age_group.png" 
         openImageViewer={openImageViewer}
       />
       <ImageCard 
         title="Gender & Education Interaction" 
         description="How gender and education together affect unemployment"
-        imageName="interaction_heatmap_Education_Sex.png" 
+        imageName="heatmap_educational_attainment_gender.png" 
         openImageViewer={openImageViewer}
       />
       <ImageCard 
         title="Age & Gender Interaction" 
         description="How age and gender together affect unemployment"
-        imageName="interaction_heatmap_Sex_Age.png" 
+        imageName="heatmap_gender_age_group.png" 
         openImageViewer={openImageViewer}
       />
     </div>
