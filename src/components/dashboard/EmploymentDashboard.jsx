@@ -568,68 +568,78 @@ const EducationPanel = ({openImageViewer}) => (
                 <div className="space-y-4">
                     <div>
                         <div className="flex justify-between mb-1">
-                            <span className="text-sm">University degree</span>
-                            <span className="text-sm font-medium">5.4%</span>
+                            <span className="text-sm">Above bachelor's degree</span>
+                            <span className="text-sm font-medium">4.7%</span>
                         </div>
                         <div className="w-full bg-gray-200 rounded-full h-2">
-                            <div className="bg-green-500 h-2 rounded-full" style={{width: '45%'}}></div>
+                            <div className="bg-green-500 h-2 rounded-full" style={{width: '33%'}}></div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div className="flex justify-between mb-1">
+                            <span className="text-sm">University degree</span>
+                            <span className="text-sm font-medium">4.8%</span>
+                        </div>
+                        <div className="w-full bg-gray-200 rounded-full h-2">
+                            <div className="bg-green-500 h-2 rounded-full" style={{width: '34%'}}></div>
                         </div>
                     </div>
 
                     <div>
                         <div className="flex justify-between mb-1">
                             <span className="text-sm">Bachelor's degree</span>
-                            <span className="text-sm font-medium">5.4%</span>
+                            <span className="text-sm font-medium">5.1%</span>
                         </div>
                         <div className="w-full bg-gray-200 rounded-full h-2">
-                            <div className="bg-green-500 h-2 rounded-full" style={{width: '45%'}}></div>
-                        </div>
-                    </div>
-
-                    <div>
-                        <div className="flex justify-between mb-1">
-                            <span className="text-sm">Above bachelor's degree</span>
-                            <span className="text-sm font-medium">5.6%</span>
-                        </div>
-                        <div className="w-full bg-gray-200 rounded-full h-2">
-                            <div className="bg-green-500 h-2 rounded-full" style={{width: '47%'}}></div>
+                            <div className="bg-green-500 h-2 rounded-full" style={{width: '36%'}}></div>
                         </div>
                     </div>
 
                     <div>
                         <div className="flex justify-between mb-1">
                             <span className="text-sm">Postsecondary certificate or diploma</span>
-                            <span className="text-sm font-medium">5.8%</span>
+                            <span className="text-sm font-medium">6.5%</span>
                         </div>
                         <div className="w-full bg-gray-200 rounded-full h-2">
-                            <div className="bg-green-500 h-2 rounded-full" style={{width: '48%'}}></div>
+                            <div className="bg-green-500 h-2 rounded-full" style={{width: '46%'}}></div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div className="flex justify-between mb-1">
+                            <span className="text-sm">Total, all education levels</span>
+                            <span className="text-sm font-medium">7.7%</span>
+                        </div>
+                        <div className="w-full bg-gray-200 rounded-full h-2">
+                            <div className="bg-yellow-500 h-2 rounded-full" style={{width: '54%'}}></div>
                         </div>
                     </div>
 
                     <div>
                         <div className="flex justify-between mb-1">
                             <span className="text-sm">High school graduate</span>
-                            <span className="text-sm font-medium">8.0%</span>
+                            <span className="text-sm font-medium">8.4%</span>
                         </div>
                         <div className="w-full bg-gray-200 rounded-full h-2">
-                            <div className="bg-yellow-500 h-2 rounded-full" style={{width: '67%'}}></div>
+                            <div className="bg-yellow-500 h-2 rounded-full" style={{width: '59%'}}></div>
                         </div>
                     </div>
 
                     <div>
                         <div className="flex justify-between mb-1">
                             <span className="text-sm">Some postsecondary</span>
-                            <span className="text-sm font-medium">8.4%</span>
+                            <span className="text-sm font-medium">9.0%</span>
                         </div>
                         <div className="w-full bg-gray-200 rounded-full h-2">
-                            <div className="bg-yellow-500 h-2 rounded-full" style={{width: '70%'}}></div>
+                            <div className="bg-yellow-500 h-2 rounded-full" style={{width: '63%'}}></div>
                         </div>
                     </div>
 
                     <div>
                         <div className="flex justify-between mb-1">
                             <span className="text-sm">Some high school</span>
-                            <span className="text-sm font-medium">12.0%</span>
+                            <span className="text-sm font-medium">14.2%</span>
                         </div>
                         <div className="w-full bg-gray-200 rounded-full h-2">
                             <div className="bg-red-500 h-2 rounded-full" style={{width: '100%'}}></div>
