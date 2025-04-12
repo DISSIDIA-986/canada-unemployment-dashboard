@@ -825,19 +825,19 @@ const RegionalPanel = ({openImageViewer}) => (
             <ImageCard
                 title="Region & Education Interaction"
                 description="How region and education together affect unemployment"
-                imageName="interaction_line_Education_GeoName.png"
+                imageName="interaction_heatmap_Education_GeoName.png"
                 openImageViewer={openImageViewer}
             />
             <ImageCard
                 title="Region & Age Interaction"
                 description="How region and age together affect unemployment"
-                imageName="interaction_line_Age_GeoName.png"
+                imageName="heatmap_geo_age_group.png"
                 openImageViewer={openImageViewer}
             />
             <ImageCard
                 title="Region & Gender Interaction"
                 description="How region and gender together affect unemployment"
-                imageName="interaction_line_Sex_GeoName.png"
+                imageName="heatmap_geo_gender.png"
                 openImageViewer={openImageViewer}
             />
         </div>
