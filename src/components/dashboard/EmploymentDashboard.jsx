@@ -1239,9 +1239,7 @@ const OccupationPanel = ({openImageViewer}) => (
                     openImageViewer={openImageViewer}
                 />
                 <p className="text-gray-700">
-                    The overall wage distribution is right-skewed, with most workers concentrated in low-to-middle
-                    income brackets. The median wage is notably lower than the highest earnings, highlighting income
-                    inequality in the labor market.
+                    The Canadian salary distribution reveals a bimodal pattern with most jobs paying $20-40 hourly, while a small percentage of extremely high-paying positions (reaching $486,469) significantly skews the mean salary upward to $1,975.
                 </p>
             </Card>
 
