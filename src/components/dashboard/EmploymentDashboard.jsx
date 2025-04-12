@@ -1248,9 +1248,35 @@ const OccupationPanel = ({openImageViewer}) => (
                     className="w-full mb-4"
                     openImageViewer={openImageViewer}
                 />
-                <p className="text-gray-700">
-                    The Canadian salary distribution reveals a bimodal pattern with most jobs paying $20-40 hourly, while a small percentage of extremely high-paying positions (reaching $486,469) significantly skews the mean salary upward to $1,975.
-                </p>
+                <div className="text-gray-700">
+                    <ul className="list-disc pl-5 space-y-1">
+                        <li>
+                            <strong>Bimodal Distribution</strong>: The salary distribution shows a bimodal
+                            pattern with peaks around $20 and $30 per hour, indicating two common salary tiers in the
+                            Canadian job market.
+                        </li>
+                        <li><strong>Significant Disparity</strong>: There's a substantial gap between the median ($30)
+                            and mean ($1,975) salaries, revealing extreme positive skew - a few very high-paying
+                            positions dramatically pull up the average.
+                        </li>
+                        <li><strong>Quartile Analysis</strong>: The interquartile range (IQR) is relatively narrow ($23
+                            to $40), showing that 50% of positions fall within this moderate salary band, despite the
+                            full range extending to $486,469.
+                        </li>
+                        <li><strong>Right-Skewed Distribution</strong>: The long tail to the right (extending beyond
+                            what's shown in the main visualization) demonstrates that while most jobs offer modest
+                            hourly wages, there exists a small percentage of extremely high-paying positions.
+                        </li>
+                        <li><strong>Concentration of Positions</strong>: The majority of job positions are concentrated
+                            below $40 per hour, with frequency steadily declining as salary increases above this
+                            threshold.
+                        </li>
+                        <li><strong>95th Percentile View</strong>: The graph focuses on salaries up to the 95th
+                            percentile ($58), making the distribution pattern more visible, while acknowledging the full
+                            range extends much higher (up to $486,469).
+                        </li>
+                    </ul>
+                </div>
             </Card>
 
             <Card>
