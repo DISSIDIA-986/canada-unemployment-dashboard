@@ -1613,37 +1613,24 @@ const CareerPanel = ({openImageViewer}) => (
                     </div>
 
                     <div>
-                        <div>
-                            <div>Above bachelor's degree</div>
-                            <div>4.7% unemployment rate</div>
-                        </div>
-                        <div>
-                            <div>University degree</div>
-                            <div>4.8% unemployment rate</div>
-                        </div>
-                        <div>
-                            <div>Bachelor's degree</div>
-                            <div>5.1% unemployment rate</div>
-                        </div>
-                        <div>
-                            <div>Postsecondary certificate or diploma</div>
-                            <div>6.5% unemployment rate</div>
-                        </div>
-                        <div>
-                            <div>Total, all education levels</div>
-                            <div>7.7% unemployment rate</div>
-                        </div>
-                        <div>
-                            <div>High school graduate</div>
-                            <div>8.4% unemployment rate</div>
-                        </div>
-                        <div>
-                            <div>Some postsecondary</div>
-                            <div>9.0% unemployment rate</div>
-                        </div>
-                        <div>
-                            <div>Some high school</div>
-                            <div>14.2% unemployment rate</div>
+                        <h3 className="font-medium">Educational Credentials</h3>
+                        <div className="grid grid-cols-2 gap-2 mt-2">
+                            <div className="border rounded p-2">
+                                <div className="font-medium">University Degree</div>
+                                <div className="text-xs text-gray-500">5.4% unemployment rate</div>
+                            </div>
+                            <div className="border rounded p-2">
+                                <div className="font-medium">Post-secondary Certificate</div>
+                                <div className="text-xs text-gray-500">5.8% unemployment rate</div>
+                            </div>
+                            <div className="border rounded p-2">
+                                <div className="font-medium">Professional Certifications</div>
+                                <div className="text-xs text-gray-500">Enhanced employability</div>
+                            </div>
+                            <div className="border rounded p-2">
+                                <div className="font-medium">Technical Training</div>
+                                <div className="text-xs text-gray-500">High demand in trades</div>
+                            </div>
                         </div>
                     </div>
                 </div>
