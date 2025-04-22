@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import * as dataUtils from './utils/dataProcessing';
-import { 
-  filterByTimeframe, 
+import {
+  filterByTimeframe,
   getAvailableIndustries,
-  getAvailableProvinces 
+  getAvailableProvinces
 } from './utils/dataProcessing';
 
 // Import all chart components
@@ -248,11 +248,10 @@ const Dashboard = (props) => {
             {dataUtils.getAvailableIndustries(filteredIndustryData).map(industry => (
               <div
                 key={industry}
-                className={`px-3 py-1 rounded-full text-sm cursor-pointer ${
-                  selectedIndustries.includes(industry) 
-                    ? 'bg-blue-100 text-blue-800' 
+                className={`px-3 py-1 rounded-full text-sm cursor-pointer ${selectedIndustries.includes(industry)
+                    ? 'bg-blue-100 text-blue-800'
                     : 'bg-gray-100 text-gray-500'
-                }`}
+                  }`}
                 onClick={() => handleIndustrySelection(industry)}
               >
                 {industry.length > 25 ? industry.substring(0, 25) + '...' : industry}
@@ -310,7 +309,20 @@ const Dashboard = (props) => {
 
   return (
     <div className="container mx-auto px-4 py-8 bg-gray-100 min-h-screen">
-      <h1 className="text-3xl font-bold mb-6">Canada Unemployment Dashboard</h1>
+      <div className="flex items-center justify-between mb-6">
+        <h1 className="text-3xl font-bold">Canada Unemployment Dashboard</h1>
+        <a
+          href="https://www.linkedin.com/in/yupo-niu-3a0200324/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center text-[#0077b5] hover:text-[#005fa3]"
+        >
+          <svg className="w-5 h-5 mr-1 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+          </svg>
+          <span className="font-medium">Connect Me</span>
+        </a>
+      </div>
 
       {/* 时间范围选择器 */}
       <div className="mb-6">
@@ -370,38 +382,38 @@ const Dashboard = (props) => {
         {activeTab === 'Demographics' && renderDemographicTab()}
         {activeTab === 'Geography' && renderGeographicTab()}
       </div>
-      
+
       {/* 导航按钮区域 */}
       <div className="mt-24 mb-6 text-center flex justify-center space-x-4">
-        <button 
-          onClick={() => props.onNavigate('jobVacancy')} 
+        <button
+          onClick={() => props.onNavigate('jobVacancy')}
           className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-6 rounded"
         >
           View Job Vacancy Analysis
         </button>
-        <button 
-          onClick={() => props.onNavigate('salary')} 
+        <button
+          onClick={() => props.onNavigate('salary')}
           className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-6 rounded"
         >
           View Salary Analysis
         </button>
-      {/*  <button */}
-      {/*    onClick={() => props.onNavigate('analysisResults')} */}
-      {/*    className="bg-purple-500 hover:bg-purple-600 text-white font-bold py-2 px-6 rounded"*/}
-      {/*  >*/}
-      {/*    View Advanced Analysis Results*/}
-      {/*</button>*/}
-      <button
-          onClick={() => props.onNavigate('employmentDashboard')} 
+        {/*  <button */}
+        {/*    onClick={() => props.onNavigate('analysisResults')} */}
+        {/*    className="bg-purple-500 hover:bg-purple-600 text-white font-bold py-2 px-6 rounded"*/}
+        {/*  >*/}
+        {/*    View Advanced Analysis Results*/}
+        {/*</button>*/}
+        <button
+          onClick={() => props.onNavigate('employmentDashboard')}
           className="bg-purple-500 hover:bg-purple-600 text-white font-bold py-2 px-6 rounded"
         >
           Advanced Analysis Insights
-      </button>
-      <button
-        onClick={() => props.onNavigate('aiCareerAdvisor')}
-        className="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-6 rounded">
-        AI Career Advisor
-      </button>
+        </button>
+        <button
+          onClick={() => props.onNavigate('aiCareerAdvisor')}
+          className="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-6 rounded">
+          AI Career Advisor
+        </button>
       </div>
 
       <div className="text-sm text-gray-500 mt-8">
