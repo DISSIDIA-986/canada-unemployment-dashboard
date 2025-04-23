@@ -166,7 +166,7 @@ const AICareerAdvisorDetail = () => {
           className="inline-block bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors"
           onClick={(e) => {
             e.preventDefault();
-            window.open('https://chat.dify.ai/c/demo', '_blank');
+            window.open('https://udify.app/chat/beksPJ3NGBj38Uyv', '_blank');
           }}
         >
           Chat with the Advisor
