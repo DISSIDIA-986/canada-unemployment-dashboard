@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/canada-unemployment-dashboard/static/css/main.f855e6bc.css",
+    "main.js": "/canada-unemployment-dashboard/static/js/main.43883d0d.js",
+    "static/js/453.53258313.chunk.js": "/canada-unemployment-dashboard/static/js/453.53258313.chunk.js",
+    "index.html": "/canada-unemployment-dashboard/index.html",
+    "main.f855e6bc.css.map": "/canada-unemployment-dashboard/static/css/main.f855e6bc.css.map",
+    "main.43883d0d.js.map": "/canada-unemployment-dashboard/static/js/main.43883d0d.js.map",
+    "453.53258313.chunk.js.map": "/canada-unemployment-dashboard/static/js/453.53258313.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f855e6bc.css",
+    "static/js/main.43883d0d.js"
+  ]
+}
