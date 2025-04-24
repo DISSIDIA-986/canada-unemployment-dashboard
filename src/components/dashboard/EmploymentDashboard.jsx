@@ -1462,7 +1462,7 @@ const CareerPanel = ({openImageViewer}) => (
                             Estimate your personal unemployment risk based on education, age, location and other
                             factors.
                         </p>
-                        <button className="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600">
+                        <button className="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600" onClick={() => window.open("https://udify.app/chat/beksPJ3NGBj38Uyv", "_blank")}>
                             Calculate My Risk
                         </button>
                     </div>
@@ -1472,7 +1472,7 @@ const CareerPanel = ({openImageViewer}) => (
                         <p className="text-sm text-gray-600 mb-3">
                             Get personalized salary estimates based on your qualifications, experience, and location.
                         </p>
-                        <button className="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600">
+                        <button className="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600" onClick={() => window.open("https://udify.app/chat/beksPJ3NGBj38Uyv", "_blank")}>
                             Estimate Salary
                         </button>
                     </div>
@@ -1482,7 +1482,7 @@ const CareerPanel = ({openImageViewer}) => (
                         <p className="text-sm text-gray-600 mb-3">
                             Identify the skills you need to develop for your target career path.
                         </p>
-                        <button className="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600">
+                        <button className="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600" onClick={() => window.open("https://udify.app/chat/beksPJ3NGBj38Uyv", "_blank")}>
                             Analyze Skills
                         </button>
                     </div>
@@ -1492,7 +1492,7 @@ const CareerPanel = ({openImageViewer}) => (
                         <p className="text-sm text-gray-600 mb-3">
                             See potential career progressions and required steps for advancement.
                         </p>
-                        <button className="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600">
+                        <button className="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600" onClick={() => window.open("https://udify.app/chat/beksPJ3NGBj38Uyv", "_blank")}>
                             Explore Pathways
                         </button>
                     </div>
